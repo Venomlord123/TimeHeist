@@ -24,6 +24,7 @@ namespace Luke
 
         public void NPCMovement()
         {
+            //fixing
             int waypointCount = 0;
             navMeshAgent.SetDestination(wayPoints[waypointCount].transform.position);
             if (navMeshAgent.remainingDistance < .2f)
