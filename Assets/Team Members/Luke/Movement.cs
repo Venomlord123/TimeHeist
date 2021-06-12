@@ -9,11 +9,13 @@ namespace Luke
     {
         public NavMeshAgent navMeshAgent;
         public List<Waypoint> wayPoints;
+        public Vector3 currentTarget;
         
         // Start is called before the first frame update
         void Start()
         {
-            
+            navMeshAgent.SetDestination(wayPoints[0].transform.position);
+            currentTarget = wayPoints[0].transform.position;
         }
 
         // Update is called once per frame
@@ -24,15 +26,18 @@ namespace Luke
 
         public void NPCMovement()
         {
-            //fixing
-            int waypointCount = 0;
-            navMeshAgent.SetDestination(wayPoints[waypointCount].transform.position);
             if (navMeshAgent.remainingDistance < .2f)
             {
-                waypointCount++;
-                navMeshAgent.SetDestination(wayPoints[waypointCount].transform.position);
+                for (int i = 0; i < wayPoints.Count; i++)
+                {
+                    currentTarget = wayPoints[i].transform.position;
+                    
+                    if (navMeshAgent.remainingDistance < .2f)
+                    {
+                        navMeshAgent.SetDestination(currentTarget);
+                    }
+                }
             }
-            
         }
     }
 }
