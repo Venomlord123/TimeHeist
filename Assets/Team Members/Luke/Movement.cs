@@ -39,25 +39,5 @@ namespace Luke
                 GoToNextPoint();
             }
         }
-
-        // public void NPCMovement()
-        // {
-        //     Vector3 dist = Vector3.Distance(wayPoints[currentTarget].transform.position, transform.position);
-        //     currentTarget = wayPoints[0];
-        //     
-        //     if (navMeshAgent.remainingDistance < .2f)
-        //     {
-        //         for (int i = 0; i < wayPoints.Count; i++)
-        //         {
-        //             print(i);
-        //             currentTarget = wayPoints[i].transform.position;
-        //             
-        //             if (navMeshAgent.remainingDistance < .2f)
-        //             {
-        //                 navMeshAgent.SetDestination(currentTarget);
-        //             }
-        //         }
-        //     }
-        // }
     }
 }
