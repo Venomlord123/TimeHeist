@@ -9,35 +9,55 @@ namespace Luke
     {
         public NavMeshAgent navMeshAgent;
         public List<Waypoint> wayPoints;
-        public Vector3 currentTarget;
+        public int currentTarget;
         
         // Start is called before the first frame update
         void Start()
         {
-            navMeshAgent.SetDestination(wayPoints[0].transform.position);
-            currentTarget = wayPoints[0].transform.position;
+            navMeshAgent = GetComponent<NavMeshAgent>();
+
+            GoToNextPoint();
+        }
+
+        private void GoToNextPoint()
+        {
+            if (wayPoints.Count == 0)
+            {
+                return;
+            }
+
+            navMeshAgent.destination = wayPoints[currentTarget].transform.position;
+
+            currentTarget = (currentTarget + 1) % wayPoints.Count;
         }
 
         // Update is called once per frame
         void Update()
         {
-            NPCMovement();
-        }
-
-        public void NPCMovement()
-        {
-            if (navMeshAgent.remainingDistance < .2f)
+            if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < .5f)
             {
-                for (int i = 0; i < wayPoints.Count; i++)
-                {
-                    currentTarget = wayPoints[i].transform.position;
-                    
-                    if (navMeshAgent.remainingDistance < .2f)
-                    {
-                        navMeshAgent.SetDestination(currentTarget);
-                    }
-                }
+                GoToNextPoint();
             }
         }
+
+        // public void NPCMovement()
+        // {
+        //     Vector3 dist = Vector3.Distance(wayPoints[currentTarget].transform.position, transform.position);
+        //     currentTarget = wayPoints[0];
+        //     
+        //     if (navMeshAgent.remainingDistance < .2f)
+        //     {
+        //         for (int i = 0; i < wayPoints.Count; i++)
+        //         {
+        //             print(i);
+        //             currentTarget = wayPoints[i].transform.position;
+        //             
+        //             if (navMeshAgent.remainingDistance < .2f)
+        //             {
+        //                 navMeshAgent.SetDestination(currentTarget);
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
