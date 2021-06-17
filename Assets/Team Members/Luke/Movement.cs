@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,28 +8,31 @@ namespace Luke
 {
     public class Movement : MonoBehaviour
     {
+        //References
         public NavMeshAgent navMeshAgent;
+        
+        //Variables
         public List<Waypoint> wayPoints;
         public int currentTarget;
         
+        //Subscribe
+        private void OnEnable()
+        {
+            throw new NotImplementedException();
+        }
+
+        //Unsubscribe
+        private void OnDisable()
+        {
+            throw new NotImplementedException();
+        }
+
         // Start is called before the first frame update
         void Start()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
 
             GoToNextPoint();
-        }
-
-        private void GoToNextPoint()
-        {
-            if (wayPoints.Count == 0)
-            {
-                return;
-            }
-
-            navMeshAgent.destination = wayPoints[currentTarget].transform.position;
-
-            currentTarget = (currentTarget + 1) % wayPoints.Count;
         }
 
         // Update is called once per frame
@@ -38,6 +42,19 @@ namespace Luke
             {
                 GoToNextPoint();
             }
+        }
+
+        // Movement stuff
+        public void GoToNextPoint()
+        {
+            if (wayPoints.Count == 0)
+            {
+                return;
+            }
+
+            navMeshAgent.destination = wayPoints[currentTarget].transform.position;
+
+            currentTarget = (currentTarget + 1) % wayPoints.Count;
         }
     }
 }
