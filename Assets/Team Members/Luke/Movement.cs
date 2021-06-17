@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using ZachFrench;
 
 namespace Luke
 {
@@ -10,6 +11,7 @@ namespace Luke
     {
         //References
         public NavMeshAgent navMeshAgent;
+        public PlayerMovementTimeStop playerMovementTimeStop;
         
         //Variables
         public List<Waypoint> wayPoints;
@@ -18,13 +20,15 @@ namespace Luke
         //Subscribe
         private void OnEnable()
         {
-            throw new NotImplementedException();
+            playerMovementTimeStop.timeStopEvent += MovementStop;
+            playerMovementTimeStop.continueTimeEvent += MovementContinue;
         }
 
         //Unsubscribe
         private void OnDisable()
         {
-            throw new NotImplementedException();
+            playerMovementTimeStop.timeStopEvent -= MovementStop;
+            playerMovementTimeStop.continueTimeEvent -= MovementContinue;
         }
 
         // Start is called before the first frame update
@@ -55,6 +59,16 @@ namespace Luke
             navMeshAgent.destination = wayPoints[currentTarget].transform.position;
 
             currentTarget = (currentTarget + 1) % wayPoints.Count;
+        }
+        
+        public void MovementStop()
+        {
+            navMeshAgent.isStopped = true;
+        }
+        
+        public void MovementContinue()
+        {
+            navMeshAgent.isStopped = false;
         }
     }
 }

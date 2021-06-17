@@ -6,13 +6,14 @@ using UnityEngine;
 
 namespace ZachFrench
 {
-
-
+    
+    
     public class PlayerMovementTimeStop : MonoBehaviour
     {
 
         //Event created using a bool
-        public event Action timeStop;
+        public event Action timeStopEvent;
+        public event Action continueTimeEvent;
 
         //Variables 
         public bool notMoving;
@@ -31,6 +32,8 @@ namespace ZachFrench
             if (transform.position != lastPosition)
             {
                 //player is moving
+                notMoving = false;
+                ContinueTime();
             }
             else //player isn't moving
             {
@@ -44,7 +47,15 @@ namespace ZachFrench
         {
             if (notMoving)
             {
-                timeStop.Invoke();
+                timeStopEvent.Invoke();
+            }
+        }
+
+        public void ContinueTime()
+        {
+            if (notMoving == false)
+            {
+                continueTimeEvent.Invoke();
             }
         }
     }
