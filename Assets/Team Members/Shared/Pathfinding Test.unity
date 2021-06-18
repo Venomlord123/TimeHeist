@@ -484,35 +484,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1360903474 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8288652921519616316, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
-  m_PrefabInstance: {fileID: 8288652921409996272}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &1360903475 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 8101667819298639784, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
-  m_PrefabInstance: {fileID: 8288652921409996272}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1360903476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1360903474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccbf3e645f3a57647874da7761fd4628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 1360903475}
-  playerMovementTimeStop: {fileID: 176009879}
-  wayPoints:
-  - {fileID: 1740093163}
-  - {fileID: 1811015682}
-  - {fileID: 432555266}
-  currentTarget: 0
 --- !u!1 &1740093162
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,6 +673,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: playerMovementTimeStop
+      value: 
+      objectReference: {fileID: 176009879}
+    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: wayPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1740093163}
+    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: wayPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1811015682}
+    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: wayPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 432555266}
     - target: {fileID: 8288652921519616288, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_RootOrder
       value: 3

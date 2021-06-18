@@ -64,11 +64,13 @@ namespace Luke
         public void MovementStop()
         {
             navMeshAgent.isStopped = true;
+            //navMeshAgent.speed = 0f;
         }
         
         public void MovementContinue()
         {
             navMeshAgent.isStopped = false;
+            //navMeshAgent.speed = 1f;
         }
     }
 }
