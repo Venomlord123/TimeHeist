@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Team Members/Luke/Scripts/Player Controller/PlayerInput.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Team Members/Luke/Scripts/Player Controller/InputSystem/PlayerInput.inputactions'
 
 using System;
 using System.Collections;
@@ -22,7 +22,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""name"": ""Movement"",
                     ""type"": ""Value"",
                     ""id"": ""5b35b45b-de81-442e-a081-4cb001d6e057"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Vector3"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
