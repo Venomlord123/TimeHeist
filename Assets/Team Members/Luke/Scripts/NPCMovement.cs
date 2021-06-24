@@ -7,7 +7,7 @@ using ZachFrench;
 
 namespace Luke
 {
-    public class Movement : MonoBehaviour
+    public class NPCMovement : MonoBehaviour
     {
         //References
         public NavMeshAgent navMeshAgent;
