@@ -13,6 +13,7 @@ namespace Luke
         public float movementSpeed;
         public float currentSpeed;
         public Rigidbody rb;
+        public CharacterController characterController;
         
         //Events
         
@@ -29,9 +30,10 @@ namespace Luke
 
         }
 
-        public void PlayerMovementForce(Vector3 direction)
+        public void PlayerMovementForce(Vector2 direction)
         {
-            rb.AddRelativeForce(direction * movementSpeed * Time.deltaTime);
+            characterController.Move(direction * movementSpeed * Time.deltaTime);
+            //rb.AddRelativeForce(direction * movementSpeed * Time.deltaTime);
         }
     }
 }

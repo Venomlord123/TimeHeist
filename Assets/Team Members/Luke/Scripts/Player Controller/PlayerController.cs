@@ -31,9 +31,9 @@ namespace Luke
 
         public void PlayerMovementInput(InputAction.CallbackContext obj)
         {
-            Debug.Log("Moving" + obj.ReadValue<Vector3>());
-            currentDirection = obj.ReadValue<Vector3>();
-            playerModel.PlayerMovementForce(obj.ReadValue<Vector3>());
+            Debug.Log("Moving" + obj.ReadValue<Vector2>());
+            currentDirection = obj.ReadValue<Vector2>();
+            playerModel.PlayerMovementForce(obj.ReadValue<Vector2>());
         }
 
         public void PlayerInteractInput(InputAction.CallbackContext obj)

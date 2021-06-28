@@ -15,6 +15,9 @@ namespace ZachFrench
         public event Action timeStopEvent;
         public event Action continueTimeEvent;
 
+        //References
+        public Rigidbody rigidbody;
+        
         //Variables 
         public bool notMoving;
         public Vector3 lastPosition;
@@ -29,18 +32,16 @@ namespace ZachFrench
         // Update is called once per frame
         void Update()
         {
-            if (transform.position != lastPosition)
+            if (rigidbody.velocity.magnitude > .2f)
             {
-                //player is moving
                 notMoving = false;
                 ContinueTime();
             }
-            else //player isn't moving
+            else
             {
                 notMoving = true;
                 TimeStopping();
             }
-            lastPosition = transform.position;
         }
 
         public void TimeStopping()
