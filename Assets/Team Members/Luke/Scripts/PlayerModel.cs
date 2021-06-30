@@ -8,13 +8,14 @@ namespace Luke
     public class PlayerModel : MonoBehaviour
     {
         //references
-        public Rigidbody rb;
-        
+
         //Variables
         public float movementSpeed;
         public float currentSpeed;
         public Vector3 fAndBVector3;
         public Vector3 lAndRVector3;
+        public Rigidbody rb;
+
         //public CharacterController characterController;
         
         //Events
