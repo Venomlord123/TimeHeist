@@ -7,12 +7,12 @@ using ZachFrench;
 
 namespace Luke
 {
-    public class NPCMovement : MonoBehaviour
+    public class NPCModel : NPCBase
     {
         //References
         public NavMeshAgent navMeshAgent;
         public PlayerMovementTimeStop playerMovementTimeStop;
-        
+
         //Variables
         public List<Waypoint> wayPoints;
         public int currentTarget;

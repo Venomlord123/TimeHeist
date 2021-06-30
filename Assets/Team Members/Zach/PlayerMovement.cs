@@ -25,7 +25,6 @@ namespace ZachFrench
         {
             if (Keyboard.current.wKey.isPressed)
             {
-                
                 rigidbody.AddRelativeForce(fAndBVector3);
             }
             if (Keyboard.current.sKey.isPressed)

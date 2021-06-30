@@ -4,15 +4,15 @@ using UnityEngine;
 
 namespace Luke
 {
-    public class PatrolManager : MonoBehaviour
+    public class NPCManager : MonoBehaviour
     {
-        //variables
-        public List<Waypoint> NPCWayPoints;
-        
+        //variables 
+        public List<NPCBase> allNpcs;
+
         // Start is called before the first frame update
         void Start()
         {
-            NPCWayPoints.AddRange(FindObjectsOfType<Waypoint>());
+            allNpcs.AddRange(FindObjectsOfType<NPCBase>());
         }
 
         // Update is called once per frame
