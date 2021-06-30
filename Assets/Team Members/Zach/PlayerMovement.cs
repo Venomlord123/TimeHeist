@@ -11,14 +11,21 @@ namespace ZachFrench
     {
         //References 
         public Rigidbody rigidbody;
-        
+        public Transform player;
+        public Camera camera;
         //Variables 
         public Vector3 fAndBVector3;
         public Vector3 lAndRVector3;
         public void Update()
         {
+            Movement();
+        }
+
+        public void Movement()
+        {
             if (Keyboard.current.wKey.isPressed)
             {
+                
                 rigidbody.AddRelativeForce(fAndBVector3);
             }
             if (Keyboard.current.sKey.isPressed)
