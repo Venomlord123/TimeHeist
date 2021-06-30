@@ -13,9 +13,13 @@ namespace ZachFrench
         public Rigidbody rigidbody;
         public Transform player;
         public Camera camera;
+        //public CharacterController characterController;
         //Variables 
         public Vector3 fAndBVector3;
         public Vector3 lAndRVector3;
+        public Vector3 movement;
+        public float xAxis;
+        public float zAxis;
         public void Update()
         {
             Movement();
@@ -23,9 +27,14 @@ namespace ZachFrench
 
         public void Movement()
         {
+            /*xAxis = Input.GetAxis("Horizontal");
+            zAxis = Input.GetAxis("Vertical");
+
+            movement = transform.right * xAxis + transform.forward * zAxis;
+
+            characterController.SimpleMove(movement);*/
             if (Keyboard.current.wKey.isPressed)
             {
-                
                 rigidbody.AddRelativeForce(fAndBVector3);
             }
             if (Keyboard.current.sKey.isPressed)
