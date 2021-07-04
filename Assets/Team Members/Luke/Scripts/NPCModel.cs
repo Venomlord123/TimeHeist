@@ -52,7 +52,7 @@ namespace Luke
         // Movement stuff
         public void GoToNextPoint()
         {
-            if (waypointPath.Count == 0)
+            if (waypointPath.Count == 0 || waypointPath == null)
             {
                 return;
             }
