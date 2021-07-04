@@ -10,13 +10,14 @@ namespace Luke
     public class NPCModel : NPCBase
     {
         //References
-        public NavMeshAgent navMeshAgent;
+        private NavMeshAgent navMeshAgent;
         public PlayerMovementTimeStop playerMovementTimeStop;
 
         //Variables
-        public List<Waypoint> wayPoints;
-        public int currentTarget;
-        
+        private int currentTarget;
+        public float waypointWaitTime;
+        public float remainingWaypointDistance;
+
         //Subscribe
         private void OnEnable()
         {
@@ -42,23 +43,23 @@ namespace Luke
         // Update is called once per frame
         void Update()
         {
-            if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < .5f)
+            if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < remainingWaypointDistance)
             {
-                GoToNextPoint();
+                StartCoroutine(WaypointWaitTimer());
             }
         }
 
         // Movement stuff
         public void GoToNextPoint()
         {
-            if (wayPoints.Count == 0)
+            if (waypointPath.Count == 0)
             {
                 return;
             }
 
-            navMeshAgent.destination = wayPoints[currentTarget].transform.position;
+            navMeshAgent.destination = waypointPath[currentTarget].transform.position;
 
-            currentTarget = (currentTarget + 1) % wayPoints.Count;
+            currentTarget = (currentTarget + 1) % waypointPath.Count;
         }
         
         public void MovementStop(float speed)
@@ -72,6 +73,12 @@ namespace Luke
             {
                 navMeshAgent.speed = speed;
             }
+        }
+        
+        public IEnumerator WaypointWaitTimer()
+        {
+            yield return new WaitForSeconds(waypointWaitTime);
+            GoToNextPoint();
         }
     }
 }

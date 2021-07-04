@@ -9,6 +9,7 @@ namespace Luke
     {
         //variables
         public List<Waypoint> waypointPath;
-        public float npcSpeed;
+        //public float npcSpeed;
+        //public float WaypointWaitTime;
     }
 }

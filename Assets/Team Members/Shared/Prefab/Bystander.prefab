@@ -132,10 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbf3e645f3a57647874da7761fd4628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 8101667819298639784}
+  waypointPath: []
   playerMovementTimeStop: {fileID: 0}
-  wayPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  currentTarget: 0
+  waypointWaitTime: 1
+  remainingWaypointDistance: 0.5
