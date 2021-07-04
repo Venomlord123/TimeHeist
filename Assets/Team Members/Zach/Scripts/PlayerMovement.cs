@@ -11,28 +11,27 @@ namespace ZachFrench
     {
         //References 
         public Rigidbody rigidbody;
-        public Transform player;
-        public Camera camera;
-        //public CharacterController characterController;
         //Variables 
         public Vector3 fAndBVector3;
         public Vector3 lAndRVector3;
-        public Vector3 movement;
-        public float xAxis;
-        public float zAxis;
+        public float velocity;
+        public float maxSpeed;
         public void Update()
         {
             Movement();
+            //Getting Velocity for NPC Movement
+            velocity = rigidbody.velocity.magnitude;
+
+            if (rigidbody.velocity.magnitude >= maxSpeed)
+            {
+                rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
+            }
         }
 
         public void Movement()
         {
-            /*xAxis = Input.GetAxis("Horizontal");
-            zAxis = Input.GetAxis("Vertical");
-
-            movement = transform.right * xAxis + transform.forward * zAxis;
-
-            characterController.SimpleMove(movement);*/
+            //TODO balance movement so that we slide only a little and stop within a couple of seconds
+            
             if (Keyboard.current.wKey.isPressed)
             {
                 rigidbody.AddRelativeForce(fAndBVector3);

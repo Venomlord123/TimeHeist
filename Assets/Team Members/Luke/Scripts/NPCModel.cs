@@ -20,15 +20,15 @@ namespace Luke
         //Subscribe
         private void OnEnable()
         {
-            playerMovementTimeStop.timeStopEvent += MovementStop;
-            playerMovementTimeStop.continueTimeEvent += MovementContinue;
+            playerMovementTimeStop.TimeStopEvent += MovementStop;
+            playerMovementTimeStop.ContinueTimeEvent += MovementContinue;
         }
 
         //Unsubscribe
         private void OnDisable()
         {
-            playerMovementTimeStop.timeStopEvent -= MovementStop;
-            playerMovementTimeStop.continueTimeEvent -= MovementContinue;
+            playerMovementTimeStop.TimeStopEvent -= MovementStop;
+            playerMovementTimeStop.ContinueTimeEvent -= MovementContinue;
         }
 
         // Start is called before the first frame update
@@ -61,16 +61,17 @@ namespace Luke
             currentTarget = (currentTarget + 1) % wayPoints.Count;
         }
         
-        public void MovementStop()
+        public void MovementStop(float speed)
         {
-            navMeshAgent.isStopped = true;
-            //navMeshAgent.speed = 0f;
+            navMeshAgent.speed = speed;
         }
         
-        public void MovementContinue()
+        public void MovementContinue(float speed)
         {
-            navMeshAgent.isStopped = false;
-            //navMeshAgent.speed = 1f;
+            if (navMeshAgent.speed > 0.01f)
+            {
+                navMeshAgent.speed = speed;
+            }
         }
     }
 }
