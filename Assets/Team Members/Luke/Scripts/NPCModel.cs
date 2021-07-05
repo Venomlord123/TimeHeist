@@ -17,6 +17,7 @@ namespace Luke
         private int currentTarget;
         public float waypointWaitTime;
         public float remainingWaypointDistance;
+        public float npcMovementMultiplier = 1f;
 
         //Subscribe
         private void OnEnable()
@@ -64,14 +65,14 @@ namespace Luke
         
         public void MovementStop(float speed)
         {
-            navMeshAgent.speed = speed;
+            navMeshAgent.speed = speed * npcMovementMultiplier;
         }
         
         public void MovementContinue(float speed)
         {
             if (navMeshAgent.speed > 0.01f)
             {
-                navMeshAgent.speed = speed;
+                navMeshAgent.speed = speed * npcMovementMultiplier;
             }
         }
         
