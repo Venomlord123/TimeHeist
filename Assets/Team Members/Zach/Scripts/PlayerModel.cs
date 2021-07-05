@@ -36,17 +36,33 @@ namespace ZachFrench
             {
                 rigidbody.AddRelativeForce(fAndBVector3);
             }
+            else if (Keyboard.current.wKey.wasReleasedThisFrame)
+            {
+                rigidbody.velocity = rigidbody.velocity.normalized * 2f;
+            }
             if (Keyboard.current.sKey.isPressed)
             {
                 rigidbody.AddRelativeForce(-fAndBVector3);
+            }
+            else if (Keyboard.current.sKey.wasReleasedThisFrame)
+            {
+                rigidbody.velocity = rigidbody.velocity.normalized * 2f;
             }
             if (Keyboard.current.aKey.isPressed)
             {
                 rigidbody.AddRelativeForce(lAndRVector3);
             }
+            else if (Keyboard.current.aKey.wasReleasedThisFrame)
+            {
+                rigidbody.velocity = rigidbody.velocity.normalized * 2f;
+            }
             if (Keyboard.current.dKey.isPressed)
             {
                 rigidbody.AddRelativeForce(-lAndRVector3);
+            }
+            else if (Keyboard.current.dKey.wasReleasedThisFrame)
+            {
+                rigidbody.velocity = rigidbody.velocity.normalized * 2f;
             }
         }
     }
