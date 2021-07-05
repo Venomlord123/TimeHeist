@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 namespace ZachFrench
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerModel : MonoBehaviour
     {
         //References 
         public Rigidbody rigidbody;

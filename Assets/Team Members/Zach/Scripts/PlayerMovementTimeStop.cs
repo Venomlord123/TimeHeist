@@ -15,7 +15,7 @@ namespace ZachFrench
 
         //References
         public Rigidbody rigidbody;
-        public PlayerMovement PlayerMovement;
+        public PlayerModel playerModel;
         
         //Variables 
         public bool notMoving;
@@ -47,7 +47,7 @@ namespace ZachFrench
         {
             if (notMoving)
             {
-                TimeStopEvent?.Invoke(PlayerMovement.velocity);
+                TimeStopEvent?.Invoke(playerModel.velocity);
             }
         }
 
@@ -55,7 +55,7 @@ namespace ZachFrench
         {
             if (notMoving == false)
             {
-                ContinueTimeEvent?.Invoke(PlayerMovement.velocity);
+                ContinueTimeEvent?.Invoke(playerModel.velocity);
             }
         }
     }
