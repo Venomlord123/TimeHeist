@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173030791}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.389, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6384832841720609102}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &173030795
 Camera:
   m_ObjectHideFlags: 0
@@ -112,8 +112,8 @@ GameObject:
   - component: {fileID: 6384832841720609102}
   - component: {fileID: 6384832841720609097}
   - component: {fileID: 3312308086072705525}
-  - component: {fileID: 3579117833836926731}
   - component: {fileID: 660734752}
+  - component: {fileID: 1669058844}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0dd8c5b9484aad4eb796cbf47acb82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 3579117833836926731}
-  playerModel: {fileID: 0}
+  rigidbody: {fileID: 3579117833836926731, guid: 05b3316536984054f988a0c89db1e9db, type: 3}
+  playerModel: {fileID: 660734752}
   notMoving: 0
   lastPosition: {x: 0, y: 0, z: 0}
 --- !u!136 &3312308086072705525
@@ -167,22 +167,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &3579117833836926731
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6384832841720609096}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 84
-  m_CollisionDetection: 0
 --- !u!114 &660734752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,11 +179,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189324f3302e76d489810b4ac08ad358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 3579117833836926731}
-  fAndBVector3: {x: 0.5, y: 0, z: 0}
-  lAndRVector3: {x: 0, y: 0, z: 0.5}
+  characterController: {fileID: 1669058844}
   velocity: 0
-  maxSpeed: 0
+  speed: 12
+  move: {x: 0, y: 0, z: 0}
+--- !u!143 &1669058844
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6384832841720609096}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6384832842769488372
 GameObject:
   m_ObjectHideFlags: 0

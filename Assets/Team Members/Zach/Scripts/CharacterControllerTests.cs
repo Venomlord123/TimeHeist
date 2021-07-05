@@ -1,30 +1,24 @@
-using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 
 namespace ZachFrench
 {
-    public class PlayerModel : MonoBehaviour
+    public class CharacterControllerTests : MonoBehaviour
     {
         //References 
         public CharacterController characterController;
-        //Variables 
-        public float velocity;
+
+        //Variables
         private float x;
         private float z;
         public float speed;
         public Vector3 move;
-        public void Update()
-        {
-            CharacterMovement();
-            //Getting Velocity for NPC Movement
-            velocity = characterController.velocity.magnitude;
-        }
+        public Vector3 velocity;
 
-        public void CharacterMovement()
+        // Update is called once per frame
+        void Update()
         {
             x = Input.GetAxis("Horizontal");
             z = Input.GetAxis("Vertical");
