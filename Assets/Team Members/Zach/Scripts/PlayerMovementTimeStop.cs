@@ -49,6 +49,7 @@ namespace ZachFrench
             if (notMoving)
             {
                 TimeStopEvent?.Invoke(playerModel.velocity);
+                //trigger fmod time stop
             }
         }
 

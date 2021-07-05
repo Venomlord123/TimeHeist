@@ -15,8 +15,10 @@ namespace Luke
 
         //Variables
         private int currentTarget;
+        [Tooltip("Amount of time at waypoint")]
         public float waypointWaitTime;
-        public float remainingWaypointDistance;
+        private float remainingWaypointDistance;
+        [Tooltip("Change the npc's speed multiplied from player speed")]
         public float npcMovementMultiplier = 1f;
 
         //Subscribe
