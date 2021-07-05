@@ -12,6 +12,7 @@ namespace ZachFrench
         //Variables 
         public float mouseX;
         public float mouseY;
+        [Tooltip("Use to set the sensitivity of the camera")]
         public float mouseSensitivity;
         public float xRotation;
 

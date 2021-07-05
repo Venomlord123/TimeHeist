@@ -18,8 +18,9 @@ namespace ZachFrench
         public CharacterController characterController;
         
         //Variables 
+        [Tooltip("A bool to show if we are not moving")]
         public bool notMoving;
-        public Vector3 lastPosition;
+        private Vector3 lastPosition;
 
         // Start is called before the first frame update
         void Start()
