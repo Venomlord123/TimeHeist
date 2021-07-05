@@ -14,8 +14,8 @@ namespace ZachFrench
         public event Action<float> ContinueTimeEvent;
 
         //References
-        public Rigidbody rigidbody;
         public PlayerModel playerModel;
+        public CharacterController characterController;
         
         //Variables 
         public bool notMoving;
@@ -31,7 +31,7 @@ namespace ZachFrench
         // Update is called once per frame
         void Update()
         {
-            if (rigidbody.velocity.magnitude > .2f)
+            if (characterController.velocity.magnitude > .2f)
             {
                 notMoving = false;
                 ContinueTime();
