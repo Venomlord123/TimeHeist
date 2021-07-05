@@ -149,10 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0dd8c5b9484aad4eb796cbf47acb82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 3579117833836926731, guid: 05b3316536984054f988a0c89db1e9db, type: 3}
   playerModel: {fileID: 660734752}
+  characterController: {fileID: 1669058844}
   notMoving: 0
-  lastPosition: {x: 0, y: 0, z: 0}
 --- !u!136 &3312308086072705525
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -182,7 +181,6 @@ MonoBehaviour:
   characterController: {fileID: 1669058844}
   velocity: 0
   speed: 12
-  move: {x: 0, y: 0, z: 0}
 --- !u!143 &1669058844
 CharacterController:
   m_ObjectHideFlags: 0
