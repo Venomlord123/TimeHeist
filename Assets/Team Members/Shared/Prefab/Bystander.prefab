@@ -163,9 +163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbf3e645f3a57647874da7761fd4628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypointPath: []
+  waypointPath:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   waypointWaitTimes: []
   playerMovementTimeStop: {fileID: 0}
-  waypointWaitTime: 1
-  remainingWaypointDistance: 0.5
+  waypointWaitTime: 5
   npcMovementMultiplier: 1
