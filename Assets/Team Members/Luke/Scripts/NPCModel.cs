@@ -70,7 +70,7 @@ namespace Luke
         
         public void MovementContinue(float speed)
         {
-            if (navMeshAgent.speed > 0.01f)
+            if (speed > 0.01f)
             {
                 navMeshAgent.speed = speed * npcMovementMultiplier;
             }

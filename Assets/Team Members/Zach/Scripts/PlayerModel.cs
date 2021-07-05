@@ -12,11 +12,13 @@ namespace ZachFrench
         //References 
         public CharacterController characterController;
         //Variables 
+        [Tooltip("Just a visual of the velocity")]
         public float velocity;
         private float x;
         private float z;
+        [Tooltip("Use this to edit how fast you want the player to move")]
         public float speed;
-        public Vector3 move;
+        private Vector3 move;
         public void Update()
         {
             CharacterMovement();
