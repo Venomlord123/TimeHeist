@@ -22,6 +22,9 @@ namespace Luke
         [Tooltip("Change the npc's speed (multiplied from player speed)")]
         public float npcMovementMultiplier = 1f;
 
+
+        public bool waiting = false;
+
         //Subscribe
         private void OnEnable()
         {
@@ -47,7 +50,7 @@ namespace Luke
         // Update is called once per frame
         void Update()
         {
-            
+            GoToNextPoint();
         }
 
         // Movement stuff
@@ -56,11 +59,12 @@ namespace Luke
             if (waypointPath.Count != 0)
             {
                 navMeshAgent.destination = waypointPath[currentTarget].transform.position;
-                currentTarget = (currentTarget + 1) % waypointPath.Count;
                 
-                if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < remainingWaypointDistance)
+                
+                if (navMeshAgent.remainingDistance < remainingWaypointDistance)
                 {
                     StartCoroutine(WaypointWaitTimer());
+                    currentTarget = (currentTarget + 1) % waypointPath.Count;
                 }
             }
         }
@@ -80,7 +84,9 @@ namespace Luke
         
         public IEnumerator WaypointWaitTimer()
         {
+            navMeshAgent.isStopped = true;
             yield return new WaitForSeconds(waypointWaitTime);
+            navMeshAgent.isStopped = false;
             GoToNextPoint();
         }
     }
