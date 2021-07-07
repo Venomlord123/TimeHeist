@@ -47,10 +47,7 @@ namespace Luke
         // Update is called once per frame
         void Update()
         {
-            if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < remainingWaypointDistance)
-            {
-                StartCoroutine(WaypointWaitTimer());
-            }
+            
         }
 
         // Movement stuff
@@ -60,6 +57,11 @@ namespace Luke
             {
                 navMeshAgent.destination = waypointPath[currentTarget].transform.position;
                 currentTarget = (currentTarget + 1) % waypointPath.Count;
+                
+                if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < remainingWaypointDistance)
+                {
+                    StartCoroutine(WaypointWaitTimer());
+                }
             }
         }
         
