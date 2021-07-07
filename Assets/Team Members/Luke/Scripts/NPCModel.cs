@@ -82,6 +82,10 @@ namespace Luke
             }
         }
         
+        /// <summary>
+        /// Co-routines only yield whats within the function!! 
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator WaypointWaitTimer()
         {
             navMeshAgent.isStopped = true;
