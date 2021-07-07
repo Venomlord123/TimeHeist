@@ -12,7 +12,7 @@ namespace Luke
         // Start is called before the first frame update
         void Start()
         {
-            NPCWayPoints.AddRange(FindObjectsOfType<Waypoint>());
+            NPCWayPoints.AddRange(GetComponents<Waypoint>());
         }
 
         // Update is called once per frame

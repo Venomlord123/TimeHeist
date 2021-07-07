@@ -14,11 +14,12 @@ namespace Luke
         public PlayerMovementTimeStop playerMovementTimeStop;
 
         //Variables
-        private int currentTarget;
+        public int currentTarget;
         [Tooltip("Amount of time at waypoint")]
-        public float waypointWaitTime;
-        private float remainingWaypointDistance;
-        [Tooltip("Change the npc's speed multiplied from player speed")]
+        public float waypointWaitTime = 3f;
+        [Tooltip(("Distance from waypoint to allow change to next waypoint"))]
+        public float remainingWaypointDistance = 2f;
+        [Tooltip("Change the npc's speed (multiplied from player speed)")]
         public float npcMovementMultiplier = 1f;
 
         //Subscribe
@@ -55,14 +56,11 @@ namespace Luke
         // Movement stuff
         public void GoToNextPoint()
         {
-            if (waypointPath.Count == 0 || waypointPath == null)
+            if (waypointPath.Count != 0)
             {
-                return;
+                navMeshAgent.destination = waypointPath[currentTarget].transform.position;
+                currentTarget = (currentTarget + 1) % waypointPath.Count;
             }
-
-            navMeshAgent.destination = waypointPath[currentTarget].transform.position;
-
-            currentTarget = (currentTarget + 1) % waypointPath.Count;
         }
         
         public void MovementStop(float speed)
