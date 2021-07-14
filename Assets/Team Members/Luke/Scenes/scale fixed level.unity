@@ -1875,7 +1875,7 @@ Transform:
   - {fileID: 1758131359}
   - {fileID: 292566396}
   - {fileID: 452873547}
-  - {fileID: 1670633461}
+  - {fileID: 576192478}
   - {fileID: 7609314}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -2814,6 +2814,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556259553}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &576192477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 576192478}
+  m_Layer: 0
+  m_Name: Art Podium Variant (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &576192478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576192477}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 419942304}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &579716634
 GameObject:
   m_ObjectHideFlags: 0
@@ -7668,80 +7698,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3b0b1b4237696646ae9fed32987e836, type: 3}
---- !u!1001 &1670633460
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 419942304}
-    m_Modifications:
-    - target: {fileID: 8165018024619762904, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8165018024619762904, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8165018024619762904, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8165018024619762904, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8165018024619762904, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 115.20775
-      objectReference: {fileID: 0}
-    - target: {fileID: 8165018024619762904, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -73.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 8165018024619762904, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 16.560556
-      objectReference: {fileID: 0}
-    - target: {fileID: 8165018024619762904, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8165018024619762904, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8165018024619762904, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8165018024619762904, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8165018024619762904, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8165018024619762904, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8165018024619762904, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8792196415354781282, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
-      propertyPath: m_Name
-      value: Art Podium Variant
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 09028d26e7a5f3349a78481fc85d9441, type: 3}
---- !u!4 &1670633461 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 1670633460}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1671864978
 GameObject:
   m_ObjectHideFlags: 0
@@ -9102,6 +9058,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 396378254}
     m_Modifications:
     - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: waypointWaitTime
       value: 2
       objectReference: {fileID: 0}
@@ -9124,11 +9084,23 @@ PrefabInstance:
     - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: waypointPath.Array.data[1]
       value: 
-      objectReference: {fileID: 248066405}
+      objectReference: {fileID: 1287582168}
     - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: waypointPath.Array.data[2]
       value: 
-      objectReference: {fileID: 1085917642}
+      objectReference: {fileID: 248066405}
+    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: waypointWaitTimes.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: waypointWaitTimes.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: waypointWaitTimes.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5899029015639135005, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

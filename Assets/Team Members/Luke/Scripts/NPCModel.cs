@@ -9,25 +9,21 @@ namespace Luke
 {
     public class NPCModel : NPCBase
     {
-        
-        
         //References
         private NavMeshAgent navMeshAgent;
         public PlayerMovementTimeStop playerMovementTimeStop;
 
         //Variables
+        [Tooltip("The current selected waypoint element")]
         public int currentTarget;
-        [Tooltip("Amount of time at waypoint")]
-        public float waypointWaitTime = 3f;
         [Tooltip(("Distance from waypoint to allow change to next waypoint"))]
         public float remainingWaypointDistance;
         [Tooltip("Change the npc's speed (multiplied from player speed)")]
         public float npcMovementMultiplier = 1f;
-
-        public float currentNPCWaitTime;
+        private float waitTimeElement;
+        [Tooltip("The current amount of time waiting at waypoint")]
         public float currentWaitTime;
-
-
+        [Tooltip("Is the NPC waiting?")]
         public bool waiting = false;
 
         //Subscribe
@@ -51,13 +47,7 @@ namespace Luke
             //setting our new variable to the NPCBase's first waypoint wait time
             if (waypointWaitTimes.Count != 0)
             {
-                currentNPCWaitTime = waypointWaitTimes[0];
-            }
-
-            //TODO remove when code is stable enough for no need to test 
-            if (navMeshAgent.hasPath == false)
-            {
-                currentTarget = 0;
+                currentWaitTime = waypointWaitTimes[0];
             }
             GoToNextPoint();
         }
@@ -76,8 +66,11 @@ namespace Luke
                 navMeshAgent.destination = waypointPath[currentTarget].transform.position;
                 if (navMeshAgent.hasPath && navMeshAgent.remainingDistance < remainingWaypointDistance)
                 {
-                    StartCoroutine(WaypointWaitTimer());
-                    currentTarget = (currentTarget + 1) % waypointPath.Count;
+                    if (waiting == false)
+                    {
+                        StartCoroutine(WaypointWaitTimer());
+                        currentTarget = (currentTarget + 1) % waypointPath.Count;   
+                    }
                 }
             }
         }
@@ -103,17 +96,17 @@ namespace Luke
         public IEnumerator WaypointWaitTimer()
         {
             navMeshAgent.isStopped = true;
+            waiting = true;
             yield return new WaitForSeconds(currentWaitTime);
             navMeshAgent.isStopped = false;
-            currentWaitTime = currentNPCWaitTime;
-            
-            //changing npc wait to the next in list ready for next waiting period
-            if (waypointWaitTimes.Count != 0)
-            {
-                currentNPCWaitTime = currentNPCWaitTime % waypointWaitTimes.Count;
-            }
 
-            GoToNextPoint();
+            //changing npc wait to the next in list ready for next waiting period
+            if (waypointWaitTimes.Count != 0 && waypointWaitTimes.Count < waypointWaitTimes.Capacity)
+            {
+                waitTimeElement++;
+                currentWaitTime = waypointWaitTimes[(int)waitTimeElement];
+            }
+            waiting = false;
         }
     }
 }
