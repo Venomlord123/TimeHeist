@@ -9,6 +9,8 @@ namespace Luke
 {
     public class NPCModel : NPCBase
     {
+        
+        
         //References
         private NavMeshAgent navMeshAgent;
         public PlayerMovementTimeStop playerMovementTimeStop;
