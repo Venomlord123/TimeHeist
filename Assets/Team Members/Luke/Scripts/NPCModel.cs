@@ -20,7 +20,7 @@ namespace Luke
         [Tooltip("Amount of time at waypoint")]
         public float waypointWaitTime = 3f;
         [Tooltip(("Distance from waypoint to allow change to next waypoint"))]
-        public float remainingWaypointDistance = 2f;
+        public float remainingWaypointDistance;
         [Tooltip("Change the npc's speed (multiplied from player speed)")]
         public float npcMovementMultiplier = 1f;
 
@@ -54,6 +54,7 @@ namespace Luke
                 currentNPCWaitTime = waypointWaitTimes[0];
             }
 
+            //TODO remove when code is stable enough for no need to test 
             if (navMeshAgent.hasPath == false)
             {
                 currentTarget = 0;
@@ -62,7 +63,7 @@ namespace Luke
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
             GoToNextPoint();
         }
@@ -73,7 +74,7 @@ namespace Luke
             if (waypointPath.Count != 0)
             {
                 navMeshAgent.destination = waypointPath[currentTarget].transform.position;
-                if (navMeshAgent.remainingDistance < remainingWaypointDistance)
+                if (navMeshAgent.hasPath && navMeshAgent.remainingDistance < remainingWaypointDistance)
                 {
                     StartCoroutine(WaypointWaitTimer());
                     currentTarget = (currentTarget + 1) % waypointPath.Count;
