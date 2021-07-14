@@ -24,6 +24,9 @@ namespace Luke
         [Tooltip("Change the npc's speed (multiplied from player speed)")]
         public float npcMovementMultiplier = 1f;
 
+        public float currentNPCWaitTime;
+        public float currentWaitTime;
+
 
         public bool waiting = false;
 
@@ -45,7 +48,16 @@ namespace Luke
         void Start()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
+            //setting our new variable to the NPCBase's first waypoint wait time
+            if (waypointWaitTimes.Count != 0)
+            {
+                currentNPCWaitTime = waypointWaitTimes[0];
+            }
 
+            if (navMeshAgent.hasPath == false)
+            {
+                currentTarget = 0;
+            }
             GoToNextPoint();
         }
 
@@ -61,8 +73,6 @@ namespace Luke
             if (waypointPath.Count != 0)
             {
                 navMeshAgent.destination = waypointPath[currentTarget].transform.position;
-                
-                
                 if (navMeshAgent.remainingDistance < remainingWaypointDistance)
                 {
                     StartCoroutine(WaypointWaitTimer());
@@ -92,8 +102,16 @@ namespace Luke
         public IEnumerator WaypointWaitTimer()
         {
             navMeshAgent.isStopped = true;
-            yield return new WaitForSeconds(waypointWaitTime);
+            yield return new WaitForSeconds(currentWaitTime);
             navMeshAgent.isStopped = false;
+            currentWaitTime = currentNPCWaitTime;
+            
+            //changing npc wait to the next in list ready for next waiting period
+            if (waypointWaitTimes.Count != 0)
+            {
+                currentNPCWaitTime = currentNPCWaitTime % waypointWaitTimes.Count;
+            }
+
             GoToNextPoint();
         }
     }
