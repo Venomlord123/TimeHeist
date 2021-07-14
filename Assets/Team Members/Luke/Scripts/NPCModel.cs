@@ -71,7 +71,8 @@ namespace Luke
         
         public void MovementStop(float speed)
         {
-            navMeshAgent.speed = speed * npcMovementMultiplier;
+            navMeshAgent.speed = 0;
+            navMeshAgent.velocity = new Vector3(speed, speed, speed);
         }
         
         public void MovementContinue(float speed)
