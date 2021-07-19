@@ -10,14 +10,18 @@ namespace Luke
     public class Timer : MonoBehaviour
     {
         //Reference
+        [Tooltip("TextMeshUGUI Reference")]
         public TextMeshProUGUI timerText;
 
         //variables
+        [Tooltip("In seconds")]
         public float currentTime;
+        [Tooltip("In seconds")]
         public float maxTime;
         public bool timeStarted;
         public float minutes;
         public float seconds;
+        public float milliSeconds;
         
         //Events TODO GameManager wants to know about these
         public event Action StartTimerEvent;
@@ -70,20 +74,24 @@ namespace Luke
             minutes = Mathf.FloorToInt(displayTime / 60);
             seconds = Mathf.FloorToInt(displayTime % 60);
             
-            if (currentTime <= 0)
+            milliSeconds = (displayTime % 1) * 1000;
+            
+            if (currentTime <= 0f)
             {
-                currentTime = 0;
+                currentTime = 0f;
+                //forcing the milliseconds because sometimes it gets stuck on a > 0 time.
+                milliSeconds = 0f;
                 //Game over stuff wants to know this
                 PauseTime();
                 StopTimerEvent?.Invoke();
             }
         }
         
-        //visuals
+        //Visuals for UI
         public void PrintTimer()
         {
             // on the left 0 for the minutes and right of the colon is 1 for seconds
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timerText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliSeconds);
         }
     }
 }
