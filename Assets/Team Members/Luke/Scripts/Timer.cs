@@ -1,0 +1,89 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+
+namespace Luke
+{
+    public class Timer : MonoBehaviour
+    {
+        //Reference
+        public TextMeshProUGUI timerText;
+
+        //variables
+        public float currentTime;
+        public float maxTime;
+        public bool timeStarted;
+        public float minutes;
+        public float seconds;
+        
+        //Events TODO GameManager wants to know about these
+        public event Action StartTimerEvent;
+        public event Action PauseTimerEvent;
+        public event Action StopTimerEvent;
+        public event Action ResetTimerEvent;
+
+        void Start()
+        {
+            timerText = GetComponentInChildren<TextMeshProUGUI>();
+            //will need to change for triggering an event to start time
+            StartTime();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (timeStarted)
+            {
+                UpdateTime(currentTime);
+            }
+            PrintTimer();
+        }
+        
+        //use for in between rounds in the main scene
+        public void ResetTime()
+        {
+            ResetTimerEvent?.Invoke();
+            currentTime = maxTime;
+        }
+
+        public void StartTime()
+        {
+            StartTimerEvent?.Invoke();
+            timeStarted = true;
+            currentTime = maxTime;
+        }
+
+        public void PauseTime()
+        {
+            PauseTimerEvent?.Invoke();
+            timeStarted = false;
+        }
+
+        public void UpdateTime(float displayTime)
+        {
+            currentTime -= Time.deltaTime;
+            
+            //making the timer have minutes and seconds limits
+            minutes = Mathf.FloorToInt(displayTime / 60);
+            seconds = Mathf.FloorToInt(displayTime % 60);
+            
+            if (currentTime <= 0)
+            {
+                currentTime = 0;
+                //Game over stuff wants to know this
+                PauseTime();
+                StopTimerEvent?.Invoke();
+            }
+        }
+        
+        //visuals
+        public void PrintTimer()
+        {
+            // on the left 0 for the minutes and right of the colon is 1 for seconds
+            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+    }
+}

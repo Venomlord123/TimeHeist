@@ -25,6 +25,5 @@ namespace Luke
         public List<Waypoint> waypointPath;
         [Tooltip("Wait times for each waypoint")]
         public List<float> waypointWaitTimes;
-        
     }
 }
