@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173030791}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.389, z: 0}
+  m_LocalPosition: {x: 0, y: 0.573, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6384832841720609102}
@@ -90,7 +90,7 @@ MonoBehaviour:
   player: {fileID: 6384832841720609102}
   mouseX: 0
   mouseY: 0
-  mouseSensitivity: 10
+  mouseSensitivity: 5
   xRotation: 0
 --- !u!1 &6384832841720609096
 GameObject:
@@ -121,7 +121,7 @@ Transform:
   m_GameObject: {fileID: 6384832841720609096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18.654224, y: 1.0000019, z: -12.230687}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 6384832842769488373}
   - {fileID: 173030792}

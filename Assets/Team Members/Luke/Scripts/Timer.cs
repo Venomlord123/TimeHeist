@@ -91,7 +91,7 @@ namespace Luke
         public void PrintTimer()
         {
             // on the left 0 for the minutes and right of the colon is 1 for seconds
-            timerText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliSeconds);
+            timerText.text = string.Format("{0:0}:{1:00}:{2:000}", minutes, seconds, milliSeconds);
         }
     }
 }
