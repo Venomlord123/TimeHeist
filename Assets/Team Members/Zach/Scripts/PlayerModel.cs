@@ -24,6 +24,7 @@ namespace ZachFrench
             CharacterMovement();
             //Getting Velocity for NPC Movement
             velocity = characterController.velocity.magnitude;
+            
         }
 
         public void CharacterMovement()
