@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8101667819298639784}
   - component: {fileID: 1360903476}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: Bystander
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,17 +163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbf3e645f3a57647874da7761fd4628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: 
-  locationsBeen: 
-  conversations: 
   waypointPath:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   waypointWaitTimes: []
   playerMovementTimeStop: {fileID: 0}
-  currentTarget: 0
-  remainingWaypointDistance: 0
+  waypointWaitTime: 5
   npcMovementMultiplier: 1
-  currentWaitTime: 0
-  waiting: 0

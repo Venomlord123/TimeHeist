@@ -13,8 +13,6 @@ namespace Luke
         [Tooltip("TextMeshUGUI Reference")]
         public TextMeshProUGUI timerText;
 
-        public GameManager gameManager;
-
         //variables
         [Tooltip("In seconds")]
         public float currentTime;
@@ -25,25 +23,17 @@ namespace Luke
         public float seconds;
         public float milliSeconds;
         
-        //Events TODO GameManager wants to know about this
+        //Events TODO GameManager wants to know about these
+        public event Action StartTimerEvent;
+        public event Action PauseTimerEvent;
         public event Action StopTimerEvent;
-
-        // private void OnEnable()
-        // {
-        //     throw new NotImplementedException();
-        // }
-        //
-        // private void OnDisable()
-        // {
-        //     throw new NotImplementedException();
-        // }
+        public event Action ResetTimerEvent;
 
         void Start()
         {
-            gameManager = FindObjectOfType<GameManager>();
             timerText = GetComponentInChildren<TextMeshProUGUI>();
             //will need to change for triggering an event to start time
-            StartTimer();
+            StartTime();
         }
 
         // Update is called once per frame
@@ -51,28 +41,32 @@ namespace Luke
         {
             if (timeStarted)
             {
-                UpdateTimer(currentTime);
+                UpdateTime(currentTime);
             }
+            PrintTimer();
         }
         
         //use for in between rounds in the main scene
-        public void ResetTimer()
+        public void ResetTime()
         {
+            ResetTimerEvent?.Invoke();
             currentTime = maxTime;
         }
 
-        public void StartTimer()
+        public void StartTime()
         {
+            StartTimerEvent?.Invoke();
             timeStarted = true;
             currentTime = maxTime;
         }
 
-        public void StopTimer()
+        public void PauseTime()
         {
+            PauseTimerEvent?.Invoke();
             timeStarted = false;
         }
 
-        public void UpdateTimer(float displayTime)
+        public void UpdateTime(float displayTime)
         {
             currentTime -= Time.deltaTime;
             
@@ -88,9 +82,16 @@ namespace Luke
                 //forcing the milliseconds because sometimes it gets stuck on a > 0 time.
                 milliSeconds = 0f;
                 //Game over stuff wants to know this
-                StopTimer();
+                PauseTime();
                 StopTimerEvent?.Invoke();
             }
+        }
+        
+        //Visuals for UI
+        public void PrintTimer()
+        {
+            // on the left 0 for the minutes and right of the colon is 1 for seconds
+            timerText.text = string.Format("{0:0}:{1:00}:{2:000}", minutes, seconds, milliSeconds);
         }
     }
 }
