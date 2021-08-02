@@ -43,6 +43,9 @@ namespace Luke
         // Start is called before the first frame update
         void Start()
         {
+            //This is for when we need to reset to original positions
+            startPos = transform.position;
+            
             navMeshAgent = GetComponent<NavMeshAgent>();
             //setting our new variable to the NPCBase's first waypoint wait time
             if (waypointWaitTimes.Count != 0)

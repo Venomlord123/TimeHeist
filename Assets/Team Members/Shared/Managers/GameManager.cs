@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
   public void GameStart()
   {
     gameStartEvent?.Invoke();
+    Debug.Log("Round started");
   }
 
   /// <summary>
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
   public void GameEnd()
   {
     gameEndEvent?.Invoke();
+    Debug.Log("Round ended");
   }
 
   /// <summary>
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
   public void GameSwitchScene()
   {
     gameSwitchSceneEvent?.Invoke();
+    Debug.Log("Switch to journal");
   }
 
   /// <summary>
@@ -46,13 +49,16 @@ public class GameManager : MonoBehaviour
   public void JournalSwitchScene()
   {
     journalSwitchSceneEvent?.Invoke();
+    Debug.Log("Switch to game");
   }
 
   /// <summary>
-  /// TODO Timer, SceneMan, NPCMan and Player need to subscribe
+  /// TODO Timer, SceneMan, NPCMan and Player need to subscribe (object pos resets 
+  /// TODO this will also remove remembered NPCs info from the player journal
   /// </summary>
   public void ResetLevel()
   {
     resetLevelEvent?.Invoke();
+    Debug.Log("Reset level");
   }
 }

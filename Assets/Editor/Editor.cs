@@ -1,18 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-public class Editor : MonoBehaviour
+public class Editor : UnityEditor.Editor
 {
-    // Start is called before the first frame update
-    void Start()
+    [CustomEditor(typeof(GameManager))]
+    public override void OnInspectorGUI()
     {
-        
-    }
+        base.OnInspectorGUI();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameManager gameManager = (GameManager) target;
+
+        if (GUILayout.Button("Start round"))
+        {
+            gameManager.GameStart();
+        }
+
+        if (GUILayout.Button("End round"))
+        {
+            gameManager.GameEnd();
+        }
+
+        if (GUILayout.Button("Switch to journal"))
+        {
+            gameManager.GameSwitchScene();
+        }
+
+        if (GUILayout.Button("Switch to main scene"))
+        {
+            gameManager.JournalSwitchScene();
+        }
+
+        if (GUILayout.Button("Reset level"))
+        {
+            gameManager.ResetLevel();
+        }
     }
 }
