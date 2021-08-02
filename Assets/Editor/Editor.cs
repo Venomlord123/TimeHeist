@@ -12,9 +12,14 @@ public class Editor : UnityEditor.Editor
 
         GameManager gameManager = (GameManager) target;
 
-        if (GUILayout.Button("Start round"))
+        if (GUILayout.Button("Start round (continue)"))
         {
             gameManager.GameStart();
+        }
+
+        if (GUILayout.Button("Pause game"))
+        {
+            gameManager.GamePause();
         }
 
         if (GUILayout.Button("End round"))

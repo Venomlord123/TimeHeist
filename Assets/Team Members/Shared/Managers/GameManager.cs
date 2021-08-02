@@ -1,28 +1,52 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Luke;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
   //references
+  public Timer timer;
   
   //variables
+  //TODO roundCounter++ when new round starts
+  public int roundCounter;
   
   //events
-  public event Action gameStartEvent;
-  public event Action gameEndEvent;
-  public event Action gameSwitchSceneEvent;
-  public event Action journalSwitchSceneEvent;
-  public event Action resetLevelEvent;
+  public event Action GameStartEvent;
+  public event Action GamePauseEvent;
+  public event Action GameEndEvent;
+  public event Action GameSwitchSceneEvent;
+  public event Action JournalSwitchSceneEvent;
+  public event Action ResetLevelEvent;
+
+  private void OnEnable()
+  {
+    timer.TimerEndEvent += GameEnd;
+  }
+
+  private void OnDisable()
+  {
+    timer.TimerEndEvent -= GameEnd;
+  }
 
   /// <summary>
-  /// TODO Tell Timer to start. Enable movement
+  /// TODO Enable movement this will also include continuing the game from pause menu
   /// </summary>
   public void GameStart()
   {
-    gameStartEvent?.Invoke();
+    GameStartEvent?.Invoke();
     Debug.Log("Round started");
+  }
+
+  /// <summary>
+  /// TODO Pause menu pop up
+  /// </summary>
+  public void GamePause()
+  {
+    GamePauseEvent?.Invoke();
+    Debug.Log("Paused game");
   }
 
   /// <summary>
@@ -30,7 +54,7 @@ public class GameManager : MonoBehaviour
   /// </summary>
   public void GameEnd()
   {
-    gameEndEvent?.Invoke();
+    GameEndEvent?.Invoke();
     Debug.Log("Round ended");
   }
 
@@ -39,7 +63,7 @@ public class GameManager : MonoBehaviour
   /// </summary>
   public void GameSwitchScene()
   {
-    gameSwitchSceneEvent?.Invoke();
+    GameSwitchSceneEvent?.Invoke();
     Debug.Log("Switch to journal");
   }
 
@@ -48,7 +72,7 @@ public class GameManager : MonoBehaviour
   /// </summary>
   public void JournalSwitchScene()
   {
-    journalSwitchSceneEvent?.Invoke();
+    JournalSwitchSceneEvent?.Invoke();
     Debug.Log("Switch to game");
   }
 
@@ -58,7 +82,7 @@ public class GameManager : MonoBehaviour
   /// </summary>
   public void ResetLevel()
   {
-    resetLevelEvent?.Invoke();
+    ResetLevelEvent?.Invoke();
     Debug.Log("Reset level");
   }
 }
