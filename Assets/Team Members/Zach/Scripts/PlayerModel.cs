@@ -22,9 +22,7 @@ namespace ZachFrench
         private Vector3 move;
         //Variables for interact
         public NPCBase tempNpcBase;
-        public GameObject npcInfo;
-        public GameObject childNpcInfo;
-        public event Action<NPCBase> writingEvent;
+        public PlayerJournal playerJournal;
         public Ray ray;
         public RaycastHit hitInfo;
         
@@ -35,6 +33,11 @@ namespace ZachFrench
             velocity = characterController.velocity.magnitude;
             
             //raycast for interacting
+            InteractionRay();
+        }
+
+        private void InteractionRay()
+        {
             ray = new Ray(transform.position, transform.forward);
             hitInfo = new RaycastHit();
             Physics.Raycast(ray, out hitInfo);
@@ -43,7 +46,7 @@ namespace ZachFrench
                 if (hitInfo.collider.GetComponent<NPCBase>())
                 {
                     tempNpcBase = hitInfo.collider.GetComponent<NPCBase>();
-                    Interact();
+                    playerJournal.GatheredInformation(tempNpcBase);
                 }
             }
         }
@@ -58,20 +61,5 @@ namespace ZachFrench
             characterController.Move(move * speed * Time.deltaTime);
         }
 
-        public void Interact()
-        {
-            if (childNpcInfo != null) 
-            {
-                childNpcInfo = Instantiate(npcInfo, transform.position, new Quaternion(0, 0, 0, 0),transform.parent);
-            }
-            else
-            {
-                if (writingEvent != null)
-                {
-                    writingEvent.Invoke(tempNpcBase);
-                }
-            }
-        }
-        
     }
 }
