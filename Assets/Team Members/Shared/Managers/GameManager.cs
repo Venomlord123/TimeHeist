@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Luke;
 using UnityEngine;
+using ZachFrench;
 
 public class GameManager : MonoBehaviour
 {
   //references
   public Timer timer;
+  private PlayerModel player;
   
   //variables
   //TODO roundCounter++ when new round starts
@@ -20,6 +22,12 @@ public class GameManager : MonoBehaviour
   public event Action GameSwitchSceneEvent;
   public event Action JournalSwitchSceneEvent;
   public event Action ResetLevelEvent;
+
+  private void Start()
+  {
+    roundCounter = 1;
+    player = FindObjectOfType<PlayerModel>();
+  }
 
   private void OnEnable()
   {
