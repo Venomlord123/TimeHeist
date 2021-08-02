@@ -8,6 +8,7 @@ namespace Luke
     {
         //variables
         public List<Waypoint> NPCWayPoints;
+        public List<Waypoint> NPCExitWaypoints;
         
         // Start is called before the first frame update
         void Start()

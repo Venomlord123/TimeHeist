@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -199,6 +199,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &7609314
@@ -411,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616316, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Name
-      value: Bystander (6)
+      value: NPC (6)
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616317, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Material
@@ -427,10 +428,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 396378254}
     m_Modifications:
     - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: waypointWaitTime
       value: 3
       objectReference: {fileID: 0}
@@ -442,6 +439,10 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 888770177}
+    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.8
@@ -516,7 +517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616316, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Name
-      value: Bystander (7)
+      value: NPC (7)
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616317, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Material
@@ -1613,6 +1614,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &267459912
 Canvas:
   m_ObjectHideFlags: 0
@@ -3953,6 +3955,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &816541077
@@ -4687,7 +4690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616316, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Name
-      value: Bystander (5)
+      value: NPC (5)
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616317, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Material
@@ -5309,7 +5312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616316, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Name
-      value: Bystander (1)
+      value: NPC (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616317, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Material
@@ -5981,10 +5984,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 396378254}
     m_Modifications:
     - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: waypointWaitTime
       value: 3
       objectReference: {fileID: 0}
@@ -5996,6 +5995,10 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 888770177}
+    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: remainingWaypointDistance
       value: 2
@@ -6070,7 +6073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616316, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Name
-      value: Bystander (3)
+      value: NPC (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616317, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Material
@@ -6410,6 +6413,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 396378254}
     m_Modifications:
     - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: playerMovementTimeStop
+      value: 
+      objectReference: {fileID: 888770177}
+    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
       objectReference: {fileID: 1945032210}
@@ -6421,10 +6428,10 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[2]
       value: 
       objectReference: {fileID: 354634046}
-    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
-      propertyPath: playerMovementTimeStop
-      value: 
-      objectReference: {fileID: 888770177}
+    - target: {fileID: 8288652921519616288, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616288, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.33
@@ -6438,6 +6445,10 @@ PrefabInstance:
       value: -22.16
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616288, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8288652921519616288, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -6448,14 +6459,6 @@ PrefabInstance:
     - target: {fileID: 8288652921519616288, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8288652921519616288, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8288652921519616288, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616288, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6471,7 +6474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616316, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Name
-      value: Bystander (4)
+      value: NPC (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
@@ -7466,10 +7469,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 396378254}
     m_Modifications:
     - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: waypointWaitTime
       value: 3
       objectReference: {fileID: 0}
@@ -7481,6 +7480,10 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 888770177}
+    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.8
@@ -7555,7 +7558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616316, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Name
-      value: Bystander (2)
+      value: NPC (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616317, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Material
@@ -9390,10 +9393,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 396378254}
     m_Modifications:
     - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: waypointWaitTime
       value: 2
       objectReference: {fileID: 0}
@@ -9421,6 +9420,10 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[2]
       value: 
       objectReference: {fileID: 248066405}
+    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 2
@@ -9499,7 +9502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616316, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Name
-      value: Bystander
+      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616317, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Material
@@ -9925,10 +9928,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 396378254}
     m_Modifications:
     - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: waypointWaitTime
       value: 3
       objectReference: {fileID: 0}
@@ -9940,6 +9939,10 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 888770177}
+    - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1360903476, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: remainingWaypointDistance
       value: 2
@@ -10014,7 +10017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616316, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Name
-      value: Bystander (8)
+      value: NPC (8)
       objectReference: {fileID: 0}
     - target: {fileID: 8288652921519616317, guid: aeb695a4e6fc784499bbbb62fe40f44b, type: 3}
       propertyPath: m_Material
