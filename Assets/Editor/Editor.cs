@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+[CustomEditor(typeof(GameManager))]
 public class Editor : UnityEditor.Editor
 {
-    [CustomEditor(typeof(GameManager))]
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
