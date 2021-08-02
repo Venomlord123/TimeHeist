@@ -17,7 +17,8 @@ public class PlayerJournal : MonoBehaviour
         if (npcBases.Contains(npcBase) != npcBase)
         {
             npcBases.Add(npcBase);
-            tempNpcInfoGameObject = Instantiate(npcInstance, transform.position, new Quaternion(0, 0, 0, 0), transform.parent);
+            tempNpcInfoGameObject = Instantiate(npcInstance, transform.position, new Quaternion(0, 0, 0, 0));
+            tempNpcInfoGameObject.transform.parent = this.transform;
             npcInformation.Add(tempNpcInfoGameObject.GetComponent<NPCInfomation>());
         
             //todo finish writing all relevant information
