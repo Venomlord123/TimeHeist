@@ -83,7 +83,6 @@ namespace Luke
             gameManager.ResetLevelEvent += ResetCountdown;
 
             playerMovement.PassingNormalEvent += AdjustTimer;
-            playerMovement.TimeStopEvent += StopTimer;
         }
 
         private void OnDisable()
@@ -93,7 +92,6 @@ namespace Luke
             gameManager.ResetLevelEvent -= ResetCountdown;
             
             playerMovement.PassingNormalEvent -= AdjustTimer;
-            playerMovement.TimeStopEvent -= StopTimer;
         }
         
         //use for in between rounds in the main scene
@@ -153,14 +151,16 @@ namespace Luke
                 timerSeconds = Mathf.FloorToInt(timer % 60);
                 timerMilliSeconds = (timer % 1) * 1000;
                 
-                if (currentTimer == blackOutTime)
+                if (currentTimer <= blackOutTime)
                 {
+                    //TODO currently casting more than once
                     BlackOutEvent?.Invoke();
                     Debug.Log("BlackOut!!!");
                 }
 
-                if (currentTimer == fireAlarmTime)
+                if (currentTimer <= fireAlarmTime)
                 {
+                    //TODO currently casting more than once
                     FireAlarmEvent?.Invoke();
                     Debug.Log("Fire Alarm!!!");
                 }
@@ -175,11 +175,6 @@ namespace Luke
             {
                 currentTimer -= velocity.magnitude * Time.deltaTime;
             }
-        }
-
-        public void StopTimer(float velocity)
-        {
-            timerOn = false;
         }
     }
 }
