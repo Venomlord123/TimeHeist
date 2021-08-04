@@ -20,6 +20,8 @@ namespace ZachFrench
         [Tooltip("Use this to edit how fast you want the player to move")]
         public float speed;
         private Vector3 move;
+        [HideInInspector] 
+        public Vector3 velocityNorm;
         //Variables for interact
         public NPCBase tempNpcBase;
         public PlayerJournal playerJournal;
@@ -38,7 +40,8 @@ namespace ZachFrench
             CharacterMovement();
             //Getting Velocity for NPC Movement
             velocity = characterController.velocity.magnitude;
-
+            velocityNorm = characterController.velocity.normalized;
+            
             //raycast for interacting
             InteractionRay();
         }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using ZachFrench;
 
 
 namespace Luke
@@ -11,89 +12,174 @@ namespace Luke
     {
         //Reference
         public GameManager gameManager;
-        [Tooltip("TextMeshUGUI Reference")]
-        public TextMeshProUGUI timerText;
+        public PlayerMovementTimeStop playerMovement;
 
-        //variables
+        //Variables for Level event
+        [Header("Timer for level events")] 
+        public TextMeshProUGUI timerText;
+        public bool timerOn;
         [Tooltip("In seconds")]
-        public float currentTime;
+        public float currentTimer;
         [Tooltip("In seconds")]
         public float maxTime;
-        public bool timeStarted;
-        public float minutes;
-        public float seconds;
-        public float milliSeconds;
+        [Tooltip("Time the blackout will happen")]
+        public float blackOutTime;
+        [Tooltip("Time the fire alarm will happen")]
+        public float fireAlarmTime;
+        [HideInInspector]
+        public float timerMinutes;
+        [HideInInspector]
+        public float timerSeconds;
+        [HideInInspector]
+        public float timerMilliSeconds;
+        
+        
+
+        //variables for player countdown
+        [Header("Player's visual countdown")]
+        public TextMeshProUGUI countDownText;
+        public bool countDownStarted;
+        [Tooltip("In seconds")]
+        public float currentCountDown;
+        [Tooltip("In seconds")]
+        public float maxCountDown;
+        [HideInInspector]
+        public float minutesCountDown;
+        [HideInInspector]
+        public float secondsCountDown;
+        [HideInInspector]
+        public float milliSecondsCountDown;
         
         //events
         public event Action TimerEndEvent;
+        public event Action BlackOutEvent;
+        public event Action FireAlarmEvent;
 
         void Start()
         {
-            currentTime = maxTime;
-            timerText = GetComponentInChildren<TextMeshProUGUI>();
+            playerMovement = FindObjectOfType<PlayerMovementTimeStop>();
+            currentCountDown = maxCountDown;
+            currentTimer = maxTime;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (timeStarted)
+            if (countDownStarted)
             {
-                UpdateTime(currentTime);
+                UpdateCountDown(currentCountDown);
+            }
+
+            if (timerOn)
+            {
+                EventTimer(currentTimer);
             }
         }
         
         private void OnEnable()
         {
-            gameManager.GameStartEvent += StartTime;
-            gameManager.GamePauseEvent += PauseTime;
-            gameManager.ResetLevelEvent += ResetTime;
+            gameManager.GameStartEvent += StartCountDown;
+            gameManager.GamePauseEvent += PauseCountDown;
+            gameManager.ResetLevelEvent += ResetCountdown;
+
+            playerMovement.PassingNormalEvent += AdjustTimer;
+            playerMovement.TimeStopEvent += StopTimer;
         }
 
         private void OnDisable()
         {
-            gameManager.GameStartEvent -= StartTime;
-            gameManager.GamePauseEvent -= PauseTime;
-            gameManager.ResetLevelEvent -= ResetTime;
+            gameManager.GameStartEvent -= StartCountDown;
+            gameManager.GamePauseEvent -= PauseCountDown;
+            gameManager.ResetLevelEvent -= ResetCountdown;
+            
+            playerMovement.PassingNormalEvent -= AdjustTimer;
+            playerMovement.TimeStopEvent -= StopTimer;
         }
         
         //use for in between rounds in the main scene
-        public void ResetTime()
+        public void ResetCountdown()
         {
-            currentTime = maxTime;
+            currentCountDown = maxCountDown;
         }
 
-        public void StartTime()
+        public void StartCountDown()
         {
-            timeStarted = true;
+            countDownStarted = true;
+            timerOn = true;
         }
 
-        public void PauseTime()
+        public void PauseCountDown()
         {
-            timeStarted = false;
+            countDownStarted = false;
         }
 
-        public void UpdateTime(float displayTime)
+        /// <summary>
+        /// Display UI time to the player. Isn't effected by movement time stop
+        /// </summary>
+        public void UpdateCountDown(float displayCountDown)
         {
-            if (timeStarted)
+            if (countDownStarted)
             {
-                currentTime -= Time.deltaTime;
-            
-                //making the timer have minutes and seconds limits
-                minutes = Mathf.FloorToInt(displayTime / 60);
-                seconds = Mathf.FloorToInt(displayTime % 60);
-            
-                milliSeconds = (displayTime % 1) * 1000;
-            
-                if (currentTime <= 0f)
+                currentCountDown -= Time.deltaTime;
+
+                //making the countdown and timer have minutes and seconds limits
+                minutesCountDown = Mathf.FloorToInt(displayCountDown / 60);
+                secondsCountDown = Mathf.FloorToInt(displayCountDown % 60);
+                milliSecondsCountDown = (displayCountDown % 1) * 1000;
+
+                //player visual
+                if (currentCountDown <= 0f)
                 {
-                    currentTime = 0f;
+                    currentCountDown = 0f;
                     //forcing the milliseconds because sometimes it gets stuck on a > 0 time.
-                    milliSeconds = 0f;
+                    milliSecondsCountDown = 0f;
                     //Game over stuff wants to know this
-                    PauseTime();
+                    PauseCountDown();
                     TimerEndEvent?.Invoke();
                 }
             }
+        }
+
+        /// <summary>
+        /// Event timer being the hidden from UI to make sure events like black out are shot at the right time.
+        /// </summary>
+        public void EventTimer(float timer)
+        {
+            if (timerOn)
+            {
+                //currentTimer -= Time.deltaTime;
+
+                timerMinutes = Mathf.FloorToInt(timer / 60);
+                timerSeconds = Mathf.FloorToInt(timer % 60);
+                timerMilliSeconds = (timer % 1) * 1000;
+                
+                if (currentTimer == blackOutTime)
+                {
+                    BlackOutEvent?.Invoke();
+                    Debug.Log("BlackOut!!!");
+                }
+
+                if (currentTimer == fireAlarmTime)
+                {
+                    FireAlarmEvent?.Invoke();
+                    Debug.Log("Fire Alarm!!!");
+                }
+                
+                //TODO check for player movement and compare time
+            }
+        }
+
+        public void AdjustTimer(Vector3 velocity)
+        {
+            if (timerOn)
+            {
+                currentTimer -= velocity.magnitude * Time.deltaTime;
+            }
+        }
+
+        public void StopTimer(float velocity)
+        {
+            timerOn = false;
         }
     }
 }
