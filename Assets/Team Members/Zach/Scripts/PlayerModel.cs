@@ -53,10 +53,13 @@ namespace ZachFrench
             Physics.Raycast(ray, out hitInfo);
             if (Mouse.current.leftButton.isPressed)
             {
-                if (hitInfo.collider.GetComponent<NPCBase>())
+                if (hitInfo.collider != null)
                 {
-                    tempNpcBase = hitInfo.collider.GetComponent<NPCBase>();
-                    playerJournal.GatheredInformation(tempNpcBase);
+                    if (hitInfo.collider.GetComponent<NPCBase>())
+                    {
+                        tempNpcBase = hitInfo.collider.GetComponent<NPCBase>();
+                        playerJournal.GatheredInformation(tempNpcBase);
+                    }
                 }
             }
         }

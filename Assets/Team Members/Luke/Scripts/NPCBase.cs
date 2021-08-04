@@ -18,6 +18,8 @@ namespace Luke
         public string locationsBeen;
         [Tooltip("What has been said in the conversations that the NPC has interacted with")]
         public string conversations;
+        [Tooltip("The current location of the NPC based on the trigger they are in")]
+        public string currentLocation;
         
         [Header("NPC Movement Related")]
         //variables
@@ -27,5 +29,10 @@ namespace Luke
         public List<float> waypointWaitTimes;
         [Tooltip("Starting locations of the NPC (reset positions)")]
         public Vector3 startPos;
+
+        public void OnTriggerEnter(Collider other)
+        {
+            currentLocation = other.name;
+        }
     }
 }
