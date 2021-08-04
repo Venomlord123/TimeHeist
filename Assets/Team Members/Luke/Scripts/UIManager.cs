@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,17 @@ namespace Luke
     {
         //references
         public Timer timer;
-        
+
+        private void OnEnable()
+        {
+            timer.TimerEndEvent += zeroTimer;
+        }
+
+        private void OnDisable()
+        {
+            timer.TimerEndEvent -= zeroTimer;
+        }
+
         // Start is called before the first frame update
         void Start()
         {
@@ -33,6 +44,12 @@ namespace Luke
             //level event timer 
             //TEST ONLY 
             timer.timerText.text = string.Format("{0:0}:{1:00}:{2:000}", timer.timerMinutes, timer.timerSeconds, timer.timerMilliSeconds);
+        }
+
+        //force the zero
+        public void zeroTimer()
+        {
+            timer.countDownText.text = string.Format("{0:0}:{1:00}:{2:000}", 0,0,0);
         }
     }
 }
