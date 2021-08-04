@@ -25,13 +25,20 @@ namespace ZachFrench
         public PlayerJournal playerJournal;
         public Ray ray;
         public RaycastHit hitInfo;
-        
+
+
+        public void Start()
+        {
+            //todo add to TDD for reference to layer
+            Physics.IgnoreLayerCollision(6,7);
+        }
+
         public void Update()
         {
             CharacterMovement();
             //Getting Velocity for NPC Movement
             velocity = characterController.velocity.magnitude;
-            
+
             //raycast for interacting
             InteractionRay();
         }
@@ -61,5 +68,12 @@ namespace ZachFrench
             characterController.Move(move * speed * Time.deltaTime);
         }
 
+        public void OnCollisionEnter(Collision other)
+        {
+            if (other.collider != null)
+            {
+                Debug.Log("Colliding");
+            }
+        }
     }
 }

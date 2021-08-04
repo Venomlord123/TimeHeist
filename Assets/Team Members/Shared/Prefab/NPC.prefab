@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5305578957199045775}
   - component: {fileID: 5899029015639135005}
   - component: {fileID: 3680384622705508612}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,6 +43,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -93,7 +94,7 @@ GameObject:
   - component: {fileID: 8288652921519616317}
   - component: {fileID: 8101667819298639784}
   - component: {fileID: 1360903476}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,6 +172,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   waypointWaitTimes: []
+  startPos: {x: 0, y: 0, z: 0}
+  navMeshAgent: {fileID: 0}
   playerMovementTimeStop: {fileID: 0}
   currentTarget: 0
   remainingWaypointDistance: 0

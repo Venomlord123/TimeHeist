@@ -10,7 +10,7 @@ namespace Luke
     public class NPCModel : NPCBase
     {
         //References
-        private NavMeshAgent navMeshAgent;
+        public NavMeshAgent navMeshAgent;
         public PlayerMovementTimeStop playerMovementTimeStop;
 
         //Variables
@@ -43,6 +43,7 @@ namespace Luke
         // Start is called before the first frame update
         void Start()
         {
+            Physics.IgnoreLayerCollision(7,7);
             //This is for when we need to reset to original positions
             startPos = transform.position;
             
@@ -91,7 +92,8 @@ namespace Luke
                 navMeshAgent.speed = speed * npcMovementMultiplier;
             }
         }
-        
+
+
         /// <summary>
         /// Co-routines only yield whats within the function!! 
         /// </summary>
