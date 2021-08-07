@@ -20,17 +20,27 @@ namespace ZachFrench
         [Tooltip("Use this to edit how fast you want the player to move")]
         public float speed;
         private Vector3 move;
+        [HideInInspector] 
+        public Vector3 velocityNorm;
         //Variables for interact
         public NPCBase tempNpcBase;
         public PlayerJournal playerJournal;
         public Ray ray;
         public RaycastHit hitInfo;
-        
+
+
+        public void Start()
+        {
+            //todo add to TDD for reference to layer
+            Physics.IgnoreLayerCollision(6,7);
+        }
+
         public void Update()
         {
             CharacterMovement();
             //Getting Velocity for NPC Movement
             velocity = characterController.velocity.magnitude;
+            velocityNorm = characterController.velocity.normalized;
             
             //raycast for interacting
             InteractionRay();
@@ -43,10 +53,13 @@ namespace ZachFrench
             Physics.Raycast(ray, out hitInfo);
             if (Mouse.current.leftButton.isPressed)
             {
-                if (hitInfo.collider.GetComponent<NPCBase>())
+                if (hitInfo.collider != null)
                 {
-                    tempNpcBase = hitInfo.collider.GetComponent<NPCBase>();
-                    playerJournal.GatheredInformation(tempNpcBase);
+                    if (hitInfo.collider.GetComponent<NPCBase>())
+                    {
+                        tempNpcBase = hitInfo.collider.GetComponent<NPCBase>();
+                        playerJournal.GatheredInformation(tempNpcBase);
+                    }
                 }
             }
         }
@@ -61,5 +74,12 @@ namespace ZachFrench
             characterController.Move(move * speed * Time.deltaTime);
         }
 
+        public void OnCollisionEnter(Collision other)
+        {
+            if (other.collider != null)
+            {
+                Debug.Log("Colliding");
+            }
+        }
     }
 }

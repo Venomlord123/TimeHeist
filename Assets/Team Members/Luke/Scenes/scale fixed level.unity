@@ -2182,10 +2182,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1534823934719538139, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
-      propertyPath: timer
-      value: 
-      objectReference: {fileID: 958367324}
     - target: {fileID: 3740275375382182456, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
       propertyPath: m_Name
       value: UIManager
@@ -2238,6 +2234,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 424925995}
+    - target: {fileID: 3740275375675803102, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 888770177}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
 --- !u!1001 &496475074

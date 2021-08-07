@@ -13,6 +13,8 @@ namespace ZachFrench
         public event Action<float> TimeStopEvent;
         public event Action<float> ContinueTimeEvent;
 
+        public event Action<Vector3> PassingNormalEvent;
+
         //References
         public PlayerModel playerModel;
         public CharacterController characterController;
@@ -58,6 +60,7 @@ namespace ZachFrench
             if (notMoving == false)
             {
                 ContinueTimeEvent?.Invoke(playerModel.velocity);
+                PassingNormalEvent?.Invoke(playerModel.velocityNorm);
             }
         }
     }
