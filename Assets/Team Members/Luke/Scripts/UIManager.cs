@@ -10,6 +10,8 @@ namespace Luke
         //references
         public Timer timer;
         public bool eventTimerShown;
+        public GameObject eventTimer;
+        public GameObject playerCountdown;
 
         private void OnEnable()
         {
@@ -46,7 +48,12 @@ namespace Luke
             //DEBUG PURPOSE ONLY 
             if (eventTimerShown)
             {
+                eventTimer.SetActive(true);
                 timer.timerText.text = string.Format("{0:0}:{1:00}:{2:000}", timer.timerMinutes, timer.timerSeconds, timer.timerMilliSeconds);
+            }
+            else
+            {
+                eventTimer.SetActive(false);
             }
         }
 

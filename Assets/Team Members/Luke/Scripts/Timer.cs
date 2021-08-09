@@ -14,13 +14,13 @@ namespace Luke
         public GameManager gameManager;
         public PlayerMovementTimeStop playerMovement;
 
-        //Variables for Level event
+        //Variables for event timer
         [Header("Timer for level events")] 
         public TextMeshProUGUI timerText;
         public bool timerOn;
         [Tooltip("In seconds")]
         public float currentTimer;
-        [Tooltip("In seconds")]
+        [Tooltip("This changes the players time within the level in seconds (countdown goes through time stopping)")]
         public float maxTime;
         [Tooltip("Time the blackout will happen")]
         public float blackOutTime;
@@ -32,16 +32,14 @@ namespace Luke
         public float timerSeconds;
         [HideInInspector]
         public float timerMilliSeconds;
-        
-        
 
-        //variables for player countdown
+        //Variables for player countdown
         [Header("Player's visual countdown")]
         public TextMeshProUGUI countDownText;
         public bool countDownStarted;
         [Tooltip("In seconds")]
         public float currentCountDown;
-        [Tooltip("In seconds")]
+        [Tooltip("Change this to change the amount of time outside the player time stopping (In seconds)")]
         public float maxCountDown;
         [HideInInspector]
         public float minutesCountDown;
@@ -54,6 +52,7 @@ namespace Luke
         public event Action CountDownEndEvent;
         public event Action BlackOutEvent;
         public event Action FireAlarmEvent;
+        public event Action EventTimerEndEvent;
 
         void Start()
         {
@@ -79,7 +78,7 @@ namespace Luke
         private void OnEnable()
         {
             gameManager.GameStartEvent += StartCountDown;
-            gameManager.GamePauseEvent += PauseCountDown;
+            gameManager.GamePauseEvent += PauseTimers;
             gameManager.ResetLevelEvent += ResetCountdown;
 
             playerMovement.PassingNormalEvent += AdjustTimer;
@@ -88,7 +87,7 @@ namespace Luke
         private void OnDisable()
         {
             gameManager.GameStartEvent -= StartCountDown;
-            gameManager.GamePauseEvent -= PauseCountDown;
+            gameManager.GamePauseEvent -= PauseTimers;
             gameManager.ResetLevelEvent -= ResetCountdown;
             
             playerMovement.PassingNormalEvent -= AdjustTimer;
@@ -98,6 +97,7 @@ namespace Luke
         public void ResetCountdown()
         {
             currentCountDown = maxCountDown;
+            currentTimer = maxTime;
         }
 
         public void StartCountDown()
@@ -106,9 +106,10 @@ namespace Luke
             timerOn = true;
         }
 
-        public void PauseCountDown()
+        public void PauseTimers()
         {
             countDownStarted = false;
+            timerOn = false;
         }
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace Luke
                     //forcing the milliseconds because sometimes it gets stuck on a > 0 time.
                     milliSecondsCountDown = 0f;
                     //Game over stuff wants to know this
-                    PauseCountDown();
+                    PauseTimers();
                     CountDownEndEvent?.Invoke();
                 }
             }
@@ -145,8 +146,6 @@ namespace Luke
         {
             if (timerOn)
             {
-                //currentTimer -= Time.deltaTime;
-
                 timerMinutes = Mathf.FloorToInt(timer / 60);
                 timerSeconds = Mathf.FloorToInt(timer % 60);
                 timerMilliSeconds = (timer % 1) * 1000;
@@ -163,6 +162,11 @@ namespace Luke
                     //TODO currently casting more than once
                     FireAlarmEvent?.Invoke();
                     Debug.Log("Fire Alarm!!!");
+                }
+
+                if (currentTimer <= 0)
+                {
+                    EventTimerEndEvent?.Invoke();
                 }
             }
         }
