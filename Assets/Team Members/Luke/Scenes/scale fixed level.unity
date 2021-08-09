@@ -2182,6 +2182,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1534823934719538139, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
+      propertyPath: eventTimerShown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3740275375382182456, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
       propertyPath: m_Name
       value: UIManager

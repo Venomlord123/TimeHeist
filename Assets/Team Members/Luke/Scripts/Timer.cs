@@ -51,7 +51,7 @@ namespace Luke
         public float milliSecondsCountDown;
         
         //events
-        public event Action TimerEndEvent;
+        public event Action CountDownEndEvent;
         public event Action BlackOutEvent;
         public event Action FireAlarmEvent;
 
@@ -112,7 +112,7 @@ namespace Luke
         }
 
         /// <summary>
-        /// Display UI time to the player. Isn't effected by movement time stop
+        /// Time logic shown to the player. Isn't effected by movement time stop
         /// </summary>
         public void UpdateCountDown(float displayCountDown)
         {
@@ -133,7 +133,7 @@ namespace Luke
                     milliSecondsCountDown = 0f;
                     //Game over stuff wants to know this
                     PauseCountDown();
-                    TimerEndEvent?.Invoke();
+                    CountDownEndEvent?.Invoke();
                 }
             }
         }
@@ -164,8 +164,6 @@ namespace Luke
                     FireAlarmEvent?.Invoke();
                     Debug.Log("Fire Alarm!!!");
                 }
-                
-                //TODO check for player movement and compare time
             }
         }
 

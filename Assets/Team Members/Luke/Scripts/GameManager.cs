@@ -31,12 +31,12 @@ public class GameManager : MonoBehaviour
 
   private void OnEnable()
   {
-    timer.TimerEndEvent += GameEnd;
+    timer.CountDownEndEvent += GameEnd;
   }
 
   private void OnDisable()
   {
-    timer.TimerEndEvent -= GameEnd;
+    timer.CountDownEndEvent -= GameEnd;
   }
 
   /// <summary>

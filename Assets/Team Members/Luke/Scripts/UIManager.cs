@@ -9,15 +9,16 @@ namespace Luke
     {
         //references
         public Timer timer;
+        public bool eventTimerShown;
 
         private void OnEnable()
         {
-            timer.TimerEndEvent += zeroTimer;
+            timer.CountDownEndEvent += ZeroCountDown;
         }
 
         private void OnDisable()
         {
-            timer.TimerEndEvent -= zeroTimer;
+            timer.CountDownEndEvent -= ZeroCountDown;
         }
 
         // Start is called before the first frame update
@@ -42,12 +43,15 @@ namespace Luke
             timer.countDownText.text = string.Format("{0:0}:{1:00}:{2:000}", timer.minutesCountDown, timer.secondsCountDown, timer.milliSecondsCountDown);
             
             //level event timer 
-            //TEST ONLY 
-            timer.timerText.text = string.Format("{0:0}:{1:00}:{2:000}", timer.timerMinutes, timer.timerSeconds, timer.timerMilliSeconds);
+            //DEBUG PURPOSE ONLY 
+            if (eventTimerShown)
+            {
+                timer.timerText.text = string.Format("{0:0}:{1:00}:{2:000}", timer.timerMinutes, timer.timerSeconds, timer.timerMilliSeconds);
+            }
         }
 
         //force the zero
-        public void zeroTimer()
+        public void ZeroCountDown()
         {
             timer.countDownText.text = string.Format("{0:0}:{1:00}:{2:000}", 0,0,0);
         }
