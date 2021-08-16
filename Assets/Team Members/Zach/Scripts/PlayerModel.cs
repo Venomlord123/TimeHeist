@@ -73,13 +73,5 @@ namespace ZachFrench
 
             characterController.Move(move * speed * Time.deltaTime);
         }
-
-        public void OnCollisionEnter(Collision other)
-        {
-            if (other.collider != null)
-            {
-                Debug.Log("Colliding");
-            }
-        }
     }
 }
