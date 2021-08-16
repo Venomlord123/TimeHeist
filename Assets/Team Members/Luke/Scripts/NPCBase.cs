@@ -30,9 +30,9 @@ namespace Luke
         [Tooltip("Starting locations of the NPC (reset positions)")]
         public Vector3 startPos;
 
-        public void OnTriggerEnter(Collider other)
+        public void OnTriggerStay(Collider other)
         {
-            currentLocation = other.name;
+            currentLocation = other.gameObject.name;
         }
     }
 }
