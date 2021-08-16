@@ -17,7 +17,7 @@ namespace Luke
         [Tooltip("The current selected waypoint element")]
         public int currentTarget;
         [Tooltip(("Distance from waypoint to allow change to next waypoint"))]
-        public float remainingWaypointDistance;
+        public float remainingWaypointDistance = .5f;
         [Tooltip("Change the npc's speed (multiplied from player speed)")]
         public float npcMovementMultiplier = 1f;
         private float waitTimeElement;

@@ -33,6 +33,9 @@ namespace Luke
         [HideInInspector]
         public float timerMilliSeconds;
 
+        private bool fireAlarmEvent;
+        private bool blackOutEvent;
+
         //Variables for player countdown
         [Header("Player's visual countdown")]
         public TextMeshProUGUI countDownText;
