@@ -4845,13 +4845,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c3fce8b53b904f47a7fd5795d010634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  playerMovement: {fileID: 0}
   timerText: {fileID: 1247343002}
-  currentTime: 0
+  timerOn: 0
+  currentTimer: 0
   maxTime: 60
-  timeStarted: 0
-  minutes: 0
-  seconds: 0
-  milliSeconds: 0
+  blackOutTime: 0
+  fireAlarmTime: 0
+  timerMinutes: 0
+  timerSeconds: 0
+  timerMilliSeconds: 0
+  countDownText: {fileID: 0}
+  countDownStarted: 0
+  currentCountDown: 0
+  maxCountDown: 0
+  minutesCountDown: 0
+  secondsCountDown: 0
+  milliSecondsCountDown: 0
 --- !u!1 &1026923367
 GameObject:
   m_ObjectHideFlags: 0
