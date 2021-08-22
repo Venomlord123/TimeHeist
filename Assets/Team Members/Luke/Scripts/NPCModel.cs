@@ -12,6 +12,7 @@ namespace Luke
         //References
         public NavMeshAgent navMeshAgent;
         public PlayerMovementTimeStop playerMovementTimeStop;
+        public Animator animator;
 
         //Variables
         [Tooltip("The current selected waypoint element")]
@@ -25,10 +26,13 @@ namespace Luke
         public float currentWaitTime;
         [Tooltip("Is the NPC waiting?")]
         public bool waiting = false;
+        private float maxAnimationSpeed = 1f;
 
         //Subscribe
         private void OnEnable()
         {
+            animator = GetComponentInChildren<Animator>();
+            animator.speed = 0;
             playerMovementTimeStop.TimeStopEvent += MovementStop;
             playerMovementTimeStop.ContinueTimeEvent += MovementContinue;
         }
@@ -81,6 +85,8 @@ namespace Luke
         
         public void MovementStop(float speed)
         {
+            //TODO: Idle animation
+            animator.speed = 0;
             navMeshAgent.speed = 0;
             navMeshAgent.velocity = new Vector3(speed, speed, speed);
         }
@@ -89,7 +95,13 @@ namespace Luke
         {
             if (speed > 0.01f)
             {
+                animator.speed = speed / 5;
                 navMeshAgent.speed = speed * npcMovementMultiplier;
+            }
+
+            if (waiting)
+            {
+                animator.speed = 0;
             }
         }
 
