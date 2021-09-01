@@ -24,7 +24,7 @@ public class Editor : UnityEditor.Editor
 
         if (GUILayout.Button("End round"))
         {
-            gameManager.GameEnd();
+            gameManager.RoundEnd();
         }
 
         if (GUILayout.Button("Switch to journal"))
@@ -40,6 +40,11 @@ public class Editor : UnityEditor.Editor
         if (GUILayout.Button("Reset level"))
         {
             gameManager.ResetLevel();
+        }
+
+        if (GUILayout.Button("Game Completed"))
+        {
+            gameManager.GameEnd();
         }
     }
 }

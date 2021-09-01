@@ -20,13 +20,18 @@ namespace Luke
         [Tooltip(("Distance from waypoint to allow change to next waypoint"))]
         public float remainingWaypointDistance = .5f;
         [Tooltip("Change the npc's speed (multiplied from player speed)")]
-        public float npcMovementMultiplier = 1f;
+        public float npcMovementMultiplier = .25f;
         private float waitTimeElement;
         [Tooltip("The current amount of time waiting at waypoint")]
         public float currentWaitTime;
         [Tooltip("Is the NPC waiting?")]
         public bool waiting = false;
-        private float maxAnimationSpeed = 1f;
+        [Tooltip("The walking animation speed")]
+        public float animationSpeedMultiplier = 1f;
+
+        //HACK 
+        [Tooltip("HACK")]
+        public bool isHeistMember = false;
 
         //Subscribe
         private void OnEnable()
@@ -35,6 +40,7 @@ namespace Luke
             animator.speed = 0;
             playerMovementTimeStop.TimeStopEvent += MovementStop;
             playerMovementTimeStop.ContinueTimeEvent += MovementContinue;
+            
         }
 
         //Unsubscribe
@@ -85,17 +91,17 @@ namespace Luke
         
         public void MovementStop(float speed)
         {
-            //TODO: Idle animation
+            //TODO Idle animation
             animator.speed = 0;
             navMeshAgent.speed = 0;
             navMeshAgent.velocity = new Vector3(speed, speed, speed);
         }
         
-        public void MovementContinue(float speed)
+        public void MovementContinue(float speed, Vector3 velocityNorm)
         {
             if (speed > 0.01f)
             {
-                animator.speed = speed / 5;
+                animator.speed = velocityNorm.normalized.magnitude * animationSpeedMultiplier;
                 navMeshAgent.speed = speed * npcMovementMultiplier;
             }
 

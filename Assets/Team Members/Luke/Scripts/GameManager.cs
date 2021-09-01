@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
   public event Action GameSwitchSceneEvent;
   public event Action JournalSwitchSceneEvent;
   public event Action ResetLevelEvent;
+  public event Action RoundEndEvent;
 
   private void Start()
   {
@@ -60,6 +61,15 @@ public class GameManager : MonoBehaviour
   /// <summary>
   /// TODO player unable to move.
   /// </summary>
+  public void RoundEnd()
+  {
+    RoundEndEvent?.Invoke();
+    roundCounter++;
+  }
+
+  /// <summary>
+  /// TODO what happens when the game is completed???
+  /// </summary>
   public void GameEnd()
   {
     GameEndEvent?.Invoke();
@@ -85,8 +95,7 @@ public class GameManager : MonoBehaviour
   }
 
   /// <summary>
-  /// TODO Timer, SceneMan, NPCMan and Player need to subscribe (object pos resets 
-  /// TODO this will also remove remembered NPCs info from the player journal
+  /// TODO Timer, SceneMan, NPCMan and Player need to subscribe (object pos resets)
   /// </summary>
   public void ResetLevel()
   {

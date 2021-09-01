@@ -50,6 +50,10 @@ namespace Luke
         public float secondsCountDown;
         [HideInInspector]
         public float milliSecondsCountDown;
+
+        public bool fireAlarmDone;
+
+        public bool blackOutDone;
         
         //events
         public event Action CountDownEndEvent;
@@ -101,6 +105,8 @@ namespace Luke
         {
             currentCountDown = maxCountDown;
             currentTimer = maxTime;
+            fireAlarmDone = false;
+            blackOutDone = false;
         }
 
         public void StartCountDown()
@@ -153,21 +159,23 @@ namespace Luke
                 timerSeconds = Mathf.FloorToInt(timer % 60);
                 timerMilliSeconds = (timer % 1) * 1000;
                 
-                if (currentTimer <= blackOutTime)
+                if (currentCountDown <= blackOutTime && blackOutDone == false)
                 {
                     //TODO currently casting more than once
                     BlackOutEvent?.Invoke();
+                    blackOutDone = true;
                     Debug.Log("BlackOut!!!");
                 }
 
-                if (currentTimer <= fireAlarmTime)
+                if (currentCountDown <= fireAlarmTime && fireAlarmDone == false)
                 {
                     //TODO currently casting more than once
                     FireAlarmEvent?.Invoke();
+                    fireAlarmDone = true;
                     Debug.Log("Fire Alarm!!!");
                 }
 
-                if (currentTimer <= 0)
+                if (currentCountDown <= 0)
                 {
                     EventTimerEndEvent?.Invoke();
                 }

@@ -11,8 +11,7 @@ namespace ZachFrench
 
         //Event created using a bool
         public event Action<float> TimeStopEvent;
-        public event Action<float> ContinueTimeEvent;
-
+        public event Action<float, Vector3> ContinueTimeEvent;
         public event Action<Vector3> PassingNormalEvent;
 
         //References
@@ -59,7 +58,7 @@ namespace ZachFrench
         {
             if (notMoving == false)
             {
-                ContinueTimeEvent?.Invoke(playerModel.velocity);
+                ContinueTimeEvent?.Invoke(playerModel.velocity, playerModel.velocityNorm);
                 PassingNormalEvent?.Invoke(playerModel.velocityNorm);
             }
         }
