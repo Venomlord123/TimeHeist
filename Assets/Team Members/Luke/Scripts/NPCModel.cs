@@ -26,11 +26,11 @@ namespace Luke
         public float currentWaitTime;
         [Tooltip("Is the NPC waiting?")]
         public bool waiting = false;
-        [Tooltip("The walking animation speed")]
-        public float animationSpeedMultiplier = 1f;
 
-        //HACK 
-        [Tooltip("HACK")]
+        //HACK s maybe?
+        [Tooltip("The walking animation speed (Higher the number slower it animates)")]
+        public float animationSpeedDivider = 5f;
+        [Tooltip("HACK (probably won't keep this)")]
         public bool isHeistMember = false;
 
         //Subscribe
@@ -83,7 +83,6 @@ namespace Luke
                     if (waiting == false)
                     {
                         StartCoroutine(WaypointWaitTimer());
-                        currentTarget = (currentTarget + 1) % waypointPath.Count;   
                     }
                 }
             }
@@ -100,9 +99,8 @@ namespace Luke
         {
             if (speed > 0)
             {
-                //TODO animation speed normalized when player is moving slow
                 navMeshAgent.speed = speed * npcMovementMultiplier;
-                animator.speed = velocityNorm.normalized.magnitude * animationSpeedMultiplier;
+                animator.speed = (navMeshAgent.speed / velocityNorm.normalized.magnitude) / animationSpeedDivider;
                 if (waiting == false)
                 {
                     //Animation walk
@@ -114,6 +112,7 @@ namespace Luke
             {
                 //Animation idle
                 animator.SetBool("isWaiting", true);
+                RotateToDirection();
             }
         }
 
@@ -136,6 +135,22 @@ namespace Luke
                 currentWaitTime = waypointWaitTimes[(int)waitTimeElement];
             }
             waiting = false;
+            //changed to here because of face direction
+            currentTarget = (currentTarget + 1) % waypointPath.Count;
+        }
+
+        /// <summary>
+        /// To face in the current waypoint's set directional vector forward (z)
+        /// TODO could be smoother facing direction of next target
+        /// </summary>
+        public void RotateToDirection()
+        {
+            if (currentTarget != null)
+            {
+                Vector3 lookDirection = waypointPath[currentTarget].transform.forward; 
+                Quaternion newRotation = Quaternion.LookRotation(lookDirection);
+                transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, animator.speed / animationSpeedDivider);
+            }
         }
     }
 }

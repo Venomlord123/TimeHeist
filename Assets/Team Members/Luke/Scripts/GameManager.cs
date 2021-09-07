@@ -8,8 +8,8 @@ using ZachFrench;
 public class GameManager : MonoBehaviour
 {
   //references
-  private Timer timer;
-  private MasterMind masterMind;
+  public Timer timer;
+  public MasterMind masterMind;
   
   //variables
   //TODO roundCounter++ when new round starts
