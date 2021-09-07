@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,17 +16,14 @@ namespace Luke
         public bool allHeistMembersAccused = false;
         public List<bool> currentlyAccused;
         public List<List<bool>> accusationHistory;
+        
+        //events
+        public event Action AllAccusedCorrectEvent;
 
         // Start is called before the first frame update
         void Start()
         {
             npcManager = FindObjectOfType<NPCManager>();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         //TODO below to be called when accusations is fully completed
@@ -52,6 +50,7 @@ namespace Luke
         public void AllAccusedCorrect()
         {
             allHeistMembersAccused = true;
+            AllAccusedCorrectEvent?.Invoke();
         }
 
         /// <summary>

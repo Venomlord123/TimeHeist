@@ -8,8 +8,8 @@ using ZachFrench;
 public class GameManager : MonoBehaviour
 {
   //references
-  public Timer timer;
-  private PlayerModel player;
+  private Timer timer;
+  private MasterMind masterMind;
   
   //variables
   //TODO roundCounter++ when new round starts
@@ -26,18 +26,21 @@ public class GameManager : MonoBehaviour
 
   private void Start()
   {
+    masterMind = FindObjectOfType<MasterMind>();
+    timer = FindObjectOfType<Timer>();
     roundCounter = 1;
-    player = FindObjectOfType<PlayerModel>();
   }
 
   private void OnEnable()
   {
     timer.CountDownEndEvent += GameEnd;
+    masterMind.AllAccusedCorrectEvent += GameEnd;
   }
 
   private void OnDisable()
   {
     timer.CountDownEndEvent -= GameEnd;
+    masterMind.AllAccusedCorrectEvent -= GameEnd;
   }
 
   /// <summary>
@@ -65,6 +68,7 @@ public class GameManager : MonoBehaviour
   {
     RoundEndEvent?.Invoke();
     roundCounter++;
+    Debug.Log("Round over");
   }
 
   /// <summary>
@@ -73,7 +77,7 @@ public class GameManager : MonoBehaviour
   public void GameEnd()
   {
     GameEndEvent?.Invoke();
-    Debug.Log("Round ended");
+    Debug.Log("Game ended");
   }
 
   /// <summary>
