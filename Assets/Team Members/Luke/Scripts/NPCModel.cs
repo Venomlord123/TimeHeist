@@ -98,10 +98,11 @@ namespace Luke
         
         public void MovementContinue(float speed, Vector3 velocityNorm)
         {
-            if (speed > 0.01f)
+            if (speed > 0)
             {
-                animator.speed = velocityNorm.normalized.magnitude * animationSpeedMultiplier;
+                //TODO animation speed normalized when player is moving slow
                 navMeshAgent.speed = speed * npcMovementMultiplier;
+                animator.speed = velocityNorm.normalized.magnitude * animationSpeedMultiplier;
                 if (waiting == false)
                 {
                     //Animation walk
@@ -111,7 +112,7 @@ namespace Luke
 
             if (waiting)
             {
-                //Animation walk
+                //Animation idle
                 animator.SetBool("isWaiting", true);
             }
         }
