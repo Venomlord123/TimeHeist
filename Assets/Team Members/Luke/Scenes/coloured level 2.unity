@@ -87702,8 +87702,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3576880034436812071, guid: b6bcb8062c38fcb45a6fe279765637c2, type: 3}
+      propertyPath: waiting
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576880034436812071, guid: b6bcb8062c38fcb45a6fe279765637c2, type: 3}
       propertyPath: navMeshAgent
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576880034436812071, guid: b6bcb8062c38fcb45a6fe279765637c2, type: 3}
+      propertyPath: isHeistMember
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3576880034436812071, guid: b6bcb8062c38fcb45a6fe279765637c2, type: 3}
       propertyPath: npcMovementMultiplier

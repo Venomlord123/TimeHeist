@@ -91,7 +91,6 @@ namespace Luke
         
         public void MovementStop(float speed)
         {
-            //TODO Idle animation
             animator.speed = 0;
             navMeshAgent.speed = 0;
             navMeshAgent.velocity = new Vector3(speed, speed, speed);
@@ -103,11 +102,17 @@ namespace Luke
             {
                 animator.speed = velocityNorm.normalized.magnitude * animationSpeedMultiplier;
                 navMeshAgent.speed = speed * npcMovementMultiplier;
+                if (waiting == false)
+                {
+                    //Animation walk
+                    animator.SetBool("isWaiting", false);
+                }
             }
 
             if (waiting)
             {
-                animator.speed = 0;
+                //Animation walk
+                animator.SetBool("isWaiting", true);
             }
         }
 
