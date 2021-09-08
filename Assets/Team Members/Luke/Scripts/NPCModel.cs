@@ -30,8 +30,6 @@ namespace Luke
         //HACK s maybe?
         [Tooltip("The walking animation speed (Higher the number slower it animates)")]
         public float animationSpeedDivider = 5f;
-        [Tooltip("HACK (probably won't keep this)")]
-        public bool isHeistMember = false;
 
         //Subscribe
         private void OnEnable()
@@ -112,6 +110,7 @@ namespace Luke
             {
                 //Animation idle
                 animator.SetBool("isWaiting", true);
+                
                 RotateToDirection();
             }
         }

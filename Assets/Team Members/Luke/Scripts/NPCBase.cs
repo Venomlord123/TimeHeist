@@ -13,6 +13,8 @@ namespace Luke
         //Details for NPC's
         [Tooltip("Name of the NPC")]
         public string npcName;
+        [Tooltip("Is a heist member if true")]
+        public bool isHeistMember = false;
         [Tooltip("Where the NPC's have been")]
         [TextArea]
         public string locationsBeen;

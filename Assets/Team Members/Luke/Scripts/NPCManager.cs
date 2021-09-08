@@ -17,12 +17,27 @@ namespace Luke
         void Start()
         {
             allNpcs.AddRange(FindObjectsOfType<NPCBase>());
+            HeistMemberSearch();
         }
 
         // Update is called once per frame
         void Update()
         {
             
+        }
+
+        /// <summary>
+        /// TODO find heist members from NPCBase then add to heist list
+        /// </summary>
+        public void HeistMemberSearch()
+        {
+            foreach (NPCBase npc in allNpcs)
+            {
+                if (npc.isHeistMember)
+                {
+                    heistNpcs.Add(npc);
+                }
+            }
         }
     }
 }
