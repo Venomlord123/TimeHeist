@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ZachFrench
 {
@@ -12,11 +13,15 @@ namespace ZachFrench
         public bool nextSuspect;
         public TextMeshProUGUI suspectName;
         public TextMeshProUGUI suspectLocations;
+        public RawImage mugShot;
 
         //Updates to use Player Journal
         public PlayerJournal playerJournal;
         public bool tempControl;
 
+        
+        //TODO Update so that we use the drag and drop system when it is implemented 
+        
 
         // Start is called before the first frame update
         private void Start()
@@ -56,6 +61,7 @@ namespace ZachFrench
             {
                 suspectLocations.text = currentNPCSelected.locations[i];
             }
+            mugShot.texture = currentNPCSelected.mugShot;
         }
     }
 }

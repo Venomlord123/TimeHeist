@@ -22,6 +22,7 @@ public class PlayerJournal : MonoBehaviour
             //todo finish writing all relevant information
             tempNpcInfoGameObject.GetComponent<NPCInfomation>().suspectName = npcBase.npcName;
             tempNpcInfoGameObject.GetComponent<NPCInfomation>().locations.Add(npcBase.currentLocation);
+            tempNpcInfoGameObject.GetComponent<NPCInfomation>().mugShot = npcBase.mugShot;
         }else if (npcBases.Contains(npcBase) == npcBase)
         {
             //todo add the overwrites for the locations and conversations if applicable 
