@@ -7,7 +7,7 @@ namespace Luke
 {
     public class Waypoint : MonoBehaviour
     {
-        
+        public bool isExit = false;
     }
 }
 

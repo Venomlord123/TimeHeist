@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 8398590436586233199}
   - component: {fileID: 8398590436586233198}
   m_Layer: 5
-  m_Name: Suspect Details
+  m_Name: Suspect Details Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

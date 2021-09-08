@@ -12,7 +12,8 @@ namespace Luke
         public NPCManager npcManager;
         
         //Variables
-        public bool accusationCorrect = false;
+        //TODO make individual bools for accusation either correct or false
+        private bool accusationCorrect = false;
         public bool allHeistMembersAccused = false;
         public List<bool> currentlyAccused;
         public List<List<bool>> accusationHistory;
