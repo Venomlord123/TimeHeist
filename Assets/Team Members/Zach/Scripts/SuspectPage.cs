@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -12,9 +10,9 @@ public class SuspectPage : MonoBehaviour
     public NPCInfomation npcInformation;
     public GameObject suspectReference;
     public List<GameObject> suspectEntries;
-    
+
     //Hack
-    public bool testing = false;
+    public bool testing;
 
 
     public void Start()
@@ -25,7 +23,7 @@ public class SuspectPage : MonoBehaviour
 
     private void Update()
     {
-        if (testing == true)
+        if (testing)
         {
             CreateSuspectReferences();
         }
@@ -33,13 +31,16 @@ public class SuspectPage : MonoBehaviour
 
     public void CreateSuspectReferences()
     {
-        foreach (NPCInfomation npcInfo in npcInfos)
+        if (npcInfos != null)
         {
-            GameObject tempSuspectEntry = Instantiate(suspectReference,gameObject.transform);
-            suspectEntries.Add(tempSuspectEntry);
-            tempSuspectEntry.GetComponentInChildren<RawImage>().texture = npcInfo.mugShot;
-            tempSuspectEntry.GetComponentInChildren<TextMeshProUGUI>().text = npcInfo.suspectName;
-            testing = false;
+            foreach (NPCInfomation npcInfo in npcInfos)
+            {
+                GameObject tempSuspectEntry = Instantiate(suspectReference, gameObject.transform);
+                suspectEntries.Add(tempSuspectEntry);
+                tempSuspectEntry.GetComponentInChildren<RawImage>().texture = npcInfo.mugShot;
+                tempSuspectEntry.GetComponentInChildren<TextMeshProUGUI>().text = npcInfo.suspectName;
+                testing = false;
+            }
         }
     }
 }
