@@ -17,12 +17,11 @@ namespace Luke
             NPCWayPoints.AddRange(FindObjectsOfType<Waypoint>());
         }
 
-        // Update is called once per frame
-        void Update()
+        public void NPCFaceDirection()
         {
             foreach (Waypoint npcWayPoint in NPCWayPoints)
             {
-                Vector3 forward = transform.TransformDirection(Vector3.forward) * rayLength;
+                Vector3 forward = transform.TransformDirection(npcWayPoint.transform.forward) * rayLength;
                 Debug.DrawRay(npcWayPoint.transform.position,forward,Color.blue);
             }
         }
