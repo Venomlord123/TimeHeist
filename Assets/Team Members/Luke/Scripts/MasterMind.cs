@@ -28,30 +28,30 @@ namespace Luke
         }
 
         //TODO below to be called when accusations is fully completed
-        
-        /// <summary>
-        /// TODO UI
-        /// </summary>
-        public void CorrectAccusation()
+
+        public void CheckAccusations()
         {
-            accusationCorrect = true;
-        }
-        
-        /// <summary>
-        /// TODO UI
-        /// </summary>
-        public void WronglyAccused()
-        {
-            accusationCorrect = false;
+            //foreach (var VARIABLE in COLLECTION)
+            {
+                //if(var.ishiestmember)
+                {
+                    accusationCorrect = true;
+                }
+                //else
+                {
+                    accusationCorrect = false;
+                }
+            }
+            AccusationsCorrect();
         }
 
-        /// <summary>
-        /// TODO End game
-        /// </summary>
-        public void AllAccusedCorrect()
+        public void AccusationsCorrect()
         {
-            allHeistMembersAccused = true;
-            AllAccusedCorrectEvent?.Invoke();
+            //TODO set this bool
+            if (allHeistMembersAccused)
+            {
+                AllAccusedCorrectEvent?.Invoke();
+            }
         }
 
         /// <summary>

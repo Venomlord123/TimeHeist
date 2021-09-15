@@ -66,7 +66,8 @@ namespace Luke
             timer.countDownText.text = string.Format("{0:0}:{1:00}:{2:000}", 0,0,0);
         }
 
-        public void ExpandedSuspectDetails()
+        //mastermind UI
+        public void AccusationUI()
         {
             
         }
