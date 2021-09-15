@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using ZachFrench;
 
-public class NPCInfomation : MonoBehaviour
+public class NPCInformation : MonoBehaviour
 {
     public string suspectName;
     public List<string> locations;

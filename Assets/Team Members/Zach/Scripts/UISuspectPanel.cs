@@ -7,9 +7,9 @@ namespace ZachFrench
 {
     public class UISuspectPanel : MonoBehaviour
     {
-        public List<NPCInfomation> npcInfo;
+        public List<NPCInformation> npcInfo;
         public int currentNpc;
-        public NPCInfomation currentNPCSelected;
+        public NPCInformation currentNPCSelected;
         public bool nextSuspect;
         public TextMeshProUGUI suspectName;
         public TextMeshProUGUI suspectLocations;

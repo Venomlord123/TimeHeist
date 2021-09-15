@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class SuspectPage : MonoBehaviour
 {
     public PlayerJournal playerJournal;
-    public List<NPCInfomation> npcInfos;
-    public NPCInfomation npcInformation;
+    public List<NPCInformation> npcInfos;
+    public NPCInformation npcInformation;
     public GameObject suspectReference;
     public List<GameObject> suspectEntries;
 
@@ -33,7 +33,7 @@ public class SuspectPage : MonoBehaviour
     {
         if (npcInfos != null)
         {
-            foreach (NPCInfomation npcInfo in npcInfos)
+            foreach (NPCInformation npcInfo in npcInfos)
             {
                 //TODO update with list of transforms for spawning
                 GameObject tempSuspectEntry = Instantiate(suspectReference, gameObject.transform);

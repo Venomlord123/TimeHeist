@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerJournal : MonoBehaviour
 {
     public List<NPCBase> npcBases;
-    public List<NPCInfomation> npcInformation;
+    public List<NPCInformation> npcInformation;
     public GameObject npcInstance;
     public GameObject tempNpcInfoGameObject;
 
@@ -17,18 +17,18 @@ public class PlayerJournal : MonoBehaviour
             npcBases.Add(npcBase);
             tempNpcInfoGameObject = Instantiate(npcInstance, transform.position, new Quaternion(0, 0, 0, 0));
             tempNpcInfoGameObject.transform.parent = this.transform;
-            npcInformation.Add(tempNpcInfoGameObject.GetComponent<NPCInfomation>());
+            npcInformation.Add(tempNpcInfoGameObject.GetComponent<NPCInformation>());
         
             //todo finish writing all relevant information
-            tempNpcInfoGameObject.GetComponent<NPCInfomation>().suspectName = npcBase.npcName;
-            tempNpcInfoGameObject.GetComponent<NPCInfomation>().locations.Add(npcBase.currentLocation);
-            tempNpcInfoGameObject.GetComponent<NPCInfomation>().mugShot = npcBase.mugShot;
+            tempNpcInfoGameObject.GetComponent<NPCInformation>().suspectName = npcBase.npcName;
+            tempNpcInfoGameObject.GetComponent<NPCInformation>().locations.Add(npcBase.currentLocation);
+            tempNpcInfoGameObject.GetComponent<NPCInformation>().mugShot = npcBase.mugShot;
         }else if (npcBases.Contains(npcBase) == npcBase)
         {
             //todo add the overwrites for the locations and conversations if applicable 
-            if (!tempNpcInfoGameObject.GetComponent<NPCInfomation>().locations.Contains(npcBase.currentLocation))
+            if (!tempNpcInfoGameObject.GetComponent<NPCInformation>().locations.Contains(npcBase.currentLocation))
             {
-                tempNpcInfoGameObject.GetComponent<NPCInfomation>().locations.Add(npcBase.currentLocation);
+                tempNpcInfoGameObject.GetComponent<NPCInformation>().locations.Add(npcBase.currentLocation);
             }
         }
     }

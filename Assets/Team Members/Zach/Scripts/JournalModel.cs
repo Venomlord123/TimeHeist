@@ -10,7 +10,7 @@ public class JournalModel : MonoBehaviour
 {
     public PlayerJournal playerJournal;
     public MouseCursor mouseCursor;
-    public List<NPCInfomation> npcInfos;
+    public List<NPCInformation> npcInfos;
     
     //Suspect Page Variables
     public List<GameObject> suspectEntries;
@@ -19,7 +19,7 @@ public class JournalModel : MonoBehaviour
     
     //Individual Suspect Details 
     public bool nextSuspect;
-    public NPCInfomation currentNPCSelected;
+    public NPCInformation currentNPCSelected;
     public TextMeshProUGUI suspectName;
     public TextMeshProUGUI suspectLocations;
     public RawImage mugShot;
@@ -44,11 +44,12 @@ public class JournalModel : MonoBehaviour
     {
         if (npcInfos != null)
         {
-            foreach (NPCInfomation npcInfo in npcInfos)
+            foreach (NPCInformation npcInfo in npcInfos)
             {
                 //TODO update with list of transforms for spawning
                 GameObject tempSuspectEntry = Instantiate(suspectReference, gameObject.transform);
                 suspectEntries.Add(tempSuspectEntry);
+                tempSuspectEntry.GetComponent<SuspectReference>().npcInformation = npcInfo;
                 tempSuspectEntry.GetComponentInChildren<RawImage>().texture = npcInfo.mugShot;
                 tempSuspectEntry.GetComponentInChildren<TextMeshProUGUI>().text = npcInfo.suspectName;
                 suspectTesting = false;
@@ -57,7 +58,7 @@ public class JournalModel : MonoBehaviour
     }
     
     //Individual Suspect Details
-    public void UpdateSuspectsDetails(NPCInfomation npcInfo)
+    public void UpdateSuspectsDetails(NPCInformation npcInfo)
     {
         suspectName.text = npcInfo.suspectName;
         for (int i = 0; i < npcInfos[i].locations.Count; i++)
