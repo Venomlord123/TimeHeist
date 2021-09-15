@@ -9,12 +9,12 @@ using UnityEngine.UI;
 public class JournalModel : MonoBehaviour
 {
     public PlayerJournal playerJournal;
-    public MouseCursor mouseCursor;
+    public SuspectReference suspectRef;
     public List<NPCInformation> npcInfos;
     
     //Suspect Page Variables
     public List<GameObject> suspectEntries;
-    public GameObject suspectReference;
+    public GameObject currentSuspectReference;
     public bool suspectTesting;
     
     //Individual Suspect Details 
@@ -31,12 +31,12 @@ public class JournalModel : MonoBehaviour
 
     private void OnEnable()
     {
-        mouseCursor.OnClickSuspectEvent += UpdateSuspectsDetails;
+         suspectRef.OnButtonPressDetailsEvent += UpdateSuspectsDetails;
     }
 
     private void OnDisable()
     {
-        mouseCursor.OnClickSuspectEvent -= UpdateSuspectsDetails;
+        suspectRef.OnButtonPressDetailsEvent -= UpdateSuspectsDetails;
     }
 
     //Suspect Page 
@@ -47,7 +47,7 @@ public class JournalModel : MonoBehaviour
             foreach (NPCInformation npcInfo in npcInfos)
             {
                 //TODO update with list of transforms for spawning
-                GameObject tempSuspectEntry = Instantiate(suspectReference, gameObject.transform);
+                GameObject tempSuspectEntry = Instantiate(currentSuspectReference, gameObject.transform);
                 suspectEntries.Add(tempSuspectEntry);
                 tempSuspectEntry.GetComponent<SuspectReference>().npcInformation = npcInfo;
                 tempSuspectEntry.GetComponentInChildren<RawImage>().texture = npcInfo.mugShot;
