@@ -29,7 +29,7 @@ namespace Luke
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            //here is where I need to work out stamping with instant outcome
+            //here is where I need to work out accusations
             Debug.Log("OnEndDrag");
         }
 
