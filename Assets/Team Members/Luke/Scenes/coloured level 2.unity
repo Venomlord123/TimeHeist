@@ -8033,6 +8033,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3740275375382182456, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3740275375382182459, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -87914,15 +87918,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2310823496305885984, guid: b6bcb8062c38fcb45a6fe279765637c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.8963842
+      value: -4.392773
       objectReference: {fileID: 0}
     - target: {fileID: 2310823496305885984, guid: b6bcb8062c38fcb45a6fe279765637c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.02
+      value: 0.089619875
       objectReference: {fileID: 0}
     - target: {fileID: 2310823496305885984, guid: b6bcb8062c38fcb45a6fe279765637c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -42.801704
+      value: -44.804123
       objectReference: {fileID: 0}
     - target: {fileID: 2310823496305885984, guid: b6bcb8062c38fcb45a6fe279765637c2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -89416,6 +89420,10 @@ PrefabInstance:
     - target: {fileID: 917514312502503881, guid: 6f43bbb16094a9a45a259ea9891f76d5, type: 3}
       propertyPath: m_Name
       value: Journal
+      objectReference: {fileID: 0}
+    - target: {fileID: 917514312502503881, guid: 6f43bbb16094a9a45a259ea9891f76d5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f43bbb16094a9a45a259ea9891f76d5, type: 3}

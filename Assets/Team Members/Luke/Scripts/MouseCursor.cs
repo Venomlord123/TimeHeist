@@ -11,6 +11,8 @@ namespace Luke
         public Vector3 mousePos;
         public Texture2D cursorArrow;
 
+        public event Action<NPCInfomation> OnClickSuspectEvent;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -29,7 +31,12 @@ namespace Luke
         public void Mouse()
         {
             mousePos = Input.mousePosition;
+        }
 
+        public void OnClick()
+        {
+            NPCInfomation npcinfo;
+            OnClickSuspectEvent?.Invoke(npcinfo);
         }
     }
 }

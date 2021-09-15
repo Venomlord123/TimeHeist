@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ZachFrench;
 
 namespace Luke
 {
@@ -11,7 +12,8 @@ namespace Luke
         public Timer timer;
         public bool eventTimerShown;
         public GameObject eventTimer;
-        public GameObject playerCountdown;
+        public UISuspectPanel currentUISuspectPanel;
+        public SuspectPage suspectPage;
 
         private void OnEnable()
         {
@@ -32,6 +34,7 @@ namespace Luke
         // Update is called once per frame
         void Update()
         {
+            //TODO 
             if (timer.countDownStarted)
             {
                 PrintTimer();
@@ -61,6 +64,11 @@ namespace Luke
         public void ZeroCountDown()
         {
             timer.countDownText.text = string.Format("{0:0}:{1:00}:{2:000}", 0,0,0);
+        }
+
+        public void ExpandedSuspectDetails()
+        {
+            
         }
     }
 }

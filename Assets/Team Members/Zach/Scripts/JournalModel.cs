@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Luke;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ using UnityEngine.UI;
 public class JournalModel : MonoBehaviour
 {
     public PlayerJournal playerJournal;
+    public MouseCursor mouseCursor;
     public List<NPCInfomation> npcInfos;
     
     //Suspect Page Variables
@@ -26,10 +28,17 @@ public class JournalModel : MonoBehaviour
     {
         playerJournal.npcInformation = npcInfos;
     }
-    
-    
-    
-    
+
+    private void OnEnable()
+    {
+        mouseCursor.OnClickSuspectEvent += UpdateSuspectsDetails;
+    }
+
+    private void OnDisable()
+    {
+        mouseCursor.OnClickSuspectEvent -= UpdateSuspectsDetails;
+    }
+
     //Suspect Page 
     public void SuspectPageIndividuals()
     {
@@ -48,13 +57,13 @@ public class JournalModel : MonoBehaviour
     }
     
     //Individual Suspect Details
-    public void UpdateSuspects()
+    public void UpdateSuspectsDetails(NPCInfomation npcInfo)
     {
-        suspectName.text = currentNPCSelected.suspectName;
+        suspectName.text = npcInfo.suspectName;
         for (int i = 0; i < npcInfos[i].locations.Count; i++)
         {
-            suspectLocations.text = currentNPCSelected.locations[i];
+            suspectLocations.text = npcInfo.locations[i];
         }
-        mugShot.texture = currentNPCSelected.mugShot;
+        mugShot.texture = npcInfo.mugShot;
     }
 }

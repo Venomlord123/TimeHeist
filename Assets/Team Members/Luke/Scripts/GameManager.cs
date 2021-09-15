@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
 
   private void Start()
   {
+    //hack put it in the cursor script when made
+    Cursor.visible = false;
+    
     masterMind = FindObjectOfType<MasterMind>();
     timer = FindObjectOfType<Timer>();
     roundCounter = 1;
