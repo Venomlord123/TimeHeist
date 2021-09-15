@@ -35,6 +35,7 @@ public class SuspectPage : MonoBehaviour
         {
             foreach (NPCInfomation npcInfo in npcInfos)
             {
+                //TODO update with list of transforms for spawning
                 GameObject tempSuspectEntry = Instantiate(suspectReference, gameObject.transform);
                 suspectEntries.Add(tempSuspectEntry);
                 tempSuspectEntry.GetComponentInChildren<RawImage>().texture = npcInfo.mugShot;
