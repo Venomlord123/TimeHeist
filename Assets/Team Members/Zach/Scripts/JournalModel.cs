@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Luke;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,8 +17,6 @@ public class JournalModel : MonoBehaviour
     public bool suspectTesting;
     
     //Individual Suspect Details 
-    public bool nextSuspect;
-    public NPCInformation currentNPCSelected;
     public TextMeshProUGUI suspectName;
     public TextMeshProUGUI suspectLocations;
     public RawImage mugShot;
@@ -52,6 +49,7 @@ public class JournalModel : MonoBehaviour
                 tempSuspectEntry.GetComponent<SuspectReference>().npcInformation = npcInfo;
                 tempSuspectEntry.GetComponentInChildren<RawImage>().texture = npcInfo.mugShot;
                 tempSuspectEntry.GetComponentInChildren<TextMeshProUGUI>().text = npcInfo.suspectName;
+                //Todo Test this and see if needs to be removed (likely)
                 suspectTesting = false;
             }
         }
