@@ -29,21 +29,21 @@ public class GameManager : MonoBehaviour
     //hack put it in the cursor script when made
     Cursor.visible = false;
     
-    masterMind = FindObjectOfType<MasterMind>();
+    //masterMind = FindObjectOfType<MasterMind>();
     timer = FindObjectOfType<Timer>();
     roundCounter = 1;
   }
 
   private void OnEnable()
   {
-    timer.CountDownEndEvent += GameEnd;
-    masterMind.AllAccusedCorrectEvent += GameEnd;
+    timer.CountDownEndEvent += RoundEnd;
+    //masterMind.AllAccusedCorrectEvent += GameEnd;
   }
 
   private void OnDisable()
   {
-    timer.CountDownEndEvent -= GameEnd;
-    masterMind.AllAccusedCorrectEvent -= GameEnd;
+    timer.CountDownEndEvent -= RoundEnd;
+    //masterMind.AllAccusedCorrectEvent -= GameEnd;
   }
 
   /// <summary>
@@ -71,6 +71,8 @@ public class GameManager : MonoBehaviour
   {
     RoundEndEvent?.Invoke();
     roundCounter++;
+    //todo remove this and implement this properly
+    GameSwitchScene();
     Debug.Log("Round over");
   }
 

@@ -12,8 +12,6 @@ namespace Luke
         public Timer timer;
         public bool eventTimerShown;
         public GameObject eventTimer;
-        public UISuspectPanel currentUISuspectPanel;
-        public SuspectPage suspectPage;
 
         private void OnEnable()
         {

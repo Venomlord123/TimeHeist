@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SuspectReference : MonoBehaviour
+public class SuspectIndividualButton : MonoBehaviour
 {
    public NPCInformation npcInformation;
    public event Action<NPCInformation> OnButtonPressDetailsEvent;
