@@ -18,12 +18,14 @@ namespace Luke
         private void OnEnable()
         {
             timer.CountDownEndEvent += ZeroCountDown;
+            gameManager.GameSwitchSceneEvent += ZeroCountDown;
             gameManager.JournalSwitchSceneEvent += ShowTimer;
         }
 
         private void OnDisable()
         {
             timer.CountDownEndEvent -= ZeroCountDown;
+            gameManager.GameSwitchSceneEvent -= ZeroCountDown;
             gameManager.JournalSwitchSceneEvent -= ShowTimer;
         }
 

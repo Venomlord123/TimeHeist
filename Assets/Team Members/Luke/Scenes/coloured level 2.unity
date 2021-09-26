@@ -8026,8 +8026,16 @@ PrefabInstance:
       value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 1534823934719538139, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
+      propertyPath: countDown
+      value: 
+      objectReference: {fileID: 420145465}
+    - target: {fileID: 1534823934719538139, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1693148344}
+    - target: {fileID: 1534823934719538139, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
       propertyPath: eventTimerShown
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3740275375382182456, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
       propertyPath: m_Name
@@ -8085,6 +8093,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1693148344}
+    - target: {fileID: 3740275375675803102, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
+      propertyPath: maxCountDown
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 3740275375675803102, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
       propertyPath: playerMovement
       value: 
@@ -17137,6 +17149,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 9219741893407799616, guid: 44243813f91796341ae4a91d1cdea708, type: 3}
   m_PrefabInstance: {fileID: 419437745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &420145465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3740275376582473589, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
+  m_PrefabInstance: {fileID: 220209477}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &420467162
 PrefabInstance:
