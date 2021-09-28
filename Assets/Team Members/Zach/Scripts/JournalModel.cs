@@ -8,11 +8,12 @@ using UnityEngine.UI;
 public class JournalModel : MonoBehaviour
 {
     public PlayerJournal playerJournal;
-    public SuspectReference suspectRef;
+    public SuspectIndividualButton suspectRef;
     public List<NPCInformation> npcInfos;
     
     //Suspect Page Variables
     public List<GameObject> suspectEntries;
+    public List<Transform> suspectPagePositions;
     public GameObject currentSuspectReference;
     public bool suspectTesting;
     
@@ -23,20 +24,21 @@ public class JournalModel : MonoBehaviour
 
     private void Awake()
     {
-        playerJournal.npcInformation = npcInfos;
+        npcInfos = playerJournal.npcInformation;
     }
 
     private void OnEnable()
     {
-         suspectRef.OnButtonPressDetailsEvent += UpdateSuspectsDetails;
+        if (suspectRef is { }) suspectRef.OnButtonPressDetailsEvent += UpdateSuspectsDetails;
     }
 
     private void OnDisable()
     {
-        suspectRef.OnButtonPressDetailsEvent -= UpdateSuspectsDetails;
+        if (suspectRef is { }) suspectRef.OnButtonPressDetailsEvent -= UpdateSuspectsDetails;
     }
 
     //Suspect Page 
+    //Small Portraits for the suspect page with all the suspects
     public void SuspectPageIndividuals()
     {
         if (npcInfos != null)
@@ -46,16 +48,15 @@ public class JournalModel : MonoBehaviour
                 //TODO update with list of transforms for spawning
                 GameObject tempSuspectEntry = Instantiate(currentSuspectReference, gameObject.transform);
                 suspectEntries.Add(tempSuspectEntry);
-                tempSuspectEntry.GetComponent<SuspectReference>().npcInformation = npcInfo;
+                tempSuspectEntry.GetComponent<SuspectIndividualButton>().npcInformation = npcInfo;
                 tempSuspectEntry.GetComponentInChildren<RawImage>().texture = npcInfo.mugShot;
                 tempSuspectEntry.GetComponentInChildren<TextMeshProUGUI>().text = npcInfo.suspectName;
-                //Todo Test this and see if needs to be removed (likely)
-                suspectTesting = false;
             }
         }
     }
     
     //Individual Suspect Details
+    //Expanded details for the player to read
     public void UpdateSuspectsDetails(NPCInformation npcInfo)
     {
         suspectName.text = npcInfo.suspectName;

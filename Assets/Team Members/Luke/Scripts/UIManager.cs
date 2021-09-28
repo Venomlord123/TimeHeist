@@ -9,26 +9,31 @@ namespace Luke
     public class UIManager : MonoBehaviour
     {
         //references
+        public GameManager gameManager;
         public Timer timer;
         public bool eventTimerShown;
         public GameObject eventTimer;
-        public UISuspectPanel currentUISuspectPanel;
-        public SuspectPage suspectPage;
+        public GameObject countDown;
 
         private void OnEnable()
         {
             timer.CountDownEndEvent += ZeroCountDown;
+            gameManager.GameSwitchSceneEvent += ZeroCountDown;
+            gameManager.JournalSwitchSceneEvent += ShowTimer;
         }
 
         private void OnDisable()
         {
             timer.CountDownEndEvent -= ZeroCountDown;
+            gameManager.GameSwitchSceneEvent -= ZeroCountDown;
+            gameManager.JournalSwitchSceneEvent -= ShowTimer;
         }
 
         // Start is called before the first frame update
         void Start()
         {
             timer = FindObjectOfType<Timer>();
+            gameManager = FindObjectOfType<GameManager>();
         }
 
         // Update is called once per frame
@@ -59,17 +64,19 @@ namespace Luke
                 eventTimer.SetActive(false);
             }
         }
-
-        //force the zero
+        
         public void ZeroCountDown()
         {
+            //Forcing the zero view
             timer.countDownText.text = string.Format("{0:0}:{1:00}:{2:000}", 0,0,0);
+            //disabling view of timer
+            countDown.SetActive(false);
         }
 
-        //mastermind UI
-        public void AccusationUI()
+        //enabling the timer
+        public void ShowTimer()
         {
-            
+            countDown.SetActive(true);
         }
     }
 }
