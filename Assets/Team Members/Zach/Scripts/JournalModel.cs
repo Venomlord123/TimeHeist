@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Luke;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +22,9 @@ public class JournalModel : MonoBehaviour
     public TextMeshProUGUI suspectName;
     public TextMeshProUGUI suspectLocations;
     public RawImage mugShot;
+    
+    //Accusations
+    public MasterMind masterMind;
 
     private void Awake()
     {
