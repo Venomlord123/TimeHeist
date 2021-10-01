@@ -12,4 +12,5 @@ public class NPCInformation : MonoBehaviour
     public List<string> locations;
     public List<string> conversations;
     public Texture mugShot;
+    public bool isHeistMember;
 }
