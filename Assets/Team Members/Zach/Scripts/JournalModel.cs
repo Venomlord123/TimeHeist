@@ -26,16 +26,7 @@ public class JournalModel : MonoBehaviour
     {
         npcInfos = playerJournal.npcInformation;
     }
-
-    private void OnEnable()
-    {
-        if (suspectRef is { }) suspectRef.OnButtonPressDetailsEvent += UpdateSuspectsDetails;
-    }
-
-    private void OnDisable()
-    {
-        if (suspectRef is { }) suspectRef.OnButtonPressDetailsEvent -= UpdateSuspectsDetails;
-    }
+    
 
     //Suspect Page 
     //Small Portraits for the suspect page with all the suspects
@@ -51,6 +42,8 @@ public class JournalModel : MonoBehaviour
                 tempSuspectEntry.GetComponent<SuspectIndividualButton>().npcInformation = npcInfo;
                 tempSuspectEntry.GetComponentInChildren<RawImage>().texture = npcInfo.mugShot;
                 tempSuspectEntry.GetComponentInChildren<TextMeshProUGUI>().text = npcInfo.suspectName;
+                tempSuspectEntry.GetComponent<SuspectIndividualButton>().OnButtonPressDetailsEvent +=
+                    UpdateSuspectsDetails;
             }
         }
     }
