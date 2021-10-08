@@ -27,7 +27,8 @@ namespace ZachFrench
         public PlayerJournal playerJournal;
         public Ray ray;
         public RaycastHit hitInfo;
-        public Transform startPosition;
+        public Vector3 startPosition;
+        public Quaternion startRotation;
         public GameManager gameManager;
 
 
@@ -43,16 +44,16 @@ namespace ZachFrench
 
         private void PlayerResetTransform()
         {
-            Transform transform1 = transform;
-            transform1.position = startPosition.position;
-            transform1.rotation = startPosition.rotation;
+            transform.position = startPosition;
+            transform.rotation = startRotation;
         }
 
         public void Start()
         {
             //todo add to TDD for reference to layer
             Physics.IgnoreLayerCollision(6,7);
-            startPosition = transform;
+            startPosition = transform.position;
+            startRotation = transform.rotation;
         }
 
         public void Update()
