@@ -8,7 +8,8 @@ namespace Luke
     public class NPCManager : MonoBehaviour
     {
         //variables 
-        public List<NPCBase> allNpcs;
+        public GameManager gameManager;
+        public List<NPCModel> allNpcs;
         public List<NPCBase> simpleNpcs;
         public List<NPCBase> redherringNpcs;
         public List<NPCBase> heistNpcs;
@@ -16,8 +17,28 @@ namespace Luke
         // Start is called before the first frame update
         void Start()
         {
-            allNpcs.AddRange(FindObjectsOfType<NPCBase>());
+            allNpcs.AddRange(FindObjectsOfType<NPCModel>());
             HeistMemberSearch();
+        }
+
+        private void OnEnable()
+        {
+            gameManager.JournalSwitchSceneEvent += ResetStartPosition;
+        }
+        
+        private void OnDisable()
+        {
+            gameManager.JournalSwitchSceneEvent -= ResetStartPosition;
+        }
+        
+        private void ResetStartPosition()
+        {
+            foreach (NPCModel npcModel in allNpcs)
+            {
+                Transform npcModelTransform = npcModel.transform;
+                npcModelTransform.position = npcModel.startPosition.position;
+                npcModelTransform.rotation = npcModel.startPosition.rotation;
+            }
         }
 
         // Update is called once per frame

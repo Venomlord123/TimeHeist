@@ -27,12 +27,32 @@ namespace ZachFrench
         public PlayerJournal playerJournal;
         public Ray ray;
         public RaycastHit hitInfo;
+        public Transform startPosition;
+        public GameManager gameManager;
 
+
+        private void OnEnable()
+        {
+            gameManager.JournalSwitchSceneEvent += PlayerResetTransform;
+        }
+        
+        private void OnDisable()
+        {
+            gameManager.JournalSwitchSceneEvent -= PlayerResetTransform;
+        }
+
+        private void PlayerResetTransform()
+        {
+            Transform transform1 = transform;
+            transform1.position = startPosition.position;
+            transform1.rotation = startPosition.rotation;
+        }
 
         public void Start()
         {
             //todo add to TDD for reference to layer
             Physics.IgnoreLayerCollision(6,7);
+            startPosition = transform;
         }
 
         public void Update()

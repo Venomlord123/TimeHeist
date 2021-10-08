@@ -31,8 +31,6 @@ namespace Luke
         public List<Waypoint> waypointPath;
         [Tooltip("Wait times for each waypoint")]
         public List<float> waypointWaitTimes;
-        [Tooltip("Starting locations of the NPC (reset positions)")]
-        public Vector3 startPos;
 
         public void OnTriggerStay(Collider other)
         {
