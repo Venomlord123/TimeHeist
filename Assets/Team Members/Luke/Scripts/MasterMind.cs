@@ -27,7 +27,6 @@ namespace Luke
             {
                 suspectIndividualButton.OnButtonPressAccuseEvent += AddToAccusationList;
             }
-            //TODO for button to remove accused sub to removefromaccusationlist()
         }
 
         private void OnDisable()
@@ -36,7 +35,6 @@ namespace Luke
             {
                 suspectIndividualButton.OnButtonPressAccuseEvent -= AddToAccusationList;
             }
-            //TODO for button to remove accused sub to removefromaccusationlist()
         }
 
         public void AddToAccusationList(NPCInformation accusedDetails)

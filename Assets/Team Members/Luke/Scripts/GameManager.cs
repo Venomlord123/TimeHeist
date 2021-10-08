@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
 
   /// <summary>
   /// TODO sceneManager and JournalMan need to subscribe
+  /// In Main Game scene currently
   /// </summary>
   public void GameSwitchScene()
   {
@@ -96,6 +97,7 @@ public class GameManager : MonoBehaviour
 
   /// <summary>
   /// TODO JournalMan and SceneMan need to subscribe
+  /// In Journal currently
   /// </summary>
   public void JournalSwitchScene()
   {
