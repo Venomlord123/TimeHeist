@@ -52,14 +52,20 @@ public class JournalManager : MonoBehaviour
     //Mastermind
     public void CreateAccusedMugshot(NPCInformation accusedDetails)
     {
-        accusedSuspectMugshot[accusationPosCount].GetComponent<RawImage>().texture = accusedDetails.mugShot;
-        accusationPosCount++;
+        if (accusationPosCount < accusedSuspectMugshot.Count)
+        {
+            accusedSuspectMugshot[accusationPosCount].GetComponent<RawImage>().texture = accusedDetails.mugShot;
+            accusationPosCount++;
+        }
     }
 
     public void RemoveAccusedMugshot()
     {
-        accusedSuspectMugshot[accusationPosCount].GetComponent<RawImage>().texture = null;
-        accusationPosCount = 0;
+        if (accusationPosCount <= accusedSuspectMugshot.Count)
+        {
+            accusedSuspectMugshot[accusationPosCount].GetComponent<RawImage>().texture = null;
+            accusationPosCount = 0;
+        }
     }
 
 }

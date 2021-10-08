@@ -43,7 +43,7 @@ namespace Luke
         public void AddToAccusationList(NPCInformation accusedDetails)
         {
             //TODO not sure if this checks for different type of accused details
-            if (!currentlyAccused.Contains(accusedDetails))
+            if (!currentlyAccused.Contains(accusedDetails) && currentlyAccused.Count < 4)
             {
                 currentlyAccused.Add(accusedDetails);
             }
