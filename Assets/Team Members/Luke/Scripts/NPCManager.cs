@@ -35,9 +35,9 @@ namespace Luke
         {
             foreach (NPCModel npcModel in allNpcs)
             {
-                Transform npcModelTransform = npcModel.transform;
-                npcModelTransform.position = npcModel.startPosition.position;
-                npcModelTransform.rotation = npcModel.startPosition.rotation;
+                npcModel.transform.position = npcModel.startPosition;
+                npcModel.transform.rotation = npcModel.startRotation;
+                npcModel.currentTarget = 0;
             }
         }
 

@@ -27,7 +27,9 @@ namespace Luke
         [Tooltip("Is the NPC waiting?")]
         public bool waiting = false;
         [Tooltip("Starting Position for the NPC")]
-        public Transform startPosition;
+        public Vector3 startPosition;
+
+        public Quaternion startRotation;
 
         //HACK s maybe?
         [Tooltip("The walking animation speed (Higher the number slower it animates)")]
@@ -55,7 +57,8 @@ namespace Luke
         {
             Physics.IgnoreLayerCollision(7,7);
             //This is for when we need to reset to original positions
-            startPosition = transform;
+            startPosition = transform.position;
+            startRotation = transform.rotation;
             
             navMeshAgent = GetComponent<NavMeshAgent>();
             //setting our new variable to the NPCBase's first waypoint wait time
