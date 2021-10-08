@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
 
   private void OnEnable()
   {
-    
     timer.CountDownEndEvent += SceneEnd;
     masterMind.AllAccusedCorrectEvent += GameEnd;
     masterMind.FinaliseAccusationsEvent += JournalEnd;
