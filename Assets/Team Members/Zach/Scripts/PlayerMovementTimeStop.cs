@@ -1,39 +1,30 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 namespace ZachFrench
 {
     public class PlayerMovementTimeStop : MonoBehaviour
     {
-
-        //Event created using a bool
-        public event Action<float> TimeStopEvent;
-        public event Action<float, Vector3> ContinueTimeEvent;
-        public event Action<Vector3> PassingNormalEvent;
-
         //References
         public PlayerModel playerModel;
         public CharacterController characterController;
-        public GameManager gameManager;
-        
+
         //Variables 
         [Tooltip("A bool to show if we are not moving")]
         public bool notMoving;
-        private Vector3 lastPosition;
+
         public float playerVelocity;
+        private Vector3 lastPosition;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             notMoving = false;
         }
 
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             playerVelocity = characterController.velocity.magnitude;
             if (playerVelocity > .2f)
@@ -47,6 +38,11 @@ namespace ZachFrench
                 TimeStopping();
             }
         }
+
+        //Event created using a bool
+        public event Action<float> TimeStopEvent;
+        public event Action<float, Vector3> ContinueTimeEvent;
+        public event Action<Vector3> PassingNormalEvent;
 
         public void TimeStopping()
         {
@@ -64,20 +60,6 @@ namespace ZachFrench
                 ContinueTimeEvent?.Invoke(playerVelocity, playerModel.velocityNorm);
                 PassingNormalEvent?.Invoke(playerModel.velocityNorm);
             }
-        }
-        private void OnEnable()
-        {
-            gameManager.GameSwitchSceneEvent += DisableMovement;
-        }
-  
-        private void OnDisable()
-        {
-            gameManager.GameSwitchSceneEvent -= DisableMovement;
-        }
-
-        public void DisableMovement()
-        {
-            playerVelocity = 0;
         }
     }
 }
