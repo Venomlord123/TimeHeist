@@ -51,7 +51,7 @@ namespace ZachFrench
         {
             if (notMoving)
             {
-                TimeStopEvent?.Invoke(playerModel.velocity);
+                TimeStopEvent?.Invoke(playerVelocity);
                 //trigger fmod time stop
             }
         }
@@ -60,7 +60,7 @@ namespace ZachFrench
         {
             if (notMoving == false)
             {
-                ContinueTimeEvent?.Invoke(playerModel.velocity, playerModel.velocityNorm);
+                ContinueTimeEvent?.Invoke(playerVelocity, playerModel.velocityNorm);
                 PassingNormalEvent?.Invoke(playerModel.velocityNorm);
             }
         }
