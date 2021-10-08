@@ -38,12 +38,14 @@ public class GameManager : MonoBehaviour
   {
     timer.CountDownEndEvent += RoundEnd;
     masterMind.AllAccusedCorrectEvent += GameEnd;
+    masterMind.FinaliseAccusationsEvent += RoundEnd;
   }
 
   private void OnDisable()
   {
     timer.CountDownEndEvent -= RoundEnd;
     masterMind.AllAccusedCorrectEvent -= GameEnd;
+    masterMind.FinaliseAccusationsEvent -= RoundEnd;
   }
 
   /// <summary>

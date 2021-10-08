@@ -17,6 +17,7 @@ namespace Luke
 
         //events
         public event Action AllAccusedCorrectEvent;
+        public event Action FinaliseAccusationsEvent;
         public event Action<NPCInformation> AddAccusedEvent;
         public event Action<NPCInformation> RemoveAccusedEvent;
 
@@ -70,11 +71,18 @@ namespace Luke
                 currentRoundBools.Add(accusationCorrect);
             }
 
+            //Game ends
             if (!currentRoundBools.Contains(false))
             {
                 AllAccusedCorrectEvent?.Invoke();
             }
+            //Round ends
+            else
+            {
+                FinaliseAccusationsEvent.Invoke();
+            }
 
+            //History of accusations (true or false amount)
             StoreHistory(currentRoundBools);
         }
 

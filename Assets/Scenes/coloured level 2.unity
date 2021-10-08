@@ -12965,6 +12965,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suspect Entry (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2608941965855741130, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 96e473f398530ab419c0609e7007e907, type: 3}
+    - target: {fileID: 6661635836756503126, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_text
+      value: New Text
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
 --- !u!4 &328756887 stripped
@@ -15602,6 +15610,14 @@ PrefabInstance:
     - target: {fileID: 1756861197565590426, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
       propertyPath: m_Name
       value: Suspect Entry
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608941965855741130, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 2e21df1c715659a43bd445c4eb41dbac, type: 3}
+    - target: {fileID: 6661635836756503126, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_text
+      value: New Text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
@@ -22506,6 +22522,14 @@ PrefabInstance:
     - target: {fileID: 1756861197565590426, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
       propertyPath: m_Name
       value: Suspect Entry (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608941965855741130, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661635836756503126, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_text
+      value: New Text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
@@ -91654,6 +91678,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 569139270}
     m_Modifications:
+    - target: {fileID: 660859135560021361, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755830439194197875, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3082963382585408494, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -91702,6 +91734,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3690894283439851289, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4595858832621905387, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -91710,6 +91746,10 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4598671436381603533, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7380431941212824727, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
       propertyPath: m_Icon
       value: 
@@ -91717,6 +91757,10 @@ PrefabInstance:
     - target: {fileID: 7380431941212824727, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
       propertyPath: m_Name
       value: Player - Modelled
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380431941212824727, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7673798556755932175, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
       propertyPath: m_RootOrder
