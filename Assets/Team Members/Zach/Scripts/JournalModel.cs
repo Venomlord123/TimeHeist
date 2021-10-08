@@ -43,7 +43,7 @@ public class JournalModel : MonoBehaviour
             foreach (NPCInformation npcInfo in npcInfos)
             {
                 //TODO update with list of transforms for spawning
-                if (suspectPagePositions.Count <= posCounter)
+                if (posCounter <= suspectPagePositions.Count)
                 {
                     GameObject tempSuspectEntry = Instantiate(currentSuspectReference, suspectPagePositions[posCounter]);
                     suspectEntries.Add(tempSuspectEntry);
