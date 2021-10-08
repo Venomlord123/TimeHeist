@@ -26,11 +26,6 @@ namespace Luke
         public event Action<NPCInformation> AddAccusedEvent;
         public event Action<NPCInformation> RemoveAccusedEvent;
 
-        private void Start()
-        {
-            journalModel = FindObjectOfType<JournalModel>();
-        }
-
         private void OnEnable()
         {
             npcDetails = journalModel.suspectEntries;
