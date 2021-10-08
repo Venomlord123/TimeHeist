@@ -43,14 +43,17 @@ public class JournalModel : MonoBehaviour
             foreach (NPCInformation npcInfo in npcInfos)
             {
                 //TODO update with list of transforms for spawning
-                GameObject tempSuspectEntry = Instantiate(currentSuspectReference, suspectPagePositions[posCounter]);
-                suspectEntries.Add(tempSuspectEntry);
-                tempSuspectEntry.GetComponent<SuspectIndividualButton>().npcInformation = npcInfo;
-                tempSuspectEntry.GetComponentInChildren<RawImage>().texture = npcInfo.mugShot;
-                tempSuspectEntry.GetComponentInChildren<TextMeshProUGUI>().text = npcInfo.suspectName;
-                tempSuspectEntry.GetComponent<SuspectIndividualButton>().OnButtonPressDetailsEvent +=
-                    UpdateSuspectsDetails;
-                posCounter++;
+                if (suspectPagePositions.Count <= posCounter)
+                {
+                    GameObject tempSuspectEntry = Instantiate(currentSuspectReference, suspectPagePositions[posCounter]);
+                    suspectEntries.Add(tempSuspectEntry);
+                    tempSuspectEntry.GetComponent<SuspectIndividualButton>().npcInformation = npcInfo;
+                    tempSuspectEntry.GetComponentInChildren<RawImage>().texture = npcInfo.mugShot;
+                    tempSuspectEntry.GetComponentInChildren<TextMeshProUGUI>().text = npcInfo.suspectName;
+                    tempSuspectEntry.GetComponent<SuspectIndividualButton>().OnButtonPressDetailsEvent +=
+                        UpdateSuspectsDetails;
+                    posCounter++;
+                }
             }
         }
     }
