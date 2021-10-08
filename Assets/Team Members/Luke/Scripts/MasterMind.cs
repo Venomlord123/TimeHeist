@@ -8,12 +8,17 @@ namespace Luke
 {
     public class MasterMind : MonoBehaviour
     {
+        //References
+        public JournalModel journalModel;
+        
         //Variables
         private bool accusationCorrect = false;
         public List<NPCInformation> currentlyAccused;
         public List<List<bool>> accusationHistory;
         public List<SuspectIndividualButton> npcDetailsInstances;
+        public List<GameObject> npcDetails;
         public List<bool> currentRoundBools;
+        
 
         //events
         public event Action AllAccusedCorrectEvent;
@@ -21,19 +26,25 @@ namespace Luke
         public event Action<NPCInformation> AddAccusedEvent;
         public event Action<NPCInformation> RemoveAccusedEvent;
 
+        private void Start()
+        {
+            journalModel = FindObjectOfType<JournalModel>();
+        }
+
         private void OnEnable()
         {
-            foreach (SuspectIndividualButton suspectIndividualButton in npcDetailsInstances)
+            npcDetails = journalModel.suspectEntries;
+            foreach (GameObject suspect in npcDetails)
             {
-                suspectIndividualButton.OnButtonPressAccuseEvent += AddToAccusationList;
+                suspect.GetComponent<SuspectIndividualButton>().OnButtonPressAccuseEvent += AddToAccusationList;
             }
         }
 
         private void OnDisable()
         {
-            foreach (SuspectIndividualButton suspectIndividualButton in npcDetailsInstances)
+            foreach (GameObject suspect in npcDetails)
             {
-                suspectIndividualButton.OnButtonPressAccuseEvent -= AddToAccusationList;
+                suspect.GetComponent<SuspectIndividualButton>().OnButtonPressAccuseEvent -= AddToAccusationList;
             }
         }
 
