@@ -9,7 +9,6 @@ namespace Luke
     public class MasterMind : MonoBehaviour
     {
         //Variables
-        //TODO make individual bools for accusation either correct or false
         private bool accusationCorrect = false;
         public List<NPCInformation> currentlyAccused;
         public List<List<bool>> accusationHistory;
@@ -39,11 +38,15 @@ namespace Luke
 
         public void AddToAccusationList(NPCInformation accusedDetails)
         {
-            currentlyAccused.Add(accusedDetails);
+            //TODO not sure if this checks for different type of accused details
+            if (!currentlyAccused.Contains(accusedDetails))
+            {
+                currentlyAccused.Add(accusedDetails);
+            }
+            
             AddAccusedEvent.Invoke(accusedDetails);
         }
-
-        //TODO still need to be called by a button
+        
         public void RemoveFromAccusationList(NPCInformation accusedDetails)
         {
             currentlyAccused.Clear();

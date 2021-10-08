@@ -39,7 +39,16 @@ namespace Luke
         // Update is called once per frame
         void Update()
         {
-            //TODO 
+            //Debugging purposes only
+            if (eventTimerShown)
+            {
+                eventTimer.SetActive(true);
+            }
+            else
+            {
+                eventTimer.SetActive(false);
+            }
+            
             if (timer.countDownStarted)
             {
                 PrintTimer();
