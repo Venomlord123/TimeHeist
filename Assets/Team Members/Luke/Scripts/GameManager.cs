@@ -72,7 +72,6 @@ public class GameManager : MonoBehaviour
   public void RoundEnd()
   {
     RoundEndEvent?.Invoke();
-    roundCounter++;
     //todo remove this and implement this properly
     GameSwitchScene();
     Debug.Log("Round over");

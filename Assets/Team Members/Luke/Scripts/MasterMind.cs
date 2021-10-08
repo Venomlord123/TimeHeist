@@ -25,6 +25,11 @@ namespace Luke
         public event Action<NPCInformation> AddAccusedEvent;
         public event Action RemoveAccusedEvent;
 
+        private void Start()
+        {
+            accusationHistory = new List<List<bool>>();
+        }
+
         private void OnEnable()
         {
             npcDetails = journalModel.suspectEntries;

@@ -63,7 +63,7 @@ public class JournalManager : MonoBehaviour
     {
         if (accusationPosCount <= accusedSuspectMugshot.Count)
         {
-            accusedSuspectMugshot[accusationPosCount].GetComponent<RawImage>().texture = null;
+            accusedSuspectMugshot.Clear();
             accusationPosCount = 0;
         }
     }
