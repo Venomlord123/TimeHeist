@@ -22,6 +22,7 @@ namespace ZachFrench
         [Tooltip("A bool to show if we are not moving")]
         public bool notMoving;
         private Vector3 lastPosition;
+        public float playerVelocity;
 
         // Start is called before the first frame update
         void Start()
@@ -33,7 +34,8 @@ namespace ZachFrench
         // Update is called once per frame
         void Update()
         {
-            if (characterController.velocity.magnitude > .2f)
+            playerVelocity = characterController.velocity.magnitude;
+            if (playerVelocity > .2f)
             {
                 notMoving = false;
                 ContinueTime();
