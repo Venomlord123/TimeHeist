@@ -49,8 +49,7 @@ namespace Luke
             currentlyAccused.Clear();
             RemoveAccusedEvent.Invoke(accusedDetails);
         }
-
-        //TODO below to be called when AddToAccusations have checked all accused (Create finalized button!!!)
+        
         public void CheckAccusations()
         {
             currentRoundBools.Clear();
