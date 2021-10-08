@@ -26,7 +26,7 @@ public class Editor : UnityEditor.Editor
 
         if (GUILayout.Button("End round"))
         {
-            gameManager.RoundEnd();
+            gameManager.SceneEnd();
         }
 
         if (GUILayout.Button("Switch to journal"))
