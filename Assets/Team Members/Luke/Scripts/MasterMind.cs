@@ -15,7 +15,6 @@ namespace Luke
         private bool accusationCorrect = false;
         public List<NPCInformation> currentlyAccused;
         public List<List<bool>> accusationHistory;
-        public List<SuspectIndividualButton> npcDetailsInstances;
         public List<GameObject> npcDetails;
         public List<bool> currentRoundBools;
         
