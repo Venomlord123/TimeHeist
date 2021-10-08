@@ -149,12 +149,10 @@ namespace Luke
         /// </summary>
         public void RotateToDirection()
         {
-            if (currentTarget != null)
-            {
-                Vector3 lookDirection = waypointPath[currentTarget].transform.forward; 
-                Quaternion newRotation = Quaternion.LookRotation(lookDirection);
-                transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, animator.speed / animationSpeedDivider);
-            }
+            Vector3 lookDirection = waypointPath[currentTarget].transform.forward; 
+            Quaternion newRotation = Quaternion.LookRotation(lookDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, animator.speed / animationSpeedDivider);
+            
         }
     }
 }
