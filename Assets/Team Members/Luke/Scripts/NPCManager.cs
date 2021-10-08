@@ -23,15 +23,15 @@ namespace Luke
 
         private void OnEnable()
         {
-            gameManager.JournalSwitchSceneEvent += ResetStartPosition;
+            gameManager.JournalSwitchSceneEvent += ResetOnJournalEnd;
         }
         
         private void OnDisable()
         {
-            gameManager.JournalSwitchSceneEvent -= ResetStartPosition;
+            gameManager.JournalSwitchSceneEvent -= ResetOnJournalEnd;
         }
         
-        private void ResetStartPosition()
+        private void ResetOnJournalEnd()
         {
             foreach (NPCModel npcModel in allNpcs)
             {
