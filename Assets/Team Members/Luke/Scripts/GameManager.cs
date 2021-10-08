@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
   /// </summary>
   public void GameSwitchScene()
   {
+    
     GameSwitchSceneEvent?.Invoke();
     Debug.Log("Switch to journal");
   }

@@ -12,6 +12,7 @@ namespace ZachFrench
     {
         //References 
         public CharacterController characterController;
+
         //Variables for movement
         [Tooltip("Just a visual of the velocity")]
         public float velocity;
@@ -22,6 +23,7 @@ namespace ZachFrench
         private Vector3 move;
         [HideInInspector] 
         public Vector3 velocityNorm;
+        public bool enabledMovement;
         //Variables for interact
         public NPCBase tempNpcBase;
         public PlayerJournal playerJournal;
@@ -35,11 +37,15 @@ namespace ZachFrench
         private void OnEnable()
         {
             gameManager.JournalSwitchSceneEvent += PlayerResetTransform;
+            gameManager.GameSwitchSceneEvent += DisableMovement;
+            gameManager.JournalSwitchSceneEvent += EnableMovement;
         }
         
         private void OnDisable()
         {
             gameManager.JournalSwitchSceneEvent -= PlayerResetTransform;
+            gameManager.GameSwitchSceneEvent -= DisableMovement;
+            gameManager.JournalSwitchSceneEvent -= EnableMovement;
         }
 
         private void PlayerResetTransform()
@@ -58,7 +64,9 @@ namespace ZachFrench
 
         public void Update()
         {
+            
             CharacterMovement();
+            
             //Getting Velocity for NPC Movement
             velocity = characterController.velocity.magnitude;
             velocityNorm = characterController.velocity.normalized;
@@ -87,12 +95,25 @@ namespace ZachFrench
 
         public void CharacterMovement()
         {
-            x = Input.GetAxis("Horizontal");
-            z = Input.GetAxis("Vertical");
+            if (enabledMovement)
+            {
+                x = Input.GetAxis("Horizontal");
+                z = Input.GetAxis("Vertical");
 
-            move = transform.right * x + transform.forward * z;
+                move = transform.right * x + transform.forward * z;
 
-            characterController.Move(move * speed * Time.deltaTime);
+                characterController.Move(move * speed * Time.deltaTime);
+            }
+        }
+
+        public void DisableMovement()
+        {
+            enabledMovement = false;
+        }
+
+        public void EnableMovement()
+        {
+            enabledMovement = true;
         }
     }
 }

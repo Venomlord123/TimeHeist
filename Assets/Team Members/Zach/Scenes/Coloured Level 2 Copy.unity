@@ -30352,28 +30352,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9219741893407799616, guid: 44243813f91796341ae4a91d1cdea708, type: 3}
   m_PrefabInstance: {fileID: 682199469}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &682716905 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4598671436381603533, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
-  m_PrefabInstance: {fileID: 5276496975928892793}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &682716909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682716905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729934d8ffd199d4f8afdd21b5819b6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 534096885}
-  mouseX: 0
-  mouseY: 0
-  mouseSensitivity: 5
-  xRotation: 0
 --- !u!1001 &684256409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91487,6 +91465,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7154178880681130301, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1693148344}
     - target: {fileID: 7380431941212824727, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
       propertyPath: m_Icon
       value: 
@@ -91515,6 +91497,10 @@ PrefabInstance:
       propertyPath: playerJournal
       value: 
       objectReference: {fileID: 847818005}
+    - target: {fileID: 8812986599910413682, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
+      propertyPath: enabledMovement
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
 --- !u!1001 &8848449749210918914

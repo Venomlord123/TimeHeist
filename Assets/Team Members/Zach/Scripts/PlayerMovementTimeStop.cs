@@ -17,6 +17,7 @@ namespace ZachFrench
         //References
         public PlayerModel playerModel;
         public CharacterController characterController;
+        public GameManager gameManager;
         
         //Variables 
         [Tooltip("A bool to show if we are not moving")]
@@ -63,6 +64,20 @@ namespace ZachFrench
                 ContinueTimeEvent?.Invoke(playerVelocity, playerModel.velocityNorm);
                 PassingNormalEvent?.Invoke(playerModel.velocityNorm);
             }
+        }
+        private void OnEnable()
+        {
+            gameManager.GameSwitchSceneEvent += DisableMovement;
+        }
+  
+        private void OnDisable()
+        {
+            gameManager.GameSwitchSceneEvent -= DisableMovement;
+        }
+
+        public void DisableMovement()
+        {
+            playerVelocity = 0;
         }
     }
 }
