@@ -56,7 +56,7 @@ public class JournalManager : MonoBehaviour
         accusationPosCount++;
     }
 
-    public void RemoveAccusedMugshot(NPCInformation accusedDetails)
+    public void RemoveAccusedMugshot()
     {
         accusedSuspectMugshot[accusationPosCount].GetComponent<RawImage>().texture = null;
         accusationPosCount = 0;

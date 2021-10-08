@@ -23,22 +23,20 @@ namespace Luke
         public event Action AllAccusedCorrectEvent;
         public event Action FinaliseAccusationsEvent;
         public event Action<NPCInformation> AddAccusedEvent;
-        public event Action<NPCInformation> RemoveAccusedEvent;
+        public event Action RemoveAccusedEvent;
 
         private void OnEnable()
         {
             npcDetails = journalModel.suspectEntries;
+            StartCoroutine(Subscribing());
+        }
+
+        public IEnumerator Subscribing()
+        {
+            yield return new WaitForSeconds(1f);
             foreach (GameObject suspect in npcDetails)
             {
                 suspect.GetComponent<SuspectIndividualButton>().OnButtonPressAccuseEvent += AddToAccusationList;
-            }
-        }
-
-        private void OnDisable()
-        {
-            foreach (GameObject suspect in npcDetails)
-            {
-                suspect.GetComponent<SuspectIndividualButton>().OnButtonPressAccuseEvent -= AddToAccusationList;
             }
         }
 
@@ -53,10 +51,10 @@ namespace Luke
             AddAccusedEvent.Invoke(accusedDetails);
         }
         
-        public void RemoveFromAccusationList(NPCInformation accusedDetails)
+        public void RemoveFromAccusationList()
         {
             currentlyAccused.Clear();
-            RemoveAccusedEvent.Invoke(accusedDetails);
+            RemoveAccusedEvent.Invoke();
         }
         
         public void CheckAccusations()
@@ -76,7 +74,7 @@ namespace Luke
                 currentRoundBools.Add(accusationCorrect);
             }
 
-            //Game ends
+            //Game ends (we won)
             if (!currentRoundBools.Contains(false))
             {
                 AllAccusedCorrectEvent?.Invoke();
@@ -84,7 +82,7 @@ namespace Luke
             //Round ends
             else
             {
-                FinaliseAccusationsEvent.Invoke();
+                FinaliseAccusationsEvent?.Invoke();
             }
 
             //History of accusations (true or false amount)
