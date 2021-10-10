@@ -16,6 +16,7 @@ public class JournalModel : MonoBehaviour
     public List<GameObject> suspectEntries;
     public List<Transform> suspectPagePositions;
     public GameObject currentSuspectReference;
+    public int posCounter;
     public bool suspectTesting;
     
     //Individual Suspect Details 
@@ -38,16 +39,21 @@ public class JournalModel : MonoBehaviour
     {
         if (npcInfos != null)
         {
+            
             foreach (NPCInformation npcInfo in npcInfos)
             {
                 //TODO update with list of transforms for spawning
-                GameObject tempSuspectEntry = Instantiate(currentSuspectReference, gameObject.transform);
-                suspectEntries.Add(tempSuspectEntry);
-                tempSuspectEntry.GetComponent<SuspectIndividualButton>().npcInformation = npcInfo;
-                tempSuspectEntry.GetComponentInChildren<RawImage>().texture = npcInfo.mugShot;
-                tempSuspectEntry.GetComponentInChildren<TextMeshProUGUI>().text = npcInfo.suspectName;
-                tempSuspectEntry.GetComponent<SuspectIndividualButton>().OnButtonPressDetailsEvent +=
-                    UpdateSuspectsDetails;
+                if (posCounter < suspectPagePositions.Count)
+                {
+                    GameObject tempSuspectEntry = Instantiate(currentSuspectReference, suspectPagePositions[posCounter]);
+                    suspectEntries.Add(tempSuspectEntry);
+                    tempSuspectEntry.GetComponent<SuspectIndividualButton>().npcInformation = npcInfo;
+                    tempSuspectEntry.GetComponentInChildren<RawImage>().texture = npcInfo.mugShot;
+                    tempSuspectEntry.GetComponentInChildren<TextMeshProUGUI>().text = npcInfo.suspectName;
+                    tempSuspectEntry.GetComponent<SuspectIndividualButton>().OnButtonPressDetailsEvent +=
+                        UpdateSuspectsDetails;
+                    posCounter++;
+                }
             }
         }
     }

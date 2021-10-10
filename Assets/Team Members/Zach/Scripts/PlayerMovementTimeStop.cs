@@ -1,39 +1,33 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 namespace ZachFrench
 {
     public class PlayerMovementTimeStop : MonoBehaviour
     {
-
-        //Event created using a bool
-        public event Action<float> TimeStopEvent;
-        public event Action<float, Vector3> ContinueTimeEvent;
-        public event Action<Vector3> PassingNormalEvent;
-
         //References
         public PlayerModel playerModel;
         public CharacterController characterController;
-        
+
         //Variables 
         [Tooltip("A bool to show if we are not moving")]
         public bool notMoving;
+
+        public float playerVelocity;
         private Vector3 lastPosition;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             notMoving = false;
         }
 
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
-            if (characterController.velocity.magnitude > .2f)
+            playerVelocity = characterController.velocity.magnitude;
+            if (playerVelocity > .2f)
             {
                 notMoving = false;
                 ContinueTime();
@@ -45,11 +39,16 @@ namespace ZachFrench
             }
         }
 
+        //Event created using a bool
+        public event Action<float> TimeStopEvent;
+        public event Action<float, Vector3> ContinueTimeEvent;
+        public event Action<Vector3> PassingNormalEvent;
+
         public void TimeStopping()
         {
             if (notMoving)
             {
-                TimeStopEvent?.Invoke(playerModel.velocity);
+                TimeStopEvent?.Invoke(playerVelocity);
                 //trigger fmod time stop
             }
         }
@@ -58,7 +57,7 @@ namespace ZachFrench
         {
             if (notMoving == false)
             {
-                ContinueTimeEvent?.Invoke(playerModel.velocity, playerModel.velocityNorm);
+                ContinueTimeEvent?.Invoke(playerVelocity, playerModel.velocityNorm);
                 PassingNormalEvent?.Invoke(playerModel.velocityNorm);
             }
         }

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
   //references
   public Timer timer;
   public MasterMind masterMind;
-  
+
   //variables
   //TODO roundCounter++ when new round starts
   public int roundCounter;
@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour
   public event Action GameSwitchSceneEvent;
   public event Action JournalSwitchSceneEvent;
   public event Action ResetLevelEvent;
-  public event Action RoundEndEvent;
+  public event Action SceneEndEvent;
+  public event Action JournalEndEvent;
 
   private void Start()
   {
@@ -36,14 +37,16 @@ public class GameManager : MonoBehaviour
 
   private void OnEnable()
   {
-    timer.CountDownEndEvent += RoundEnd;
+    timer.CountDownEndEvent += SceneEnd;
     masterMind.AllAccusedCorrectEvent += GameEnd;
+    masterMind.FinaliseAccusationsEvent += JournalEnd;
   }
 
   private void OnDisable()
   {
-    timer.CountDownEndEvent -= RoundEnd;
+    timer.CountDownEndEvent -= SceneEnd;
     masterMind.AllAccusedCorrectEvent -= GameEnd;
+    masterMind.FinaliseAccusationsEvent -= JournalEnd;
   }
 
   /// <summary>
@@ -67,13 +70,18 @@ public class GameManager : MonoBehaviour
   /// <summary>
   /// TODO player unable to move.
   /// </summary>
-  public void RoundEnd()
+  public void SceneEnd()
   {
-    RoundEndEvent?.Invoke();
-    roundCounter++;
-    //todo remove this and implement this properly
+    SceneEndEvent?.Invoke();
     GameSwitchScene();
-    Debug.Log("Round over");
+    Debug.Log("Main Scene over");
+  }
+
+  public void JournalEnd()
+  {
+    JournalEndEvent?.Invoke();
+    Debug.Log("Journal Scene over");
+    JournalSwitchScene();
   }
 
   /// <summary>
@@ -87,15 +95,18 @@ public class GameManager : MonoBehaviour
 
   /// <summary>
   /// TODO sceneManager and JournalMan need to subscribe
+  /// In Main Game scene currently
   /// </summary>
   public void GameSwitchScene()
   {
+    
     GameSwitchSceneEvent?.Invoke();
     Debug.Log("Switch to journal");
   }
 
   /// <summary>
   /// TODO JournalMan and SceneMan need to subscribe
+  /// In Journal currently
   /// </summary>
   public void JournalSwitchScene()
   {

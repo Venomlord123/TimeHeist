@@ -12,6 +12,7 @@ namespace ZachFrench
     {
         //References 
         public CharacterController characterController;
+
         //Variables for movement
         [Tooltip("Just a visual of the velocity")]
         public float velocity;
@@ -22,22 +23,50 @@ namespace ZachFrench
         private Vector3 move;
         [HideInInspector] 
         public Vector3 velocityNorm;
+        public bool enabledMovement;
         //Variables for interact
         public NPCBase tempNpcBase;
         public PlayerJournal playerJournal;
         public Ray ray;
         public RaycastHit hitInfo;
+        public Vector3 startPosition;
+        public Quaternion startRotation;
+        public GameManager gameManager;
 
+
+        private void OnEnable()
+        {
+            gameManager.JournalSwitchSceneEvent += PlayerResetTransform;
+            gameManager.GameSwitchSceneEvent += DisableMovement;
+            gameManager.JournalSwitchSceneEvent += EnableMovement;
+        }
+        
+        private void OnDisable()
+        {
+            gameManager.JournalSwitchSceneEvent -= PlayerResetTransform;
+            gameManager.GameSwitchSceneEvent -= DisableMovement;
+            gameManager.JournalSwitchSceneEvent -= EnableMovement;
+        }
+
+        private void PlayerResetTransform()
+        {
+            transform.position = startPosition;
+            transform.rotation = startRotation;
+        }
 
         public void Start()
         {
             //todo add to TDD for reference to layer
             Physics.IgnoreLayerCollision(6,7);
+            startPosition = transform.position;
+            startRotation = transform.rotation;
         }
 
         public void Update()
         {
+            
             CharacterMovement();
+            
             //Getting Velocity for NPC Movement
             velocity = characterController.velocity.magnitude;
             velocityNorm = characterController.velocity.normalized;
@@ -66,12 +95,25 @@ namespace ZachFrench
 
         public void CharacterMovement()
         {
-            x = Input.GetAxis("Horizontal");
-            z = Input.GetAxis("Vertical");
+            if (enabledMovement)
+            {
+                x = Input.GetAxis("Horizontal");
+                z = Input.GetAxis("Vertical");
 
-            move = transform.right * x + transform.forward * z;
+                move = transform.right * x + transform.forward * z;
 
-            characterController.Move(move * speed * Time.deltaTime);
+                characterController.Move(move * speed * Time.deltaTime);
+            }
+        }
+
+        public void DisableMovement()
+        {
+            enabledMovement = false;
+        }
+
+        public void EnableMovement()
+        {
+            enabledMovement = true;
         }
     }
 }

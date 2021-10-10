@@ -47,8 +47,10 @@ MonoBehaviour:
   suspectRef: {fileID: 0}
   npcInfos: []
   suspectEntries: []
+  suspectPagePositions: []
   currentSuspectReference: {fileID: 0}
   suspectTesting: 0
   suspectName: {fileID: 0}
   suspectLocations: {fileID: 0}
   mugShot: {fileID: 0}
+  masterMind: {fileID: 0}

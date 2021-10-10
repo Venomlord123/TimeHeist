@@ -8,51 +8,60 @@ namespace Luke
 {
     public class MasterMind : MonoBehaviour
     {
+        //References
+        public JournalModel journalModel;
+        
         //Variables
-        //TODO make individual bools for accusation either correct or false
         private bool accusationCorrect = false;
         public List<NPCInformation> currentlyAccused;
         public List<List<bool>> accusationHistory;
-        public List<SuspectIndividualButton> npcDetailsInstances;
+        public List<GameObject> npcDetails;
         public List<bool> currentRoundBools;
+        
 
         //events
         public event Action AllAccusedCorrectEvent;
+        public event Action FinaliseAccusationsEvent;
         public event Action<NPCInformation> AddAccusedEvent;
-        public event Action<NPCInformation> RemoveAccusedEvent;
+        public event Action RemoveAccusedEvent;
+
+        private void Start()
+        {
+            accusationHistory = new List<List<bool>>();
+        }
 
         private void OnEnable()
         {
-            foreach (SuspectIndividualButton suspectIndividualButton in npcDetailsInstances)
-            {
-                suspectIndividualButton.OnButtonPressAccuseEvent += AddToAccusationList;
-            }
-            //TODO for button to remove accused sub to removefromaccusationlist()
+            npcDetails = journalModel.suspectEntries;
+            StartCoroutine(Subscribing());
         }
 
-        private void OnDisable()
+        public IEnumerator Subscribing()
         {
-            foreach (SuspectIndividualButton suspectIndividualButton in npcDetailsInstances)
+            yield return new WaitForSeconds(1f);
+            foreach (GameObject suspect in npcDetails)
             {
-                suspectIndividualButton.OnButtonPressAccuseEvent -= AddToAccusationList;
+                suspect.GetComponent<SuspectIndividualButton>().OnButtonPressAccuseEvent += AddToAccusationList;
             }
-            //TODO for button to remove accused sub to removefromaccusationlist()
         }
 
         public void AddToAccusationList(NPCInformation accusedDetails)
         {
-            currentlyAccused.Add(accusedDetails);
+            //TODO not sure if this checks for different type of accused details
+            if (!currentlyAccused.Contains(accusedDetails) && currentlyAccused.Count < 4)
+            {
+                currentlyAccused.Add(accusedDetails);
+            }
+            
             AddAccusedEvent.Invoke(accusedDetails);
         }
-
-        //TODO still need to be called by a button
-        public void RemoveFromAccusationList(NPCInformation accusedDetails)
+        
+        public void RemoveFromAccusationList()
         {
             currentlyAccused.Clear();
-            RemoveAccusedEvent.Invoke(accusedDetails);
+            RemoveAccusedEvent.Invoke();
         }
-
-        //TODO below to be called when AddToAccusations have checked all accused (Create finalized button!!!)
+        
         public void CheckAccusations()
         {
             currentRoundBools.Clear();
@@ -70,11 +79,18 @@ namespace Luke
                 currentRoundBools.Add(accusationCorrect);
             }
 
+            //Game ends (we won)
             if (!currentRoundBools.Contains(false))
             {
                 AllAccusedCorrectEvent?.Invoke();
             }
+            //Round ends
+            else
+            {
+                FinaliseAccusationsEvent?.Invoke();
+            }
 
+            //History of accusations (true or false amount)
             StoreHistory(currentRoundBools);
         }
 

@@ -18,4 +18,6 @@ public class SuspectIndividualButton : MonoBehaviour
    {
       OnButtonPressAccuseEvent?.Invoke(npcInformation);
    }
+   
+   
 }
