@@ -12033,6 +12033,7 @@ MonoBehaviour:
   currentlyAccused: []
   npcDetails: []
   currentRoundBools: 
+  heistCounter: 0
 --- !u!1001 &300208477
 PrefabInstance:
   m_ObjectHideFlags: 0
