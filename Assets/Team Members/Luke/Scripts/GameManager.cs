@@ -106,20 +106,12 @@ public class GameManager : MonoBehaviour
 
   /// <summary>
   /// TODO JournalMan and SceneMan need to subscribe
-  /// In Journal currently
+  /// In Journal currently (resets scene)
   /// </summary>
   public void JournalSwitchScene()
   {
     JournalSwitchSceneEvent?.Invoke();
     Debug.Log("Switch to game");
-  }
-
-  /// <summary>
-  /// TODO Timer, SceneMan, NPCMan and Player need to subscribe (object pos resets)
-  /// </summary>
-  public void ResetLevel()
-  {
-    ResetLevelEvent?.Invoke();
-    Debug.Log("Reset level");
+    roundCounter++;
   }
 }

@@ -88,8 +88,8 @@ namespace Luke
         {
             gameManager.GameStartEvent += StartCountDown;
             gameManager.GamePauseEvent += PauseTimers;
-            gameManager.ResetLevelEvent += ResetCountdown;
-
+            gameManager.JournalSwitchSceneEvent += ResetCountdown;
+            gameManager.JournalSwitchSceneEvent += StartCountDown;
             playerMovement.PassingNormalEvent += AdjustTimer;
         }
 
@@ -97,8 +97,8 @@ namespace Luke
         {
             gameManager.GameStartEvent -= StartCountDown;
             gameManager.GamePauseEvent -= PauseTimers;
-            gameManager.ResetLevelEvent -= ResetCountdown;
-            
+            gameManager.JournalSwitchSceneEvent -= ResetCountdown;
+            gameManager.JournalSwitchSceneEvent-= StartCountDown;
             playerMovement.PassingNormalEvent -= AdjustTimer;
         }
         

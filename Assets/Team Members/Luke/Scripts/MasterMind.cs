@@ -17,6 +17,7 @@ namespace Luke
         public List<List<bool>> accusationHistory;
         public List<GameObject> npcDetails;
         public List<bool> currentRoundBools;
+        public int heistCounter = 0;
         
 
         //events
@@ -79,13 +80,21 @@ namespace Luke
                 currentRoundBools.Add(accusationCorrect);
             }
 
-            //Game ends (we won)
-            if (!currentRoundBools.Contains(false))
+            foreach (bool roundBool in currentRoundBools)
+            {
+                if (roundBool)
+                {
+                    heistCounter++;
+                }
+            }
+
+            if (heistCounter == 4)
             {
                 AllAccusedCorrectEvent?.Invoke();
             }
-            //Round ends
-            else
+
+            //if the player hasn't accused anyone
+            if (currentlyAccused.Count >= 0)
             {
                 FinaliseAccusationsEvent?.Invoke();
             }

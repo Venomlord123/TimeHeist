@@ -39,11 +39,6 @@ public class Editor : UnityEditor.Editor
             gameManager.JournalSwitchScene();
         }
 
-        if (GUILayout.Button("Reset level"))
-        {
-            gameManager.ResetLevel();
-        }
-
         if (GUILayout.Button("Game Completed"))
         {
             gameManager.GameEnd();
