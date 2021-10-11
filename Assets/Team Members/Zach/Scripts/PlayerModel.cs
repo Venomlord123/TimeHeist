@@ -50,8 +50,10 @@ namespace ZachFrench
 
         private void PlayerResetTransform()
         {
+            characterController.enabled = false;
             transform.position = startPosition;
             transform.rotation = startRotation;
+            characterController.enabled = true;
         }
 
         public void Start()
