@@ -109,6 +109,12 @@ namespace ZachFrench
         public void DisableMovement()
         {
             enabledMovement = false;
+            if (velocity > 0)
+            {
+                //TODO test this to make sure works when the speed is higher 
+                //Hack float here is massive hack, change this later in debugging stages 
+                characterController.Move(-(characterController.velocity)*0.00005f);
+            }
         }
 
         public void EnableMovement()
