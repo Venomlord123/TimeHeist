@@ -22,7 +22,9 @@ namespace Luke
         [Tooltip(("Distance from waypoint to allow change to next waypoint"))]
         public float remainingWaypointDistance = .5f;
         [Tooltip("Change the npc's speed (multiplied from player speed)")]
-        public float npcMovementMultiplier = .25f;
+        public float npcMovementMultiplier;
+        [Tooltip("The walking animation speed (Higher the number slower it animates)")]
+        public float animationSpeedDivider = 5f;
         private float waitTimeElement;
         [Tooltip("The current amount of time waiting at waypoint")]
         public float currentWaitTime;
@@ -30,12 +32,10 @@ namespace Luke
         public bool waiting = false;
         [Tooltip("Starting Position for the NPC")]
         public Vector3 startPosition;
-
+        [Tooltip("Start rotation position of npc")]
         public Quaternion startRotation;
-
-        //HACK s maybe?
-        [Tooltip("The walking animation speed (Higher the number slower it animates)")]
-        public float animationSpeedDivider = 5f;
+        
+        
 
         //Subscribe
         private void OnEnable()
@@ -108,7 +108,7 @@ namespace Luke
             if (speed > 0)
             {
                 navMeshAgent.speed = speed * npcMovementMultiplier;
-                animator.speed = (navMeshAgent.speed / velocityNorm.normalized.magnitude) / animationSpeedDivider;
+                animator.speed = (animationSpeedDivider / velocityNorm.normalized.magnitude);
                 if (waiting == false)
                 {
                     //Animation walk
