@@ -2,13 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Luke
 {
     public class NPCManager : MonoBehaviour
     {
-        //variables 
+        //References
+        public PatrolManager patrolManager;
         public GameManager gameManager;
+        public Timer timer;
+
+        //variables 
         public List<NPCModel> allNpcs;
         public List<NPCBase> simpleNpcs;
         public List<NPCBase> redherringNpcs;
@@ -24,27 +29,37 @@ namespace Luke
         private void OnEnable()
         {
             gameManager.JournalSwitchSceneEvent += ResetOnJournalEnd;
+            timer.FireAlarmEvent += SetToExitWaypoint;
         }
         
         private void OnDisable()
         {
             gameManager.JournalSwitchSceneEvent -= ResetOnJournalEnd;
+            timer.FireAlarmEvent -= SetToExitWaypoint;
         }
         
         private void ResetOnJournalEnd()
         {
             foreach (NPCModel npcModel in allNpcs)
             {
+                npcModel.fireAlarm = false;
                 npcModel.transform.position = npcModel.startPosition;
                 npcModel.transform.rotation = npcModel.startRotation;
                 npcModel.currentTarget = 0;
             }
         }
 
-        // Update is called once per frame
-        void Update()
+        /// <summary>
+        /// Setting the exit point for each of the npc's on the event FireAlarm
+        /// </summary>
+        public void SetToExitWaypoint()
         {
-            
+            foreach (NPCModel npcModel in allNpcs)
+            {
+                npcModel.exitWaypoints = patrolManager.NPCExitWaypoints;
+                npcModel.currentTarget = npcModel.setExitWaypoint;
+                npcModel.fireAlarm = true;
+            }
         }
 
         /// <summary>
