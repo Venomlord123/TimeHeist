@@ -19,6 +19,8 @@ namespace Luke
         //Variables
         [Tooltip("The current selected waypoint element")]
         public int currentTarget;
+        [Tooltip("The npc's set exit point (On fire alarm event)")]
+        public int setExitWaypoint;
         [Tooltip(("Distance from waypoint to allow change to next waypoint"))]
         public float remainingWaypointDistance = .5f;
         [Tooltip("Change the npc's speed (multiplied from player speed)")]
@@ -26,7 +28,7 @@ namespace Luke
         [Tooltip("The walking animation speed (Higher the number slower it animates)")]
         public float animationSpeedDivider = 5f;
         private float waitTimeElement;
-        [Tooltip("The current amount of time waiting at waypoint")]
+        [Tooltip("The current amount of time waiting at waypoint (For visual testing purposes)")]
         public float currentWaitTime;
         [Tooltip("Is the NPC waiting?")]
         public bool waiting = false;
@@ -34,8 +36,8 @@ namespace Luke
         public Vector3 startPosition;
         [Tooltip("Start rotation position of npc")]
         public Quaternion startRotation;
-        
-        
+        [Tooltip("Testing purposes only")]
+        public bool fireAlarm;
 
         //Subscribe
         private void OnEnable()
@@ -44,7 +46,7 @@ namespace Luke
             animator.speed = 0;
             playerMovementTimeStop.TimeStopEvent += MovementStop;
             playerMovementTimeStop.ContinueTimeEvent += MovementContinue;
-            
+
         }
 
         //Unsubscribe
@@ -71,13 +73,17 @@ namespace Luke
             GoToNextPoint();
         }
 
-        
-        
-        
         // Update is called once per frame
         void FixedUpdate()
         {
-            GoToNextPoint();
+            if (fireAlarm)
+            {
+                GoToExitPoint();
+            }
+            else
+            {
+                GoToNextPoint();
+            }
         }
 
         // Movement stuff
@@ -125,7 +131,6 @@ namespace Luke
             }
         }
 
-
         /// <summary>
         /// Co-routines only yield whats within the function!! 
         /// </summary>
@@ -158,5 +163,11 @@ namespace Luke
             transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, animator.speed / animationSpeedDivider);
             
         }
+
+        public void GoToExitPoint()
+        {
+            navMeshAgent.SetDestination(exitWaypoints[currentTarget].transform.position);
+        }
+        
     }
 }

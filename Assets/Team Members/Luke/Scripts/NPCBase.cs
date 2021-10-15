@@ -29,6 +29,8 @@ namespace Luke
         //variables
         [Tooltip("Path of the NPC")]
         public List<Waypoint> waypointPath;
+        [Tooltip("Exit waypoint's for the NPC")]
+        public List<Waypoint> exitWaypoints;
         [Tooltip("Wait times for each waypoint")]
         public List<float> waypointWaitTimes;
 
