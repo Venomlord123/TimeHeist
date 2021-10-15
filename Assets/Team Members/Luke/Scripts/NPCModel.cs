@@ -78,7 +78,7 @@ namespace Luke
         {
             if (fireAlarm)
             {
-                GoToExitPoint();
+                StartCoroutine(GoToExitPoint());
             }
             else
             {
@@ -151,6 +151,10 @@ namespace Luke
             waiting = false;
             //changed to here because of face direction
             currentTarget = (currentTarget + 1) % waypointPath.Count;
+            if (fireAlarm)
+            {
+                currentTarget = setExitWaypoint;
+            }
         }
 
         /// <summary>
@@ -164,8 +168,9 @@ namespace Luke
             
         }
 
-        public void GoToExitPoint()
+        public IEnumerator GoToExitPoint()
         {
+            yield return new WaitForSeconds(.5f);
             navMeshAgent.SetDestination(exitWaypoints[currentTarget].transform.position);
         }
         
