@@ -1928,7 +1928,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6248102846692620749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 796, y: 0.03, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 7.5, y: 7.5, z: 7.5}
   m_Children:
   - {fileID: 6248102846897298089}
@@ -1969,6 +1969,7 @@ MonoBehaviour:
   waypointPath:
   - {fileID: 0}
   - {fileID: 0}
+  exitWaypoints: []
   waypointWaitTimes:
   - 2
   - 1
@@ -1977,6 +1978,7 @@ MonoBehaviour:
   playerMovementTimeStop: {fileID: 0}
   animator: {fileID: 6248102844938047673}
   currentTarget: 0
+  setExitWaypoint: 0
   remainingWaypointDistance: 0.5
   npcMovementMultiplier: 1
   animationSpeedDivider: 1
@@ -1984,6 +1986,7 @@ MonoBehaviour:
   waiting: 0
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
+  fireAlarm: 0
 --- !u!195 &6248102846692620747
 NavMeshAgent:
   m_ObjectHideFlags: 0
