@@ -11,7 +11,9 @@ namespace Luke
     {
         //References
         public NavMeshAgent navMeshAgent;
+        [Tooltip("Drag the player object here")]
         public PlayerMovementTimeStop playerMovementTimeStop;
+        [Tooltip("Drag this character's animator here")]
         public Animator animator;
 
         //Variables
@@ -148,7 +150,6 @@ namespace Luke
 
         /// <summary>
         /// To face in the current waypoint's set directional vector forward (z)
-        /// TODO could be smoother facing direction of next target
         /// </summary>
         public void RotateToDirection()
         {
