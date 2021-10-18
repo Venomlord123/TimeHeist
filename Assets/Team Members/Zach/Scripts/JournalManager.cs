@@ -19,6 +19,7 @@ public class JournalManager : MonoBehaviour
     {
         gameManager.GameSwitchSceneEvent += JournalActivate;
         gameManager.JournalSwitchSceneEvent += JournalDeactivate;
+        gameManager.JournalSwitchSceneEvent += RemoveAccusedMugshot;
         masterMind.AddAccusedEvent += CreateAccusedMugshot;
         masterMind.RemoveAccusedEvent += RemoveAccusedMugshot;
     }
@@ -27,6 +28,7 @@ public class JournalManager : MonoBehaviour
     {
         gameManager.GameSwitchSceneEvent -= JournalActivate;
         gameManager.JournalSwitchSceneEvent -= JournalDeactivate;
+        gameManager.JournalSwitchSceneEvent -= RemoveAccusedMugshot;
         masterMind.AddAccusedEvent -= CreateAccusedMugshot;
         masterMind.RemoveAccusedEvent -= RemoveAccusedMugshot;
     }
@@ -63,7 +65,10 @@ public class JournalManager : MonoBehaviour
     {
         if (accusationPosCount <= accusedSuspectMugshot.Count)
         {
-            accusedSuspectMugshot.Clear();
+            foreach (GameObject accusedSuspect in accusedSuspectMugshot)
+            {
+                accusedSuspect.GetComponent<RawImage>().texture = null;
+            }
             accusationPosCount = 0;
         }
     }
