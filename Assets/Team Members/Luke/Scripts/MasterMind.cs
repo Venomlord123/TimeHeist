@@ -61,6 +61,7 @@ namespace Luke
         {
             currentlyAccused.Clear();
             RemoveAccusedEvent.Invoke();
+            
         }
         
         public void CheckAccusations()
