@@ -1876,17 +1876,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbf3e645f3a57647874da7761fd4628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Annie Mated
   isHeistMember: 0
   conversations: 
   currentLocation: 
-  mugShot: {fileID: 0}
+  mugShot: {fileID: 2800000, guid: 7b570577959124d4b891fc589e327439, type: 3}
   waypointPath: []
+  exitWaypoints: []
   waypointWaitTimes: []
   navMeshAgent: {fileID: 7442500834365691187}
   playerMovementTimeStop: {fileID: 0}
   animator: {fileID: 0}
   currentTarget: 0
+  setExitWaypoint: 0
   remainingWaypointDistance: 0.5
   npcMovementMultiplier: 1
   animationSpeedDivider: 1
@@ -1894,6 +1896,7 @@ MonoBehaviour:
   waiting: 0
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
+  fireAlarm: 0
 --- !u!1 &7910404932916805067
 GameObject:
   m_ObjectHideFlags: 0

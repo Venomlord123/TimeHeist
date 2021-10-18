@@ -857,17 +857,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbf3e645f3a57647874da7761fd4628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Amanda Lynn
   isHeistMember: 0
   conversations: 
   currentLocation: 
-  mugShot: {fileID: 0}
+  mugShot: {fileID: 2800000, guid: d7ab63e0f26f0964bb30f064d003d08b, type: 3}
   waypointPath: []
+  exitWaypoints: []
   waypointWaitTimes: []
   navMeshAgent: {fileID: 2523508911750339935}
   playerMovementTimeStop: {fileID: 0}
   animator: {fileID: 0}
   currentTarget: 0
+  setExitWaypoint: 0
   remainingWaypointDistance: 0.5
   npcMovementMultiplier: 1
   animationSpeedDivider: 1
@@ -875,6 +877,7 @@ MonoBehaviour:
   waiting: 0
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
+  fireAlarm: 0
 --- !u!195 &2523508911750339935
 NavMeshAgent:
   m_ObjectHideFlags: 0
