@@ -868,7 +868,7 @@ GameObject:
   - component: {fileID: 1302322548408009502}
   - component: {fileID: 1302322548408009489}
   m_Layer: 0
-  m_Name: CourtneyWise
+  m_Name: CourtneyFood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -956,7 +956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbf3e645f3a57647874da7761fd4628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: Courtney Wise
+  npcName: Courtney Food
   isHeistMember: 0
   conversations: 
   currentLocation: 
