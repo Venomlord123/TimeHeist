@@ -13,4 +13,6 @@ public class NPCInformation : MonoBehaviour
     public List<string> conversations;
     public Texture mugShot;
     public bool isHeistMember;
+    [Tooltip("NPC has an entry in journal")]
+    public bool suspectChecked = false;
 }

@@ -38,6 +38,7 @@ namespace Luke
         public Quaternion startRotation;
         [Tooltip("Testing purposes only")]
         public bool fireAlarm;
+        
 
         private float time = 0.178f;
 
