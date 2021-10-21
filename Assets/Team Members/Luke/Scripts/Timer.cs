@@ -161,7 +161,7 @@ namespace Luke
                 timerSeconds = Mathf.FloorToInt(timer % 60);
                 timerMilliSeconds = (timer % 1) * 1000;
                 
-                if (currentCountDown <= blackOutTime && blackOutDone == false)
+                if (currentTimer <= blackOutTime && blackOutDone == false)
                 {
                     //TODO currently casting more than once
                     BlackOutEvent?.Invoke();
@@ -169,7 +169,7 @@ namespace Luke
                     Debug.Log("BlackOut!!!");
                 }
 
-                if (currentCountDown <= fireAlarmTime && fireAlarmDone == false)
+                if (currentTimer <= fireAlarmTime && fireAlarmDone == false)
                 {
                     //TODO currently casting more than once
                     FireAlarmEvent?.Invoke();
@@ -177,7 +177,7 @@ namespace Luke
                     Debug.Log("Fire Alarm!!!");
                 }
 
-                if (currentCountDown <= 0)
+                if (currentTimer <= 0)
                 {
                     EventTimerEndEvent?.Invoke();
                 }

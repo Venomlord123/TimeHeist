@@ -143,6 +143,7 @@ namespace Luke
             waiting = true;
             if (currentWaitTime == 0f)
             {
+
                 currentWaitTime = time;
             }
             yield return new WaitForSeconds(currentWaitTime);
