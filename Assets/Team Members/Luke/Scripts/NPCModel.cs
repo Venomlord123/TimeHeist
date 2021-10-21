@@ -39,6 +39,8 @@ namespace Luke
         [Tooltip("Testing purposes only")]
         public bool fireAlarm;
 
+        private float time = 0.178f;
+
         //Subscribe
         private void OnEnable()
         {
@@ -63,7 +65,7 @@ namespace Luke
             //This is for when we need to reset to original positions
             startPosition = transform.position;
             startRotation = transform.rotation;
-            
+
             navMeshAgent = GetComponent<NavMeshAgent>();
             //setting our new variable to the NPCBase's first waypoint wait time
             if (waypointWaitTimes.Count != 0)
@@ -139,6 +141,10 @@ namespace Luke
         {
             navMeshAgent.isStopped = true;
             waiting = true;
+            if (currentWaitTime == 0f)
+            {
+                currentWaitTime = time;
+            }
             yield return new WaitForSeconds(currentWaitTime);
             navMeshAgent.isStopped = false;
 
