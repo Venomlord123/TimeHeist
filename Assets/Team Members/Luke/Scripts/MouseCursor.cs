@@ -8,8 +8,24 @@ namespace Luke
 {
     public class MouseCursor : MonoBehaviour
     {
+        //References
+        public GameManager gameManager;
+        
+        //variables
         public Vector3 mousePos;
         public Texture2D cursorArrow;
+
+        private void OnEnable()
+        {
+            gameManager.GameSwitchSceneEvent += EnableMouse;
+            gameManager.JournalSwitchSceneEvent += DisableMouse;
+        }
+
+        private void OnDisable()
+        {
+            gameManager.GameSwitchSceneEvent -= EnableMouse;
+            gameManager.JournalSwitchSceneEvent -= DisableMouse;
+        }
 
         // Start is called before the first frame update
         void Start()
@@ -23,12 +39,25 @@ namespace Luke
         // Update is called once per frame
         void Update()
         {
-            Mouse();
+            if (Cursor.visible)
+            {
+                Mouse();
+            }
         }
 
         public void Mouse()
         {
             mousePos = Input.mousePosition;
+        }
+
+        public void EnableMouse()
+        {
+            Cursor.visible = true;
+        }
+
+        public void DisableMouse()
+        {
+            Cursor.visible = false;
         }
     }
 }
