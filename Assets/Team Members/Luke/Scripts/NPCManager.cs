@@ -42,7 +42,7 @@ namespace Luke
         {
             foreach (NPCModel npcModel in allNpcs)
             {
-                npcModel.ignoreFireAlarm = false;
+                npcModel.fireAlarmActive = false;
                 npcModel.transform.position = npcModel.startPosition;
                 npcModel.transform.rotation = npcModel.startRotation;
                 npcModel.currentTarget = 0;
@@ -58,7 +58,7 @@ namespace Luke
             {
                 npcModel.exitWaypoints = patrolManager.NPCExitWaypoints;
                 npcModel.currentTarget = npcModel.setExitWaypoint;
-                npcModel.ignoreFireAlarm = true;
+                npcModel.fireAlarmActive = true;
             }
         }
 

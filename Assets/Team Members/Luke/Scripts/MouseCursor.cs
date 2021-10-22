@@ -30,6 +30,7 @@ namespace Luke
         // Start is called before the first frame update
         void Start()
         {
+            Cursor.visible = false;
             Cursor.SetCursor(cursorArrow, mousePos, CursorMode.ForceSoftware);
         
             //will only work properly for the build of the game (this locks the mouse cursor within the game screen bounds)

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Luke;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -72,5 +73,4 @@ public class JournalManager : MonoBehaviour
             accusationPosCount = 0;
         }
     }
-
 }
