@@ -36,8 +36,6 @@ namespace Luke
         public Vector3 startPosition;
         [Tooltip("Start rotation position of npc")]
         public Quaternion startRotation;
-        [Tooltip("Testing purposes only")]
-        public bool fireAlarm;
         [Tooltip("If true, NPC will not use the fire exits")]
         public bool ignoreFireAlarm;
 
