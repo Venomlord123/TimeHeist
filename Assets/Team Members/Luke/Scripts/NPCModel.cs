@@ -38,7 +38,8 @@ namespace Luke
         public Quaternion startRotation;
         [Tooltip("Testing purposes only")]
         public bool fireAlarm;
-        
+        [Tooltip("If true, NPC will not use the fire exits")]
+        public bool ignoreFireAlarm;
 
         private float time = 0.178f;
 
@@ -49,7 +50,6 @@ namespace Luke
             animator.speed = 0;
             playerMovementTimeStop.TimeStopEvent += MovementStop;
             playerMovementTimeStop.ContinueTimeEvent += MovementContinue;
-
         }
 
         //Unsubscribe
@@ -79,7 +79,7 @@ namespace Luke
         // Update is called once per frame
         void FixedUpdate()
         {
-            if (fireAlarm)
+            if (ignoreFireAlarm == false)
             {
                 StartCoroutine(GoToExitPoint());
             }
@@ -159,7 +159,7 @@ namespace Luke
             waiting = false;
             //changed to here because of face direction
             currentTarget = (currentTarget + 1) % waypointPath.Count;
-            if (fireAlarm)
+            if (ignoreFireAlarm == false)
             {
                 currentTarget = setExitWaypoint;
             }
