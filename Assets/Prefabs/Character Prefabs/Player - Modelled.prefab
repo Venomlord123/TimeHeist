@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4595858832621905387}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3275662303157069257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CharacterModel - Scaled Variant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 4323998536611958601}
   - component: {fileID: 6199443125637779074}
   - component: {fileID: 6126198469184713928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Characer_Mesh_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 913609879966650542}
   - component: {fileID: 8802528044911687704}
   - component: {fileID: 1521703329746221406}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4598671436381603533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 2.84, z: 0.266}
+  m_LocalPosition: {x: 0.01, y: 2.84, z: 0.581}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3082963382585408494}
@@ -257,10 +257,11 @@ GameObject:
   - component: {fileID: 8812986599910413682}
   - component: {fileID: 7154178880681130301}
   - component: {fileID: 1223065967768369388}
-  m_Layer: 0
+  - component: {fileID: 1583628560}
+  m_Layer: 6
   m_Name: Player - Modelled
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -314,7 +315,7 @@ MonoBehaviour:
   velocity: 0
   speed: 12
   velocityNorm: {x: 0, y: 0, z: 0}
-  enabledMovement: 0
+  enabledMovement: 1
   tempNpcBase: {fileID: 0}
   playerJournal: {fileID: 0}
   startPosition: {x: 0, y: 0, z: 0}
@@ -350,3 +351,18 @@ CapsuleCollider:
   m_Height: 3.5462472
   m_Direction: 1
   m_Center: {x: 0, y: 1.6416467, z: 0}
+--- !u!114 &1583628560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7380431941212824727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323014d4fa4ada742b4f52dfc2168e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  mousePos: {x: 0, y: 0, z: 0}
+  cursorArrow: {fileID: 0}
