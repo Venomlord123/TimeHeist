@@ -57,6 +57,7 @@ namespace Luke
             foreach (NPCModel npcModel in allNpcs)
             {
                 npcModel.fireAlarmActive = true;
+                
                 if (npcModel.ignoreFireAlarm == false)
                 {
                     npcModel.exitWaypoints = patrolManager.NPCExitWaypoints;
