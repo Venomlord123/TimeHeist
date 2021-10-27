@@ -62,7 +62,7 @@ namespace Luke
             timer.countDownText.text = string.Format("{0:0}:{1:00}:{2:000}", timer.minutesCountDown, timer.secondsCountDown, timer.milliSecondsCountDown);
             
             //level event timer 
-            //DEBUG PURPOSE ONLY 
+            //bool for DEBUG PURPOSE ONLY 
             if (eventTimerShown)
             {
                 eventTimer.SetActive(true);

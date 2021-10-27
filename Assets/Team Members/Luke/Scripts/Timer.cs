@@ -20,7 +20,7 @@ namespace Luke
         public bool timerOn;
         [Tooltip("In seconds")]
         public float currentTimer;
-        [Tooltip("This changes the players time within the level in seconds (countdown goes through time stopping)")]
+        [Tooltip("Walking time")]
         public float maxTime;
         [Tooltip("Time the blackout will happen")]
         public float blackOutTime;

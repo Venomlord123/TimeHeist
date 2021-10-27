@@ -36,8 +36,10 @@ namespace Luke
         public Vector3 startPosition;
         [Tooltip("Start rotation position of npc")]
         public Quaternion startRotation;
-        [Tooltip("Testing purposes only")]
-        public bool fireAlarm;
+        [Tooltip("If fire alarm is currently on")]
+        public bool fireAlarmActive = false;
+        [Tooltip("This npc will currently ignore the fire alarm exit waypoints")]
+        public bool ignoreFireAlarm = false;
 
         private float time = 0.178f;
 
@@ -48,7 +50,6 @@ namespace Luke
             animator.speed = 0;
             playerMovementTimeStop.TimeStopEvent += MovementStop;
             playerMovementTimeStop.ContinueTimeEvent += MovementContinue;
-
         }
 
         //Unsubscribe
@@ -78,7 +79,7 @@ namespace Luke
         // Update is called once per frame
         void FixedUpdate()
         {
-            if (fireAlarm)
+            if (fireAlarmActive && ignoreFireAlarm == false)
             {
                 StartCoroutine(GoToExitPoint());
             }
@@ -158,7 +159,7 @@ namespace Luke
             waiting = false;
             //changed to here because of face direction
             currentTarget = (currentTarget + 1) % waypointPath.Count;
-            if (fireAlarm)
+            if (fireAlarmActive == false)
             {
                 currentTarget = setExitWaypoint;
             }
