@@ -90,6 +90,7 @@ namespace ZachFrench
                     {
                         tempNpcBase = hitInfo.collider.GetComponent<NPCBase>();
                         if (playerJournal is { }) playerJournal.GatheredInformation(tempNpcBase);
+                        //TODO add pop up event here
                     }
                 }
             }
