@@ -1800,7 +1800,7 @@ GameObject:
   - component: {fileID: 5773856251448504153}
   - component: {fileID: 5773856251448504135}
   m_Layer: 0
-  m_Name: JoeKing
+  m_Name: JoKing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1890,7 +1890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbf3e645f3a57647874da7761fd4628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: Joe King
+  npcName: Jo King
   isHeistMember: 0
   conversations: 
   currentLocation: 
