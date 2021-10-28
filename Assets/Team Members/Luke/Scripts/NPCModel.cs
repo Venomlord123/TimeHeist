@@ -79,9 +79,16 @@ namespace Luke
         // Update is called once per frame
         void FixedUpdate()
         {
-            if (fireAlarmActive && ignoreFireAlarm == false)
+            if (fireAlarmActive)
             {
-                StartCoroutine(GoToExitPoint());
+                if (ignoreFireAlarm)
+                {
+                    GoToNextPoint();
+                }
+                else
+                {
+                    StartCoroutine(GoToExitPoint());
+                }
             }
             else
             {
@@ -144,7 +151,6 @@ namespace Luke
             waiting = true;
             if (currentWaitTime == 0f)
             {
-
                 currentWaitTime = time;
             }
             yield return new WaitForSeconds(currentWaitTime);
@@ -159,7 +165,7 @@ namespace Luke
             waiting = false;
             //changed to here because of face direction
             currentTarget = (currentTarget + 1) % waypointPath.Count;
-            if (fireAlarmActive == false)
+            if (fireAlarmActive && ignoreFireAlarm == false)
             {
                 currentTarget = setExitWaypoint;
             }
@@ -173,13 +179,15 @@ namespace Luke
             Vector3 lookDirection = waypointPath[currentTarget].transform.forward; 
             Quaternion newRotation = Quaternion.LookRotation(lookDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, animator.speed / animationSpeedDivider);
-            
         }
 
         public IEnumerator GoToExitPoint()
         {
-            yield return new WaitForSeconds(.5f);
-            navMeshAgent.SetDestination(exitWaypoints[currentTarget].transform.position);
+            if (ignoreFireAlarm == false)
+            {
+                yield return new WaitForSeconds(.5f);
+                navMeshAgent.SetDestination(exitWaypoints[currentTarget].transform.position);
+            }
         }
         
     }

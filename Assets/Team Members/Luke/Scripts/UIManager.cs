@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using ZachFrench;
 
@@ -10,16 +11,21 @@ namespace Luke
     {
         //references
         public GameManager gameManager;
+        public PlayerModel playerModel;
         public Timer timer;
+        //Variables
         public bool eventTimerShown;
         public GameObject eventTimer;
         public GameObject countDown;
+        public TextMeshProUGUI text;
+        public float timePopUpShown;
 
         private void OnEnable()
         {
             timer.CountDownEndEvent += ZeroCountDown;
             gameManager.GameSwitchSceneEvent += ZeroCountDown;
             gameManager.JournalSwitchSceneEvent += ShowTimer;
+            playerModel.InteractEvent += InteractPopUp;
         }
 
         private void OnDisable()
@@ -27,6 +33,7 @@ namespace Luke
             timer.CountDownEndEvent -= ZeroCountDown;
             gameManager.GameSwitchSceneEvent -= ZeroCountDown;
             gameManager.JournalSwitchSceneEvent -= ShowTimer;
+            playerModel.InteractEvent -= InteractPopUp;
         }
 
         // Start is called before the first frame update
@@ -86,6 +93,19 @@ namespace Luke
         public void ShowTimer()
         {
             countDown.SetActive(true);
+        }
+
+        public void InteractPopUp()
+        {
+            //TODO check to see if the npc is already added
+            StartCoroutine(PopUpTimer());
+        }
+
+        public IEnumerator PopUpTimer()
+        {
+            text.gameObject.SetActive(true);
+            yield return new WaitForSeconds(timePopUpShown);
+            text.gameObject.SetActive(false);
         }
     }
 }

@@ -56,15 +56,16 @@ namespace Luke
         {
             foreach (NPCModel npcModel in allNpcs)
             {
-                npcModel.exitWaypoints = patrolManager.NPCExitWaypoints;
-                npcModel.currentTarget = npcModel.setExitWaypoint;
                 npcModel.fireAlarmActive = true;
+                
+                if (npcModel.ignoreFireAlarm == false)
+                {
+                    npcModel.exitWaypoints = patrolManager.NPCExitWaypoints;
+                    npcModel.currentTarget = npcModel.setExitWaypoint;
+                }
             }
         }
-
-        /// <summary>
-        /// TODO find heist members from NPCBase then add to heist list
-        /// </summary>
+        
         public void HeistMemberSearch()
         {
             foreach (NPCBase npc in allNpcs)

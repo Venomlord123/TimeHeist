@@ -32,7 +32,8 @@ namespace ZachFrench
         public Vector3 startPosition;
         public Quaternion startRotation;
         public GameManager gameManager;
-
+        //Events
+        public event Action InteractEvent;
 
         private void OnEnable()
         {
@@ -90,7 +91,8 @@ namespace ZachFrench
                     {
                         tempNpcBase = hitInfo.collider.GetComponent<NPCBase>();
                         if (playerJournal is { }) playerJournal.GatheredInformation(tempNpcBase);
-                        //TODO add pop up event here
+                        //TODO hook this up to functionality in UIManager
+                        InteractEvent?.Invoke();
                     }
                 }
             }
