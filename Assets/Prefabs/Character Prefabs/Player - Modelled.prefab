@@ -274,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 7380431941212824727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4595858832621905387}
   - {fileID: 7673798556755932175}
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 4042344015905807039}
   velocity: 0
-  speed: 12
+  speed: 24
   velocityNorm: {x: 0, y: 0, z: 0}
   enabledMovement: 1
   tempNpcBase: {fileID: 0}
