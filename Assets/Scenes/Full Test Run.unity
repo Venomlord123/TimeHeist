@@ -118409,6 +118409,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 1208531823824383835, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1534823934719538139, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
       propertyPath: countDown
       value: 
@@ -118428,6 +118432,14 @@ PrefabInstance:
     - target: {fileID: 1534823934719538139, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
       propertyPath: eventTimerShown
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121649133850588953, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121649133850588953, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3740275375382182456, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
       propertyPath: m_Name
@@ -118544,6 +118556,10 @@ PrefabInstance:
     - target: {fileID: 3740275376582473591, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
       propertyPath: m_fontSizeBase
       value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740275376582473591, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
+      propertyPath: m_enableVertexGradient
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
