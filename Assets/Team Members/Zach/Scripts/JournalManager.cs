@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using Luke;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +9,7 @@ public class JournalManager : MonoBehaviour
     public GameObject journalCanvas;
     public JournalModel journalModel;
     public MasterMind masterMind;
-    
+
     //MasterMind UI
     public int accusationPosCount;
     public List<GameObject> accusedSuspectMugshot;
@@ -37,7 +35,7 @@ public class JournalManager : MonoBehaviour
 
     private void JournalActivate()
     {
-        journalCanvas.SetActive(true); 
+        journalCanvas.SetActive(true);
         JournalUpdateSuspects();
     }
 
@@ -73,6 +71,7 @@ public class JournalManager : MonoBehaviour
             {
                 accusedSuspect.GetComponent<RawImage>().texture = null;
             }
+
             accusationPosCount = 0;
         }
     }
