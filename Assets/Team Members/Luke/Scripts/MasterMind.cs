@@ -40,7 +40,7 @@ namespace Luke
         {
             gameManager.GameSwitchSceneEvent += DisplayHistory;
             npcDetails = journalModel.suspectEntries;
-            StartCoroutine(Subscribing());
+            //StartCoroutine(Subscribing());
         }
 
         private void OnDisable()
@@ -48,14 +48,14 @@ namespace Luke
             gameManager.GameSwitchSceneEvent += DisplayHistory;
         }
 
-        public IEnumerator Subscribing()
+        /*public IEnumerator Subscribing()
         {
             yield return new WaitForSeconds(1f);
             foreach (GameObject suspect in npcDetails)
             {
                 suspect.GetComponent<SuspectIndividualButton>().OnButtonPressAccuseEvent += AddToAccusationList;
             }
-        }
+        }*/
 
         public void AddToAccusationList(NPCInformation accusedDetails)
         {

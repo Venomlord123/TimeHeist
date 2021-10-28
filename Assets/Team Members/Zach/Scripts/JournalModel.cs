@@ -52,6 +52,8 @@ public class JournalModel : MonoBehaviour
                         tempSuspectEntry.GetComponentInChildren<TextMeshProUGUI>().text = npcInfo.suspectName;
                         tempSuspectEntry.GetComponent<SuspectIndividualButton>().OnButtonPressDetailsEvent +=
                             UpdateSuspectsDetails;
+                        tempSuspectEntry.GetComponent<SuspectIndividualButton>().OnButtonPressAccuseEvent +=
+                            masterMind.AddToAccusationList;
                         npcInfo.suspectChecked = true;
                         posCounter++;
                     }
