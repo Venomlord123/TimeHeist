@@ -67,7 +67,7 @@ namespace Luke
             // on the left 0 for the minutes and right of the colon is 1 for seconds
             //Player's visual
             timer.countDownText.text = string.Format("{0:0}:{1:00}:{2:000}", timer.minutesCountDown, timer.secondsCountDown, timer.milliSecondsCountDown);
-            
+
             //level event timer 
             //bool for DEBUG PURPOSE ONLY 
             if (eventTimerShown)
