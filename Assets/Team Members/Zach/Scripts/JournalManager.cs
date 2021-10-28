@@ -44,21 +44,24 @@ public class JournalManager : MonoBehaviour
     private void JournalDeactivate()
     {
         journalCanvas.SetActive(false);
+        accusationPosCount = 0;
     }
 
     public void JournalUpdateSuspects()
     {
         journalModel.SuspectPageIndividuals();
     }
-    
-    
+
     //Mastermind
     public void CreateAccusedMugshot(NPCInformation accusedDetails)
     {
         if (accusationPosCount < accusedSuspectMugshot.Count)
         {
-            accusedSuspectMugshot[accusationPosCount].GetComponent<RawImage>().texture = accusedDetails.mugShot;
-            accusationPosCount++;
+            if (accusedSuspectMugshot[accusationPosCount] != null)
+            {
+                accusedSuspectMugshot[accusationPosCount].GetComponent<RawImage>().texture = accusedDetails.mugShot;
+                accusationPosCount++;
+            }
         }
     }
 
