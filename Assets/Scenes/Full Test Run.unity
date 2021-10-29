@@ -10188,6 +10188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 196269839}
+  - component: {fileID: 196269840}
   m_Layer: 0
   m_Name: Blue Room
   m_TagString: Untagged
@@ -10209,6 +10210,19 @@ Transform:
   m_Father: {fileID: 928520361}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &196269840
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196269838}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 210.82544, y: 1, z: 178.48967}
+  m_Center: {x: 30.078613, y: 0, z: 7.184761}
 --- !u!4 &199272131 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ce50d2d315a18446bb0196604a3eedc, type: 3}
@@ -16528,6 +16542,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 323040943}
+  - component: {fileID: 323040944}
   m_Layer: 0
   m_Name: Yellow Room
   m_TagString: Untagged
@@ -16549,6 +16564,19 @@ Transform:
   m_Father: {fileID: 928520361}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &323040944
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323040942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 127.899414, y: 1, z: 121.46005}
+  m_Center: {x: -3.5344849, y: 0, z: 6.5821}
 --- !u!1001 &325773562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20695,7 +20723,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396615808}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 68.11859, y: 1, z: 64.275734}
@@ -31851,6 +31879,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 668112977}
+  - component: {fileID: 668112978}
   m_Layer: 0
   m_Name: Red Room
   m_TagString: Untagged
@@ -31872,6 +31901,19 @@ Transform:
   m_Father: {fileID: 928520361}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &668112978
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668112976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 140.00946, y: 1, z: 176.34726}
+  m_Center: {x: 28.795258, y: 0, z: -6.1445312}
 --- !u!1 &668448222
 GameObject:
   m_ObjectHideFlags: 0
