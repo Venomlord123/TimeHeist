@@ -7,7 +7,6 @@ using UnityEngine;
 public class LightingManager : MonoBehaviour
 {
     //References
-    public GameManager gameManager;
     public Timer timer;
     //Variables
     public List<Light> lights;
