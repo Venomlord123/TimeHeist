@@ -49,17 +49,21 @@ namespace Luke
 
         public void AddToAccusationList(NPCInformation accusedDetails)
         {
-            if (!currentlyAccused.Contains(accusedDetails) && currentlyAccused.Count < 4)
+            if (!currentlyAccused.Contains(accusedDetails) && currentlyAccused.Count < 4 && accusedDetails.currentlyAccused == false)
             {
+                AddAccusedEvent.Invoke(accusedDetails);
                 currentlyAccused.Add(accusedDetails);
+                accusedDetails.currentlyAccused = true;
             }
-            
-            AddAccusedEvent.Invoke(accusedDetails);
         }
         
         public void RemoveFromAccusationList()
         {
             currentlyAccused.Clear();
+            foreach (NPCInformation npcInformation in currentlyAccused)
+            {
+                npcInformation.currentlyAccused = false;
+            }
             RemoveAccusedEvent.Invoke();
             
         }
