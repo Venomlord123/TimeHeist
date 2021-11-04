@@ -59,6 +59,7 @@ namespace Luke
         public event Action CountDownEndEvent;
         public event Action BlackOutEvent;
         public event Action FireAlarmEvent;
+        public event Action PaintingStolenEvent;
         public event Action EventTimerEndEvent;
 
         void Start()
@@ -173,6 +174,7 @@ namespace Luke
                 {
                     //TODO currently casting more than once
                     FireAlarmEvent?.Invoke();
+                    PaintingStolenEvent?.Invoke();
                     fireAlarmDone = true;
                     Debug.Log("Fire Alarm!!!");
                 }
