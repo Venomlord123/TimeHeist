@@ -45712,6 +45712,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 971307675}
+  - component: {fileID: 971307676}
   m_Layer: 0
   m_Name: Lights
   m_TagString: Untagged
@@ -45790,6 +45791,23 @@ Transform:
   m_Father: {fileID: 861141795}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &971307676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971307674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3eeae5ba7094234b9a13243fb74b0c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1059966977}
+  timer: {fileID: 1924370733}
+  lights: []
+  lightsIntensity: 2.5
+  blackoutDuration: 5
 --- !u!1 &973324598
 GameObject:
   m_ObjectHideFlags: 0
