@@ -90,7 +90,11 @@ namespace ZachFrench
                     if (hitInfo.collider.GetComponent<NPCBase>())
                     {
                         tempNpcBase = hitInfo.collider.GetComponent<NPCBase>();
-                        if (playerJournal is { }) playerJournal.GatheredInformation(tempNpcBase);
+                        if (playerJournal != null)
+                        {
+                            playerJournal.GatheredInformation(tempNpcBase);
+                        }
+                        //if (playerJournal is { }) playerJournal.GatheredInformation(tempNpcBase);
                         InteractEvent?.Invoke();
                     }
                 }
