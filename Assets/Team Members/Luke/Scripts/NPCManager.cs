@@ -62,9 +62,9 @@ namespace Luke
                 {
                     npcModel.exitWaypoints = patrolManager.NPCExitWaypoints;
                     npcModel.currentTarget = npcModel.setExitWaypoint;
-                    //hack need to make the speed of the player calculate to the npc animation
-                    npcModel.animationSpeedDivider /= .5f;
-                    npcModel.npcMovementMultiplier *= 2;
+                    //hack need to make the speed of the player calculate to the npc animation (fire alarm increase npc speed)
+                    // npcModel.animationSpeedDivider /= .5f;
+                    // npcModel.npcMovementMultiplier *= 2;
                 }
             }
         }

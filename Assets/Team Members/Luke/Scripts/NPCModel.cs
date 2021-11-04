@@ -176,7 +176,15 @@ namespace Luke
         /// </summary>
         public void RotateToDirection()
         {
-            Vector3 lookDirection = waypointPath[currentTarget].transform.forward; 
+            Vector3 lookDirection = new Vector3();
+            if (fireAlarmActive && ignoreFireAlarm == false)
+            {
+                lookDirection = exitWaypoints[setExitWaypoint].transform.forward;
+            }
+            else
+            {
+                lookDirection = waypointPath[currentTarget].transform.forward;
+            }
             Quaternion newRotation = Quaternion.LookRotation(lookDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, animator.speed / animationSpeedDivider);
         }
