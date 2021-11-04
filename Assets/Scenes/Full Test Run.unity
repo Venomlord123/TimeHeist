@@ -45808,6 +45808,7 @@ MonoBehaviour:
   lights: []
   lightsIntensity: 2.5
   blackoutDuration: 5
+  lightsOn: 1
 --- !u!1 &973324598
 GameObject:
   m_ObjectHideFlags: 0

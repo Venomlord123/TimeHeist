@@ -12,7 +12,19 @@ public class LightingManager : MonoBehaviour
     //Variables
     public List<Light> lights;
     public float lightsIntensity;
+    [Tooltip("In seconds")]
     public float blackoutDuration;
+    public bool lightsOn = true;
+
+    private void OnEnable()
+    {
+        timer.BlackOutEvent += TurnOffLights;
+    }
+
+    private void OnDisable()
+    {
+        timer.BlackOutEvent += TurnOffLights;
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -25,28 +37,15 @@ public class LightingManager : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    private void Update()
     {
-        timer.BlackOutEvent += Blackout;
-    }
-
-    private void OnDisable()
-    {
-        timer.BlackOutEvent += Blackout;
-    }
-
-    public void Blackout()
-    {
-        StartCoroutine(BlackoutSequence());
-    }
-
-    public IEnumerator BlackoutSequence()
-    {
-        TurnOffLights();
-
-        yield return new WaitForSeconds(blackoutDuration);
-        
-        TurnOnLights();
+        if (lightsOn == false)
+        {
+            if (timer.currentTimer < timer.blackOutTime - blackoutDuration)
+            {
+                TurnOnLights();
+            }
+        }
     }
 
     public void TurnOffLights()
@@ -55,6 +54,7 @@ public class LightingManager : MonoBehaviour
         {
             light.intensity = 0;
         }
+        lightsOn = false;
     }
 
     public void TurnOnLights()
@@ -63,5 +63,6 @@ public class LightingManager : MonoBehaviour
         {
             light.intensity = lightsIntensity;
         }
+        lightsOn = true;
     }
 }
