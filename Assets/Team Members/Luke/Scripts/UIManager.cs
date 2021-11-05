@@ -17,7 +17,7 @@ namespace Luke
         public bool eventTimerShown;
         public GameObject eventTimer;
         public GameObject countDown;
-        public TextMeshProUGUI text;
+        public TextMeshProUGUI popUpText;
         public float timePopUpShown;
 
         private void OnEnable()
@@ -103,9 +103,9 @@ namespace Luke
 
         public IEnumerator PopUpTimer()
         {
-            text.gameObject.SetActive(true);
+            popUpText.gameObject.SetActive(true);
             yield return new WaitForSeconds(timePopUpShown);
-            text.gameObject.SetActive(false);
+            popUpText.gameObject.SetActive(false);
         }
     }
 }

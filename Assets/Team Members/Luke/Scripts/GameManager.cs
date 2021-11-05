@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
   //variables
   //TODO roundCounter++ when new round starts
   public int roundCounter;
+  public float journalTransitionTime;
   
   //events
   public event Action GameStartEvent;
@@ -37,13 +38,13 @@ public class GameManager : MonoBehaviour
     roundCounter = 1;
   }
 
-  public void Update()
-  {
-    if (Keyboard.current.escapeKey.isPressed)
-    {
-      pause.PauseGame();
-    }
-  }
+  // public void Update()
+  // {
+  //   if (Keyboard.current.escapeKey.isPressed)
+  //   {
+  //     pause.PauseGame();
+  //   }
+  // }
 
 
   private void OnEnable()
@@ -92,6 +93,12 @@ public class GameManager : MonoBehaviour
 
   public void JournalEnd()
   {
+    StartCoroutine(TransitionToGameSceneTime());
+  }
+
+  public IEnumerator TransitionToGameSceneTime()
+  {
+    yield return new WaitForSeconds(journalTransitionTime);
     JournalEndEvent?.Invoke();
     Debug.Log("Journal Scene over");
     JournalSwitchScene();

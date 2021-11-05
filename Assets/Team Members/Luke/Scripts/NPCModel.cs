@@ -153,6 +153,7 @@ namespace Luke
             {
                 currentWaitTime = time;
             }
+            
             yield return new WaitForSeconds(currentWaitTime);
             navMeshAgent.isStopped = false;
 
