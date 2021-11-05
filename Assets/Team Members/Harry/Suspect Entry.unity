@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 620086377}
     m_Modifications:
+    - target: {fileID: 174604412261613634, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 174604412261613634, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f8887ba15282905499451af9b4635886, type: 3}
+    - target: {fileID: 1353563548845616334, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.1800451
+      objectReference: {fileID: 0}
     - target: {fileID: 1571170192876384303, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -178,6 +190,54 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suspect Entry
       objectReference: {fileID: 0}
+    - target: {fileID: 3257263232664013398, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257263232664013398, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257263232664013398, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257263232664013398, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257263232664013398, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257263232664013398, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 692d507c8b9039b4a9adf0ab8d970c7d, type: 3}
+    - target: {fileID: 5002901743037256237, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8310804
+      objectReference: {fileID: 0}
+    - target: {fileID: 5002901743037256237, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -60.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5855121221766170357, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652085686727949242, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652085686727949242, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3d85ef569ce4b944ebcef0a2b887c570, type: 3}
+    - target: {fileID: 9105617304280584168, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c831bd1ae2efa54182b927b57caec4d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e013b2c3d51abd40a61077841f26824, type: 3}
 --- !u!4 &521540946 stripped
@@ -243,7 +303,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!223 &620086376
 Canvas:
   m_ObjectHideFlags: 0
@@ -361,7 +420,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &833472082
