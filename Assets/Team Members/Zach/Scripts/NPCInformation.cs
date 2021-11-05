@@ -15,4 +15,5 @@ public class NPCInformation : MonoBehaviour
     public bool isHeistMember;
     [Tooltip("NPC has an entry in journal")]
     public bool suspectChecked = false;
+    public bool currentlyAccused = false;
 }

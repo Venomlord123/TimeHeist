@@ -71,7 +71,6 @@ public class JournalManager : MonoBehaviour
             {
                 accusedSuspect.GetComponent<RawImage>().texture = null;
             }
-
             accusationPosCount = 0;
         }
     }
