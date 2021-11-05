@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using Luke;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +15,7 @@ public class JournalManager : MonoBehaviour
     //MasterMind UI
     public int accusationPosCount;
     public List<GameObject> accusedSuspectMugshot;
+    public TextMeshProUGUI transitionText;
 
     private void OnEnable()
     {
@@ -21,6 +24,7 @@ public class JournalManager : MonoBehaviour
         gameManager.JournalSwitchSceneEvent += RemoveAccusedMugshot;
         masterMind.AddAccusedEvent += CreateAccusedMugshot;
         masterMind.RemoveAccusedEvent += RemoveAccusedMugshot;
+        masterMind.FinaliseAccusationsEvent += TransitionToGameScene;
     }
 
     private void OnDisable()
@@ -30,6 +34,7 @@ public class JournalManager : MonoBehaviour
         gameManager.JournalSwitchSceneEvent -= RemoveAccusedMugshot;
         masterMind.AddAccusedEvent -= CreateAccusedMugshot;
         masterMind.RemoveAccusedEvent -= RemoveAccusedMugshot;
+        masterMind.FinaliseAccusationsEvent -= TransitionToGameScene;
     }
 
 
@@ -73,5 +78,18 @@ public class JournalManager : MonoBehaviour
             }
             accusationPosCount = 0;
         }
+    }
+
+    public void TransitionToGameScene()
+    {
+        StartCoroutine(UITransitionTime());
+    }
+
+    public IEnumerator UITransitionTime()
+    {
+        transitionText.text = masterMind.trueCounter + " correct " + masterMind.falseCounter + " incorrect" + "\n" + "Next round will begin shortly";
+        transitionText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(gameManager.journalTransitionTime);
+        transitionText.gameObject.SetActive(false);
     }
 }

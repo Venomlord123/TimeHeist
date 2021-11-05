@@ -21,8 +21,7 @@ namespace ZachFrench
         {
             notMoving = false;
         }
-
-
+        
         // Update is called once per frame
         private void Update()
         {
