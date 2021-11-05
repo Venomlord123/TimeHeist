@@ -23,6 +23,8 @@ namespace Luke
         public List<GameObject> npcDetails;
         public List<bool> currentRoundBools;
         public int heistCounter = 0;
+        public int falseCounter = 0;
+        public int trueCounter = 0;
         
 
         //events
@@ -121,9 +123,6 @@ namespace Luke
         /// </summary>
         public void DisplayHistory()
         {
-            int falseCounter = 0;
-            int trueCounter = 0;
-
             if (accusationHistory.Count != 0 && accusationHistory != null)
             {
                 foreach (bool accusation in accusationHistory[gameManager.roundCounter -2])

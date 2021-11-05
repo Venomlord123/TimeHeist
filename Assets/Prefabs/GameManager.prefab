@@ -44,4 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
+  masterMind: {fileID: 0}
+  pause: {fileID: 0}
   roundCounter: 0
+  journalTransitionTime: 4

@@ -226,8 +226,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -318,7 +318,7 @@ MonoBehaviour:
   eventTimerShown: 0
   eventTimer: {fileID: 1022116527}
   countDown: {fileID: 3740275376582473589}
-  text: {fileID: 3121649133850588953}
+  popUpText: {fileID: 3121649133850588953}
   timePopUpShown: 2
 --- !u!1 &3740275375435897769
 GameObject:
@@ -477,8 +477,8 @@ MonoBehaviour:
   timerOn: 0
   currentTimer: 0
   maxTime: 70
-  blackOutTime: 37
-  fireAlarmTime: 20
+  blackOutTime: 35
+  fireAlarmTime: 15
   timerMinutes: 0
   timerSeconds: 0
   timerMilliSeconds: 0
