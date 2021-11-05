@@ -3249,6 +3249,10 @@ PrefabInstance:
       propertyPath: waypointWaitTimes.Array.data[3]
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
+      propertyPath: isHeistMember
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5733030916642434269, guid: baef55ded4d248043b7447c76212420c, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -71745,6 +71749,10 @@ PrefabInstance:
       propertyPath: waypointWaitTimes.Array.data[1]
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
+      propertyPath: isHeistMember
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4988688586665599622, guid: af52cafce070c7248ae0531717fb417b, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -85172,6 +85180,10 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[4]
       value: 
       objectReference: {fileID: 625069453}
+    - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
+      propertyPath: isHeistMember
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5805590331923403255, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -85636,6 +85648,10 @@ PrefabInstance:
     - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
       propertyPath: waypointWaitTimes.Array.data[4]
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
+      propertyPath: isHeistMember
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2808990194790287599, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
       propertyPath: m_Layer
