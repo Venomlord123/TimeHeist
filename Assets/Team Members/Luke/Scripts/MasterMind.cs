@@ -61,11 +61,11 @@ namespace Luke
         
         public void RemoveFromAccusationList()
         {
-            currentlyAccused.Clear();
             foreach (NPCInformation npcInformation in currentlyAccused)
             {
                 npcInformation.currentlyAccused = false;
             }
+            currentlyAccused.Clear();
             RemoveAccusedEvent.Invoke();
             
         }
@@ -79,10 +79,12 @@ namespace Luke
                 if(npcInformation.isHeistMember)
                 {
                     accusationCorrect = true;
+                    trueCounter++;
                 }
                 else
                 {
                     accusationCorrect = false;
+                    falseCounter++;
                 }
                 currentRoundBools.Add(accusationCorrect);
             }
@@ -108,6 +110,7 @@ namespace Luke
 
             //History of accusations (true or false amount)
             StoreHistory(currentRoundBools);
+            currentlyAccused.Clear();
         }
 
         /// <summary>
@@ -123,6 +126,9 @@ namespace Luke
         /// </summary>
         public void DisplayHistory()
         {
+            falseCounter = 0;
+            trueCounter = 0;
+            
             if (accusationHistory.Count != 0 && accusationHistory != null)
             {
                 foreach (bool accusation in accusationHistory[gameManager.roundCounter -2])
@@ -139,6 +145,8 @@ namespace Luke
 
                 GameObject tempHistoryText = Instantiate(histroyTextRef,historyPositions[gameManager.roundCounter -2].transform);
                 tempHistoryText.GetComponent<TextMeshProUGUI>().text = trueCounter + " correct" + falseCounter + " incorrect";
+                trueCounter = 0;
+                falseCounter = 0;
             }
         }
     }
