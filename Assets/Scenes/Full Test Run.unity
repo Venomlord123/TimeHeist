@@ -978,7 +978,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &13833309
@@ -3177,6 +3176,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -3188,10 +3195,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.5
@@ -3208,10 +3211,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[2]
       value: 
       objectReference: {fileID: 1123995069}
-    - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 1
@@ -3446,6 +3445,138 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65642992}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &67895080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 67895081}
+  - component: {fileID: 67895085}
+  - component: {fileID: 67895084}
+  - component: {fileID: 67895083}
+  m_Layer: 5
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &67895081
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67895080}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2093660874}
+  m_Father: {fileID: 1253288726}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &67895083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67895080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 67895084}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 691379044}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: UnpauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &67895084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67895080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &67895085
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67895080}
+  m_CullTransparentMesh: 0
 --- !u!1 &68348937
 GameObject:
   m_ObjectHideFlags: 0
@@ -5400,7 +5531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5539374860273869738, guid: e3b0b1b4237696646ae9fed32987e836, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 811
+      value: 841.11
       objectReference: {fileID: 0}
     - target: {fileID: 5539374860273869738, guid: e3b0b1b4237696646ae9fed32987e836, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5420,7 +5551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5539374860273869738, guid: e3b0b1b4237696646ae9fed32987e836, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 5539374860273869738, guid: e3b0b1b4237696646ae9fed32987e836, type: 3}
       propertyPath: m_LocalRotation.z
@@ -5432,7 +5563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5539374860273869738, guid: e3b0b1b4237696646ae9fed32987e836, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 5539374860273869738, guid: e3b0b1b4237696646ae9fed32987e836, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -5746,7 +5877,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &123044539 stripped
@@ -8445,7 +8575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3609702778064032380, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3609702778064032380, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8500,6 +8630,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3860293997862059017, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860293997862059017, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860293997862059017, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -8511,10 +8649,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 3860293997862059017, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3860293997862059017, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -8535,10 +8669,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[4]
       value: 
       objectReference: {fileID: 457734667}
-    - target: {fileID: 3860293997862059017, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3860293997862059017, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 4
@@ -9168,6 +9298,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3563981845588632332, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563981845588632332, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563981845588632332, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
       propertyPath: setExitWaypoint
       value: 1
       objectReference: {fileID: 0}
@@ -9179,10 +9317,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 3563981845588632332, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3563981845588632332, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -9203,10 +9337,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[4]
       value: 
       objectReference: {fileID: 1764341842}
-    - target: {fileID: 3563981845588632332, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3563981845588632332, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 5
@@ -9257,7 +9387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3963018028400456906, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3963018028400456906, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9729,7 +9859,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &190808975
@@ -10014,7 +10143,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &191542305
@@ -11200,7 +11328,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &218986459 stripped
@@ -11304,7 +11431,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &222326887
@@ -12494,7 +12620,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &255357886
@@ -14049,7 +14174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 763907984727412747, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 763907984727412747, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14096,6 +14221,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 942179480454059507, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 942179480454059507, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 942179480454059507, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -14107,10 +14240,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 942179480454059507, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 942179480454059507, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -14127,10 +14256,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 1404498416}
-    - target: {fileID: 942179480454059507, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 942179480454059507, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 6
@@ -14951,7 +15076,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &291584000
@@ -15321,7 +15445,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &298524663
@@ -15693,7 +15816,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &301547754
@@ -16404,7 +16526,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &319096939
@@ -18444,7 +18565,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &356238743
@@ -19754,6 +19874,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1656469453660630187, guid: 41606c78f6332f44c9c33756f0b3b2b3, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656469453660630187, guid: 41606c78f6332f44c9c33756f0b3b2b3, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656469453660630187, guid: 41606c78f6332f44c9c33756f0b3b2b3, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -19761,10 +19889,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 1656469453660630187, guid: 41606c78f6332f44c9c33756f0b3b2b3, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1656469453660630187, guid: 41606c78f6332f44c9c33756f0b3b2b3, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -19785,10 +19909,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[4]
       value: 
       objectReference: {fileID: 1889224279}
-    - target: {fileID: 1656469453660630187, guid: 41606c78f6332f44c9c33756f0b3b2b3, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1656469453660630187, guid: 41606c78f6332f44c9c33756f0b3b2b3, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 10
@@ -20586,7 +20706,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &391598749
@@ -22111,7 +22230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6972604040499321737, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6972604040499321737, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22170,6 +22289,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7442500834365691197, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442500834365691197, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442500834365691197, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -22182,10 +22309,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1250184184}
     - target: {fileID: 7442500834365691197, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7442500834365691197, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
       objectReference: {fileID: 1014263912}
@@ -22193,10 +22316,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[1]
       value: 
       objectReference: {fileID: 1631878600}
-    - target: {fileID: 7442500834365691197, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7442500834365691197, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 3
@@ -22481,7 +22600,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &449549383
@@ -22972,7 +23090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6030989008850366938, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6030989008850366938, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23015,6 +23133,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6068840130193679331, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068840130193679331, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068840130193679331, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -23026,10 +23152,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 6068840130193679331, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6068840130193679331, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -23046,10 +23168,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 218986459}
-    - target: {fileID: 6068840130193679331, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6068840130193679331, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 4
@@ -24748,7 +24866,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &493556256
@@ -26460,7 +26577,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &523540439
@@ -26839,7 +26955,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &528237121
@@ -28645,6 +28760,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6381092056634228457, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381092056634228457, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381092056634228457, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
       propertyPath: setExitWaypoint
       value: 1
       objectReference: {fileID: 0}
@@ -28656,10 +28779,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 6381092056634228457, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6381092056634228457, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -28676,10 +28795,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 516218551}
-    - target: {fileID: 6381092056634228457, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6381092056634228457, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 10
@@ -28714,7 +28829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6846746968530725153, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6846746968530725153, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28948,7 +29063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2523508911750339933, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2523508911750339933, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28991,6 +29106,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
+      propertyPath: exitWaypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
       propertyPath: setExitWaypoint
       value: 1
       objectReference: {fileID: 0}
@@ -29002,14 +29129,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
-      propertyPath: exitWaypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -29034,10 +29153,6 @@ PrefabInstance:
       propertyPath: exitWaypoints.Array.data[0]
       value: 
       objectReference: {fileID: 88893752}
-    - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 8
@@ -29910,7 +30025,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &623385905
@@ -30175,7 +30289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3686842908433060975, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3686842908433060975, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30226,6 +30340,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3792300723708136345, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792300723708136345, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792300723708136345, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -30233,10 +30355,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 3792300723708136345, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3792300723708136345, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -30253,10 +30371,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 1855508873}
-    - target: {fileID: 3792300723708136345, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3792300723708136345, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 5
@@ -33871,6 +33985,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000002, y: 1.5, z: 0.018085746}
   m_Center: {x: -0.5000001, y: 0.75, z: 0.009042873}
+--- !u!1 &691379043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3774047569057329178, guid: f7867f1772198a0459a2bb38efa435f8, type: 3}
+  m_PrefabInstance: {fileID: 5019522623330695645}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &691379044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691379043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdca699c0d5ad3d489af6c6359cbe772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseCursor: {fileID: 1450286866}
+  pauseMenu: {fileID: 1253288722}
+  isPaused: 0
 --- !u!4 &691433057 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ce50d2d315a18446bb0196604a3eedc, type: 3}
@@ -34613,7 +34747,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &704745023
@@ -34706,7 +34839,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &705202515 stripped
@@ -35841,7 +35973,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &739093219
@@ -36010,14 +36141,6 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 207281484101178119, guid: dc40f87cd06b74242a500aad98b8f5de, type: 3}
-      propertyPath: npcMovementMultiplier
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 207281484101178119, guid: dc40f87cd06b74242a500aad98b8f5de, type: 3}
-      propertyPath: playerMovementTimeStop
-      value: 
-      objectReference: {fileID: 1250184184}
-    - target: {fileID: 207281484101178119, guid: dc40f87cd06b74242a500aad98b8f5de, type: 3}
       propertyPath: waypointPath.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -36025,6 +36148,14 @@ PrefabInstance:
       propertyPath: exitWaypoints.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 207281484101178119, guid: dc40f87cd06b74242a500aad98b8f5de, type: 3}
+      propertyPath: npcMovementMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 207281484101178119, guid: dc40f87cd06b74242a500aad98b8f5de, type: 3}
+      propertyPath: playerMovementTimeStop
+      value: 
+      objectReference: {fileID: 1250184184}
     - target: {fileID: 207281484101178119, guid: dc40f87cd06b74242a500aad98b8f5de, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.5
@@ -38098,7 +38229,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &810369846
@@ -39044,6 +39174,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 717969520845475468, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 717969520845475468, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 717969520845475468, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -39055,10 +39193,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 717969520845475468, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 717969520845475468, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -39075,10 +39209,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 232546722}
-    - target: {fileID: 717969520845475468, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 717969520845475468, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 4
@@ -39109,7 +39239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1043713631274777149, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1043713631274777149, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40253,7 +40383,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &839642815 stripped
@@ -40469,7 +40598,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &849348036
@@ -41369,7 +41497,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &867949794
@@ -43615,7 +43742,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &931431158
@@ -45249,7 +45375,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &958958215
@@ -47270,6 +47395,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1302322548408009489, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302322548408009489, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302322548408009489, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -47277,10 +47410,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 1302322548408009489, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1302322548408009489, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -47297,10 +47426,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 1394813777}
-    - target: {fileID: 1302322548408009489, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1302322548408009489, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 7
@@ -47331,7 +47456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1556132245224031045, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1556132245224031045, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47972,7 +48097,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1000105897
@@ -48492,7 +48616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8296473776615965752, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8296473776615965752, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48543,6 +48667,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8406047372343192353, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406047372343192353, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406047372343192353, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -48554,10 +48686,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 8406047372343192353, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8406047372343192353, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -48574,10 +48702,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 593071136}
-    - target: {fileID: 8406047372343192353, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8406047372343192353, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 4
@@ -49098,7 +49222,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1020479809
@@ -49602,7 +49725,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1032579719
@@ -50019,6 +50141,18 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
+      propertyPath: exitWaypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -50030,14 +50164,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
-      propertyPath: exitWaypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -50078,10 +50204,6 @@ PrefabInstance:
       propertyPath: exitWaypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1270820417}
-    - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 3
@@ -50148,7 +50270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6316970100166293959, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6316970100166293959, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
       propertyPath: m_LocalPosition.x
@@ -50486,7 +50608,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1048109648
@@ -51066,7 +51187,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1054691214
@@ -51174,7 +51294,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1436970150434558137, guid: f7867f1772198a0459a2bb38efa435f8, type: 3}
   m_PrefabInstance: {fileID: 5019522623330695645}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 691379043}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41ccf84fec561504d8a24cc55d0b283a, type: 3}
@@ -52775,7 +52895,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1091711664
@@ -52963,7 +53082,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1093736291
@@ -53760,6 +53878,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3488755318494426061, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488755318494426061, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488755318494426061, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -53767,10 +53893,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 3488755318494426061, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3488755318494426061, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -53787,10 +53909,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 1746235882}
-    - target: {fileID: 3488755318494426061, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3488755318494426061, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 3
@@ -53833,7 +53951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4026276372363882192, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4026276372363882192, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54107,7 +54225,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1137292232 stripped
@@ -56541,7 +56658,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1202506741
@@ -58297,6 +58413,18 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
+      propertyPath: exitWaypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
       propertyPath: waiting
       value: 0
       objectReference: {fileID: 0}
@@ -58313,14 +58441,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1250184184}
     - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
-      propertyPath: exitWaypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.5
       objectReference: {fileID: 0}
@@ -58336,10 +58456,6 @@ PrefabInstance:
       propertyPath: exitWaypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1270820417}
-    - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 50
@@ -58358,7 +58474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7377913181416763547, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 7377913181416763547, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58860,6 +58976,105 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251999970}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1253288722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1253288726}
+  - component: {fileID: 1253288725}
+  - component: {fileID: 1253288724}
+  - component: {fileID: 1253288723}
+  m_Layer: 5
+  m_Name: Pause Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1253288723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253288722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1253288724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253288722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &1253288725
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253288722}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1253288726
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253288722}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 67895081}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1253495059
 GameObject:
   m_ObjectHideFlags: 0
@@ -61105,7 +61320,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1293383876
@@ -61198,7 +61412,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1294356784
@@ -61635,7 +61848,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1300834110 stripped
@@ -62133,7 +62345,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1315344193
@@ -63006,7 +63217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7724067179705437328, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7724067179705437328, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -63061,6 +63272,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7724067179705437331, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7724067179705437331, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7724067179705437331, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -63072,10 +63291,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 7724067179705437331, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 7724067179705437331, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -63092,10 +63307,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 723265554}
-    - target: {fileID: 7724067179705437331, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 7724067179705437331, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
       propertyPath: waypointWaitTimes.Array.data[1]
       value: 5
@@ -63950,6 +64161,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 180652845438747299, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 180652845438747299, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 180652845438747299, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -63961,10 +64180,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 180652845438747299, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 180652845438747299, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -63981,10 +64196,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 362668861}
-    - target: {fileID: 180652845438747299, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 180652845438747299, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 4
@@ -64011,7 +64222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 363515805927605039, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 363515805927605039, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64600,7 +64811,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1362874237
@@ -64752,7 +64962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5469821501516377287, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5469821501516377287, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64795,6 +65005,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
+      propertyPath: exitWaypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
       propertyPath: setExitWaypoint
       value: 1
       objectReference: {fileID: 0}
@@ -64806,14 +65028,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
-      propertyPath: exitWaypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -64838,10 +65052,6 @@ PrefabInstance:
       propertyPath: exitWaypoints.Array.data[0]
       value: 
       objectReference: {fileID: 88893752}
-    - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 8
@@ -65216,7 +65426,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1366499878
@@ -66491,7 +66700,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1385331633
@@ -69127,6 +69335,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 1.5, z: 0.01808575}
   m_Center: {x: -0.49999833, y: 0.75, z: 0.009050504}
+--- !u!114 &1450286866 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1583628560, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
+  m_PrefabInstance: {fileID: 905521700438010955}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323014d4fa4ada742b4f52dfc2168e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1451247830
 GameObject:
   m_ObjectHideFlags: 0
@@ -70547,7 +70766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4845544932713757750, guid: af52cafce070c7248ae0531717fb417b, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4845544932713757750, guid: af52cafce070c7248ae0531717fb417b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70598,6 +70817,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -70606,10 +70833,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1250184184}
     - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
       objectReference: {fileID: 55716654}
@@ -70617,10 +70840,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[1]
       value: 
       objectReference: {fileID: 226342328}
-    - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 33
@@ -71445,6 +71664,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3538162806293161793, guid: c05e0d5897e72524cbabf48d16d8ba90, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538162806293161793, guid: c05e0d5897e72524cbabf48d16d8ba90, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538162806293161793, guid: c05e0d5897e72524cbabf48d16d8ba90, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -71452,10 +71679,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 3538162806293161793, guid: c05e0d5897e72524cbabf48d16d8ba90, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3538162806293161793, guid: c05e0d5897e72524cbabf48d16d8ba90, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -71476,10 +71699,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[4]
       value: 
       objectReference: {fileID: 1415554684}
-    - target: {fileID: 3538162806293161793, guid: c05e0d5897e72524cbabf48d16d8ba90, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3538162806293161793, guid: c05e0d5897e72524cbabf48d16d8ba90, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 8
@@ -73633,7 +73852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4122878747759471812, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4122878747759471812, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73696,6 +73915,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4520999527356806806, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520999527356806806, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520999527356806806, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -73707,10 +73934,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 4520999527356806806, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4520999527356806806, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -73727,10 +73950,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 572469888}
-    - target: {fileID: 4520999527356806806, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4520999527356806806, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 6
@@ -74339,7 +74558,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1542230898
@@ -75802,7 +76020,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1576173078
@@ -79143,7 +79360,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1641322126
@@ -80149,6 +80365,18 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
+      propertyPath: exitWaypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -80160,14 +80388,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
-      propertyPath: exitWaypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -80188,10 +80408,6 @@ PrefabInstance:
       propertyPath: exitWaypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1270820417}
-    - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 3
@@ -81361,7 +81577,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &1676873821 stripped
@@ -82101,7 +82316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8256292283383851046, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8256292283383851046, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -82148,6 +82363,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8439331648520476592, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439331648520476592, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439331648520476592, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
       propertyPath: setExitWaypoint
       value: 1
       objectReference: {fileID: 0}
@@ -82159,10 +82382,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 8439331648520476592, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8439331648520476592, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -82183,10 +82402,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[4]
       value: 
       objectReference: {fileID: 246078528}
-    - target: {fileID: 8439331648520476592, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8439331648520476592, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 3
@@ -83623,6 +83838,18 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
+      propertyPath: exitWaypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -83634,14 +83861,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
-      propertyPath: exitWaypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.5
@@ -83667,10 +83886,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1270820417}
     - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 3
       objectReference: {fileID: 0}
@@ -83681,6 +83896,10 @@ PrefabInstance:
     - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
       propertyPath: waypointWaitTimes.Array.data[2]
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
+      propertyPath: animationSpeedDivider
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5805590331923403255, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
       propertyPath: m_Layer
@@ -83708,7 +83927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6334607472039075732, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6334607472039075732, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
       propertyPath: m_LocalPosition.x
@@ -84080,6 +84299,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
       propertyPath: fireAlarm
       value: 0
       objectReference: {fileID: 0}
@@ -84091,10 +84318,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.5
@@ -84123,10 +84346,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[5]
       value: 
       objectReference: {fileID: 1947556837}
-    - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 3
@@ -85503,7 +85722,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1748254187
@@ -88762,6 +88980,18 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
+      propertyPath: exitWaypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
       propertyPath: waiting
       value: 0
       objectReference: {fileID: 0}
@@ -88777,14 +89007,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
-      propertyPath: exitWaypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.5
@@ -88802,16 +89024,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 88893752}
     - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7783466435726385961, guid: 17262699d9e1c954c89ef88006380166, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 7783466435726385961, guid: 17262699d9e1c954c89ef88006380166, type: 3}
       propertyPath: m_LocalPosition.x
@@ -91580,7 +91798,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1887250870
@@ -92420,7 +92637,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1901273924
@@ -93945,6 +94161,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3848841602731901285, guid: 2e80b90e3f52bc1469491995ed26be86, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848841602731901285, guid: 2e80b90e3f52bc1469491995ed26be86, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848841602731901285, guid: 2e80b90e3f52bc1469491995ed26be86, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -93952,10 +94176,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 3848841602731901285, guid: 2e80b90e3f52bc1469491995ed26be86, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3848841602731901285, guid: 2e80b90e3f52bc1469491995ed26be86, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.5
@@ -93968,10 +94188,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[1]
       value: 
       objectReference: {fileID: 1246974646}
-    - target: {fileID: 3848841602731901285, guid: 2e80b90e3f52bc1469491995ed26be86, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3848841602731901285, guid: 2e80b90e3f52bc1469491995ed26be86, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 5
@@ -94518,7 +94734,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1926725697
@@ -95632,7 +95847,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1960220367
@@ -96623,6 +96837,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000002, y: 1.5, z: 0.018085746}
   m_Center: {x: -0.5000001, y: 0.75, z: 0.009041919}
+--- !u!114 &1972520069 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4356745740536138099, guid: 83f6852a331c0d142bc36dd3d9810722, type: 3}
+  m_PrefabInstance: {fileID: 580244821}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1973523984
 GameObject:
   m_ObjectHideFlags: 0
@@ -96713,7 +96938,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1978058048 stripped
@@ -97003,7 +97227,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1990115901 stripped
@@ -97437,7 +97660,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &2002566541
@@ -97695,7 +97917,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &2005000958
@@ -98613,6 +98834,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 222005735545831209, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 222005735545831209, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 222005735545831209, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -98620,10 +98849,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 222005735545831209, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 222005735545831209, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -98640,10 +98865,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 1485840265}
-    - target: {fileID: 222005735545831209, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 222005735545831209, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 5
@@ -98670,7 +98891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 332703933622462450, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 332703933622462450, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -100901,6 +101122,140 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093030375}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2093660873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2093660874}
+  - component: {fileID: 2093660876}
+  - component: {fileID: 2093660875}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2093660874
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093660873}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 67895081}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2093660875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093660873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Unpause
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &2093660876
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093660873}
+  m_CullTransparentMesh: 0
 --- !u!1001 &2093692439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101724,7 +102079,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &2112264893
@@ -102536,7 +102890,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &2130565082
@@ -106949,10 +107302,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 4595858832621905387, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4598671436381603533, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
       propertyPath: m_Icon
       value: 
@@ -106979,10 +107328,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7380431941212824727, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7673798556755932175, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
-      propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7673798556755932175, guid: 9c6cfa6825b2ea8478e3bae839676f82, type: 3}
@@ -124828,6 +125173,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 5019522623944888692}
     m_Modifications:
     - target: {fileID: 8848449747644925072, guid: 1862632188239aa47a9492c9fb37acce, type: 3}
+      propertyPath: accusedSuspectMugshot.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848449747644925072, guid: 1862632188239aa47a9492c9fb37acce, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -124848,10 +125197,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 550844035}
     - target: {fileID: 8848449747644925072, guid: 1862632188239aa47a9492c9fb37acce, type: 3}
-      propertyPath: accusedSuspectMugshot.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8848449747644925072, guid: 1862632188239aa47a9492c9fb37acce, type: 3}
       propertyPath: accusedSuspectMugshot.Array.data[0]
       value: 
       objectReference: {fileID: 1236811228}
@@ -124867,6 +125212,10 @@ PrefabInstance:
       propertyPath: accusedSuspectMugshot.Array.data[3]
       value: 
       objectReference: {fileID: 40814294}
+    - target: {fileID: 8848449747644925072, guid: 1862632188239aa47a9492c9fb37acce, type: 3}
+      propertyPath: transitionText
+      value: 
+      objectReference: {fileID: 1972520069}
     - target: {fileID: 8848449747644925073, guid: 1862632188239aa47a9492c9fb37acce, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -125040,6 +125389,14 @@ PrefabInstance:
       value: NPCManager
       objectReference: {fileID: 0}
     - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
+      propertyPath: allNpcs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
+      propertyPath: simpleNpcs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
       propertyPath: timer
       value: 
       objectReference: {fileID: 1924370733}
@@ -125052,20 +125409,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1923860207}
     - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
-      propertyPath: allNpcs.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
       propertyPath: allNpcs.Array.data[0]
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
       propertyPath: allNpcs.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
-      propertyPath: simpleNpcs.Array.size
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
       propertyPath: simpleNpcs.Array.data[0]
@@ -125201,6 +125550,10 @@ PrefabInstance:
       propertyPath: masterMind
       value: 
       objectReference: {fileID: 1869653311}
+    - target: {fileID: 1436970150434558137, guid: f7867f1772198a0459a2bb38efa435f8, type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 691379044}
     - target: {fileID: 3774047569057329178, guid: f7867f1772198a0459a2bb38efa435f8, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -125319,6 +125672,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8313452774475984859, guid: 23766b7adea476e429ac413b99e3c068, type: 3}
+      propertyPath: NPCExitWaypoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8313452774475984859, guid: 23766b7adea476e429ac413b99e3c068, type: 3}
       propertyPath: NPCWayPoints.Array.data[0]
       value: 
       objectReference: {fileID: 0}
@@ -125341,10 +125698,6 @@ PrefabInstance:
     - target: {fileID: 8313452774475984859, guid: 23766b7adea476e429ac413b99e3c068, type: 3}
       propertyPath: NPCWayPoints.Array.data[5]
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8313452774475984859, guid: 23766b7adea476e429ac413b99e3c068, type: 3}
-      propertyPath: NPCExitWaypoints.Array.size
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8313452774475984859, guid: 23766b7adea476e429ac413b99e3c068, type: 3}
       propertyPath: NPCExitWaypoints.Array.data[0]

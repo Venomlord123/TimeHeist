@@ -1,7 +1,12 @@
-﻿using UnityEngine;
+﻿using Luke;
+using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
+    //References 
+    public MouseCursor mouseCursor;
+    
+    //Variables
     public GameObject pauseMenu;
     public bool isPaused;
 
@@ -11,6 +16,7 @@ public class Pause : MonoBehaviour
         {
             Time.timeScale = 0;
             pauseMenu.SetActive(true);
+            mouseCursor.EnableMouse();
         }
     }
 
@@ -19,6 +25,7 @@ public class Pause : MonoBehaviour
         if (isPaused)
         {
             pauseMenu.SetActive(false);
+            mouseCursor.DisableMouse();
             Time.timeScale = 1;
         }
     }
