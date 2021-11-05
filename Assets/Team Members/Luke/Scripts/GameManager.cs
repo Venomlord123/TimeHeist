@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Luke;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using ZachFrench;
 
 public class GameManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
   //references
   public Timer timer;
   public MasterMind masterMind;
+  public Pause pause;
 
   //variables
   //TODO roundCounter++ when new round starts
@@ -34,6 +36,15 @@ public class GameManager : MonoBehaviour
     timer = FindObjectOfType<Timer>();
     roundCounter = 1;
   }
+
+  public void Update()
+  {
+    if (Keyboard.current.escapeKey.isPressed)
+    {
+      pause.PauseGame();
+    }
+  }
+
 
   private void OnEnable()
   {
