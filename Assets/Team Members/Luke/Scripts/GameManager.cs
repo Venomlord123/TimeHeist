@@ -28,7 +28,22 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-       // if (Keyboard.current.escapeKey.isPressed) pause.PauseGame();
+        if (pause.isPaused == false)
+        {
+            if (Keyboard.current.escapeKey.wasReleasedThisFrame)
+            {
+                pause.PauseGame();
+                pause.isPaused = true;
+            }
+        }
+        else if (pause.isPaused)
+        {
+            if (Keyboard.current.escapeKey.wasReleasedThisFrame)
+            {
+                pause.UnpauseGame();
+                pause.isPaused = false;
+            }
+        }
     }
 
 

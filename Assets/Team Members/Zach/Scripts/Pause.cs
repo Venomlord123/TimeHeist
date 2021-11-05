@@ -1,20 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public bool isPaused;
 
     public void PauseGame()
     {
-        Time.timeScale = 0;
-        pauseMenu.SetActive(true);
+        if (isPaused == false)
+        {
+            Time.timeScale = 0;
+            pauseMenu.SetActive(true);
+        }
     }
 
     public void UnpauseGame()
     {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1;
+        if (isPaused)
+        {
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+        }
     }
 }
