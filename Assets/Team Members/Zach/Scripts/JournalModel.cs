@@ -39,6 +39,8 @@ public class JournalModel : MonoBehaviour
         {
             foreach (NPCInformation npcInfo in npcInfos)
             {
+                npcInfo.currentlyAccused = false;
+                
                 if (posCounter < suspectPagePositions.Count)
                 {
                     if (npcInfo.suspectChecked == false)

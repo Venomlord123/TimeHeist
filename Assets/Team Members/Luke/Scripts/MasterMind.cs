@@ -145,6 +145,8 @@ namespace Luke
 
                 GameObject tempHistoryText = Instantiate(histroyTextRef,historyPositions[gameManager.roundCounter -2].transform);
                 tempHistoryText.GetComponent<TextMeshProUGUI>().text = trueCounter + " correct" + falseCounter + " incorrect";
+                trueCounter = 0;
+                falseCounter = 0;
             }
         }
     }
