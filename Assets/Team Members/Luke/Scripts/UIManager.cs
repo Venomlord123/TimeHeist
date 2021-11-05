@@ -18,6 +18,7 @@ namespace Luke
         public GameObject eventTimer;
         public GameObject countDown;
         public TextMeshProUGUI popUpText;
+        public TextMeshProUGUI gameEndText;
         public float timePopUpShown;
 
         private void OnEnable()
@@ -26,6 +27,7 @@ namespace Luke
             gameManager.GameSwitchSceneEvent += ZeroCountDown;
             gameManager.JournalSwitchSceneEvent += ShowTimer;
             playerModel.InteractEvent += InteractPopUp;
+            gameManager.masterMind.AllAccusedCorrectEvent += GameEndPopUp;
         }
 
         private void OnDisable()
@@ -106,6 +108,11 @@ namespace Luke
             popUpText.gameObject.SetActive(true);
             yield return new WaitForSeconds(timePopUpShown);
             popUpText.gameObject.SetActive(false);
+        }
+
+        public void GameEndPopUp()
+        {
+            gameEndText.gameObject.SetActive(true);
         }
     }
 }
