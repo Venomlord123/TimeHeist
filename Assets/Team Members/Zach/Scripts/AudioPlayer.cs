@@ -1,25 +1,38 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
-   public GameManager gameManager;
-   public AudioSource audioSource;
+    public GameManager gameManager;
+    public AudioSource audioSourceFire;
+    public AudioSource audioSourcePower;
 
-   private void OnEnable()
-   {
-      gameManager.timer.FireAlarmEvent += FireAlarm;
-   }
+    private void OnEnable()
+    {
+        gameManager.timer.FireAlarmEvent += FireAlarm;
+        gameManager.timer.BlackOutEvent += PowerSound;
+        gameManager.GameSwitchSceneEvent += EndOfFireAlarm;
+    }
 
-   private void OnDisable()
-   {
-      gameManager.timer.FireAlarmEvent -= FireAlarm;
-   }
 
-   private void FireAlarm()
-   {
-      audioSource.Play();
-   }
+    private void OnDisable()
+    {
+        gameManager.timer.FireAlarmEvent -= FireAlarm;
+        gameManager.timer.BlackOutEvent -= PowerSound;
+        gameManager.GameSwitchSceneEvent -= EndOfFireAlarm;
+    }
+
+    private void FireAlarm()
+    {
+        audioSourceFire.Play();
+    }
+
+    private void EndOfFireAlarm()
+    {
+        audioSourceFire.Stop();
+    }
+
+    private void PowerSound()
+    {
+        audioSourcePower.Play();
+    }
 }
