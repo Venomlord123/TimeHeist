@@ -978,7 +978,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &13833309
@@ -3177,6 +3176,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -3188,10 +3195,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.5
@@ -3208,10 +3211,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[2]
       value: 
       objectReference: {fileID: 1123995069}
-    - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5711351681582941560, guid: baef55ded4d248043b7447c76212420c, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 1
@@ -5746,7 +5745,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &123044539 stripped
@@ -8500,6 +8498,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3860293997862059017, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860293997862059017, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860293997862059017, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -8511,10 +8517,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 3860293997862059017, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3860293997862059017, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -8535,10 +8537,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[4]
       value: 
       objectReference: {fileID: 457734667}
-    - target: {fileID: 3860293997862059017, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3860293997862059017, guid: e3477a26325a2e14cab1b5a33eb5b66c, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 4
@@ -9168,6 +9166,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3563981845588632332, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563981845588632332, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563981845588632332, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
       propertyPath: setExitWaypoint
       value: 1
       objectReference: {fileID: 0}
@@ -9179,10 +9185,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 3563981845588632332, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3563981845588632332, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -9203,10 +9205,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[4]
       value: 
       objectReference: {fileID: 1764341842}
-    - target: {fileID: 3563981845588632332, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3563981845588632332, guid: ad21025375d41084e8aa97d24b9c1b08, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 5
@@ -9729,7 +9727,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &190808975
@@ -10014,7 +10011,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &191542305
@@ -11200,7 +11196,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &218986459 stripped
@@ -11304,7 +11299,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &222326887
@@ -12494,7 +12488,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &255357886
@@ -14096,6 +14089,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 942179480454059507, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 942179480454059507, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 942179480454059507, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -14107,10 +14108,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 942179480454059507, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 942179480454059507, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -14127,10 +14124,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 1404498416}
-    - target: {fileID: 942179480454059507, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 942179480454059507, guid: 4676bbdd7e4b1c14c9d710c339dc4b80, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 6
@@ -14951,7 +14944,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &291584000
@@ -15321,7 +15313,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &298524663
@@ -15693,7 +15684,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &301547754
@@ -16404,7 +16394,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &319096939
@@ -18444,7 +18433,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &356238743
@@ -19754,6 +19742,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1656469453660630187, guid: 41606c78f6332f44c9c33756f0b3b2b3, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656469453660630187, guid: 41606c78f6332f44c9c33756f0b3b2b3, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656469453660630187, guid: 41606c78f6332f44c9c33756f0b3b2b3, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -19761,10 +19757,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 1656469453660630187, guid: 41606c78f6332f44c9c33756f0b3b2b3, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1656469453660630187, guid: 41606c78f6332f44c9c33756f0b3b2b3, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -19785,10 +19777,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[4]
       value: 
       objectReference: {fileID: 1889224279}
-    - target: {fileID: 1656469453660630187, guid: 41606c78f6332f44c9c33756f0b3b2b3, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1656469453660630187, guid: 41606c78f6332f44c9c33756f0b3b2b3, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 10
@@ -20586,7 +20574,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &391598749
@@ -22170,6 +22157,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7442500834365691197, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442500834365691197, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442500834365691197, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -22182,10 +22177,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1250184184}
     - target: {fileID: 7442500834365691197, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7442500834365691197, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
       objectReference: {fileID: 1014263912}
@@ -22193,10 +22184,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[1]
       value: 
       objectReference: {fileID: 1631878600}
-    - target: {fileID: 7442500834365691197, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7442500834365691197, guid: 10fc9c85fcf8c8a4895df2afef99127d, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 3
@@ -22481,7 +22468,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &449549383
@@ -23015,6 +23001,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6068840130193679331, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068840130193679331, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068840130193679331, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -23026,10 +23020,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 6068840130193679331, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6068840130193679331, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -23046,10 +23036,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 218986459}
-    - target: {fileID: 6068840130193679331, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6068840130193679331, guid: 11a5b32af806c6d41bd739b15eec2fda, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 4
@@ -24748,7 +24734,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &493556256
@@ -26460,7 +26445,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &523540439
@@ -26839,7 +26823,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &528237121
@@ -28645,6 +28628,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6381092056634228457, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381092056634228457, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381092056634228457, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
       propertyPath: setExitWaypoint
       value: 1
       objectReference: {fileID: 0}
@@ -28656,10 +28647,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 6381092056634228457, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6381092056634228457, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -28676,10 +28663,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 516218551}
-    - target: {fileID: 6381092056634228457, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6381092056634228457, guid: 2db92a821f77f744cab9b77a14c2e04b, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 10
@@ -28991,6 +28974,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
+      propertyPath: exitWaypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
       propertyPath: setExitWaypoint
       value: 1
       objectReference: {fileID: 0}
@@ -29002,14 +28997,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
-      propertyPath: exitWaypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -29034,10 +29021,6 @@ PrefabInstance:
       propertyPath: exitWaypoints.Array.data[0]
       value: 
       objectReference: {fileID: 88893752}
-    - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2523508911750339934, guid: 15f589278b19a3d4dad6b715a0bc9b1f, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 8
@@ -29910,7 +29893,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &623385905
@@ -30226,6 +30208,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3792300723708136345, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792300723708136345, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792300723708136345, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -30233,10 +30223,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 3792300723708136345, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3792300723708136345, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -30253,10 +30239,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 1855508873}
-    - target: {fileID: 3792300723708136345, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3792300723708136345, guid: 246f19fb9c3b2e2409673ee9dcae3391, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 5
@@ -34613,7 +34595,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &704745023
@@ -34706,7 +34687,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &705202515 stripped
@@ -35841,7 +35821,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &739093219
@@ -36010,14 +35989,6 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 207281484101178119, guid: dc40f87cd06b74242a500aad98b8f5de, type: 3}
-      propertyPath: npcMovementMultiplier
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 207281484101178119, guid: dc40f87cd06b74242a500aad98b8f5de, type: 3}
-      propertyPath: playerMovementTimeStop
-      value: 
-      objectReference: {fileID: 1250184184}
-    - target: {fileID: 207281484101178119, guid: dc40f87cd06b74242a500aad98b8f5de, type: 3}
       propertyPath: waypointPath.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -36025,6 +35996,14 @@ PrefabInstance:
       propertyPath: exitWaypoints.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 207281484101178119, guid: dc40f87cd06b74242a500aad98b8f5de, type: 3}
+      propertyPath: npcMovementMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 207281484101178119, guid: dc40f87cd06b74242a500aad98b8f5de, type: 3}
+      propertyPath: playerMovementTimeStop
+      value: 
+      objectReference: {fileID: 1250184184}
     - target: {fileID: 207281484101178119, guid: dc40f87cd06b74242a500aad98b8f5de, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.5
@@ -38098,7 +38077,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &810369846
@@ -39044,6 +39022,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 717969520845475468, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 717969520845475468, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 717969520845475468, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -39055,10 +39041,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 717969520845475468, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 717969520845475468, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -39075,10 +39057,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 232546722}
-    - target: {fileID: 717969520845475468, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 717969520845475468, guid: 6052c7d95bd492b44b6141077148508f, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 4
@@ -40253,7 +40231,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &839642815 stripped
@@ -40469,7 +40446,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &849348036
@@ -41369,7 +41345,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &867949794
@@ -43615,7 +43590,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &931431158
@@ -45249,7 +45223,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &958958215
@@ -46238,6 +46211,102 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973324598}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &975181441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 975181445}
+  - component: {fileID: 975181444}
+  - component: {fileID: 975181443}
+  - component: {fileID: 975181442}
+  m_Layer: 0
+  m_Name: BlackVoid (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &975181442
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975181441}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &975181443
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975181441}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a34438adfbd0f9d4f9e4d3f8d0475a5c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &975181444
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975181441}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &975181445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975181441}
+  m_LocalRotation: {x: 0.50000006, y: 0.49999997, z: -0.49999997, w: 0.5000001}
+  m_LocalPosition: {x: 619.7, y: 10.5, z: 150.8}
+  m_LocalScale: {x: 1.7438183, y: 2.700705, z: 2.2198715}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -90}
 --- !u!1 &977723299
 GameObject:
   m_ObjectHideFlags: 0
@@ -47270,6 +47339,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1302322548408009489, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302322548408009489, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302322548408009489, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -47277,10 +47354,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 1302322548408009489, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1302322548408009489, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -47297,10 +47370,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 1394813777}
-    - target: {fileID: 1302322548408009489, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1302322548408009489, guid: 2a82c77cc0af80d42ad2ab95c681548d, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 7
@@ -47972,7 +48041,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1000105897
@@ -48543,6 +48611,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8406047372343192353, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406047372343192353, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406047372343192353, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -48554,10 +48630,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 8406047372343192353, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8406047372343192353, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -48574,10 +48646,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 593071136}
-    - target: {fileID: 8406047372343192353, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8406047372343192353, guid: 8adfc52ba86aadb4e988a3dcc28d8cb2, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 4
@@ -48887,6 +48955,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a604eb52c60e9a4b8c508fb53ca9859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1014381271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1014381275}
+  - component: {fileID: 1014381274}
+  - component: {fileID: 1014381273}
+  - component: {fileID: 1014381272}
+  m_Layer: 0
+  m_Name: BlackVoid (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &1014381272
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014381271}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1014381273
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014381271}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a34438adfbd0f9d4f9e4d3f8d0475a5c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1014381274
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014381271}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1014381275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014381271}
+  m_LocalRotation: {x: 0.5000003, y: -0.49999967, z: 0.49999976, w: 0.50000024}
+  m_LocalPosition: {x: 827.72, y: 14.54, z: 28.78}
+  m_LocalScale: {x: 1.7438183, y: 2.700705, z: 3.2634332}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!4 &1017551275 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9a03f26f0befaf949aafafd86cf152c9, type: 3}
@@ -49098,7 +49262,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1020479809
@@ -49602,7 +49765,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1032579719
@@ -50019,6 +50181,18 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
+      propertyPath: exitWaypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -50030,14 +50204,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
-      propertyPath: exitWaypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -50078,10 +50244,6 @@ PrefabInstance:
       propertyPath: exitWaypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1270820417}
-    - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 5773856251448504135, guid: 79d713f03f417054fb9a6a0ce4d15d06, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 3
@@ -50486,7 +50648,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1048109648
@@ -51066,7 +51227,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1054691214
@@ -52775,7 +52935,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1091711664
@@ -52963,7 +53122,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1093736291
@@ -53760,6 +53918,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3488755318494426061, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488755318494426061, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488755318494426061, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -53767,10 +53933,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 3488755318494426061, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3488755318494426061, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -53787,10 +53949,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 1746235882}
-    - target: {fileID: 3488755318494426061, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3488755318494426061, guid: 8ad1d014ba266a94dac7be3cc98cf0b2, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 3
@@ -54107,7 +54265,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1137292232 stripped
@@ -56541,7 +56698,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1202506741
@@ -58297,6 +58453,18 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
+      propertyPath: exitWaypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
       propertyPath: waiting
       value: 0
       objectReference: {fileID: 0}
@@ -58313,14 +58481,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1250184184}
     - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
-      propertyPath: exitWaypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.5
       objectReference: {fileID: 0}
@@ -58336,10 +58496,6 @@ PrefabInstance:
       propertyPath: exitWaypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1270820417}
-    - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7055211591368536041, guid: a2a72e01249b04744821bd74d4c8d0cd, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 50
@@ -61105,7 +61261,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1293383876
@@ -61198,7 +61353,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1294356784
@@ -61635,7 +61789,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1300834110 stripped
@@ -62133,7 +62286,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1315344193
@@ -63061,6 +63213,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7724067179705437331, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7724067179705437331, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7724067179705437331, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -63072,10 +63232,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 7724067179705437331, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 7724067179705437331, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -63092,10 +63248,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 723265554}
-    - target: {fileID: 7724067179705437331, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 7724067179705437331, guid: f6df44e75376eb048809eecb9687b8fe, type: 3}
       propertyPath: waypointWaitTimes.Array.data[1]
       value: 5
@@ -63830,6 +63982,102 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ce50d2d315a18446bb0196604a3eedc, type: 3}
   m_PrefabInstance: {fileID: 1427669437}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1348844836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1348844840}
+  - component: {fileID: 1348844839}
+  - component: {fileID: 1348844838}
+  - component: {fileID: 1348844837}
+  m_Layer: 0
+  m_Name: BlackVoid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &1348844837
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348844836}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1348844838
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348844836}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a34438adfbd0f9d4f9e4d3f8d0475a5c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1348844839
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348844836}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1348844840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348844836}
+  m_LocalRotation: {x: 0.70710677, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 790.71, y: 11.33, z: -64.77}
+  m_LocalScale: {x: 1.7438183, y: 2.700705, z: 2.2198715}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1356316700
 GameObject:
   m_ObjectHideFlags: 0
@@ -63950,6 +64198,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 180652845438747299, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 180652845438747299, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 180652845438747299, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -63961,10 +64217,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 180652845438747299, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 180652845438747299, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -63981,10 +64233,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 362668861}
-    - target: {fileID: 180652845438747299, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 180652845438747299, guid: a9170045d67c22a4599f8ba5c99ec128, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 4
@@ -64600,7 +64848,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1362874237
@@ -64795,6 +65042,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
+      propertyPath: exitWaypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
       propertyPath: setExitWaypoint
       value: 1
       objectReference: {fileID: 0}
@@ -64806,14 +65065,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
-      propertyPath: exitWaypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -64838,10 +65089,6 @@ PrefabInstance:
       propertyPath: exitWaypoints.Array.data[0]
       value: 
       objectReference: {fileID: 88893752}
-    - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5503975789330787992, guid: 023d9a8b6d904a74c9b795be0080ad28, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 8
@@ -65216,7 +65463,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1366499878
@@ -66491,7 +66737,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1385331633
@@ -70598,6 +70843,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -70606,10 +70859,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1250184184}
     - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
       objectReference: {fileID: 55716654}
@@ -70617,10 +70866,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[1]
       value: 
       objectReference: {fileID: 226342328}
-    - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4950700692570215169, guid: af52cafce070c7248ae0531717fb417b, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 33
@@ -71445,6 +71690,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3538162806293161793, guid: c05e0d5897e72524cbabf48d16d8ba90, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538162806293161793, guid: c05e0d5897e72524cbabf48d16d8ba90, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538162806293161793, guid: c05e0d5897e72524cbabf48d16d8ba90, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -71452,10 +71705,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 3538162806293161793, guid: c05e0d5897e72524cbabf48d16d8ba90, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3538162806293161793, guid: c05e0d5897e72524cbabf48d16d8ba90, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -71476,10 +71725,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[4]
       value: 
       objectReference: {fileID: 1415554684}
-    - target: {fileID: 3538162806293161793, guid: c05e0d5897e72524cbabf48d16d8ba90, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3538162806293161793, guid: c05e0d5897e72524cbabf48d16d8ba90, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 8
@@ -73696,6 +73941,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4520999527356806806, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520999527356806806, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520999527356806806, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -73707,10 +73960,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 4520999527356806806, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4520999527356806806, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -73727,10 +73976,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 572469888}
-    - target: {fileID: 4520999527356806806, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4520999527356806806, guid: e973812fbb8d06545a66000acbff6abd, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 6
@@ -74339,7 +74584,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1542230898
@@ -75802,7 +76046,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1576173078
@@ -79143,7 +79386,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1641322126
@@ -80149,6 +80391,18 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
+      propertyPath: exitWaypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -80160,14 +80414,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
-      propertyPath: exitWaypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -80188,10 +80434,6 @@ PrefabInstance:
       propertyPath: exitWaypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1270820417}
-    - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1721077309297913502, guid: 2b9316b315db33642b38de1ac7e0a09a, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 3
@@ -81361,7 +81603,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &1676873821 stripped
@@ -82148,6 +82389,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8439331648520476592, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439331648520476592, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439331648520476592, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
       propertyPath: setExitWaypoint
       value: 1
       objectReference: {fileID: 0}
@@ -82159,10 +82408,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 8439331648520476592, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8439331648520476592, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -82183,10 +82428,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[4]
       value: 
       objectReference: {fileID: 246078528}
-    - target: {fileID: 8439331648520476592, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8439331648520476592, guid: b26557933c3623a47a0eb1cb39f98fdf, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 3
@@ -83623,6 +83864,18 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
+      propertyPath: exitWaypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
       propertyPath: setExitWaypoint
       value: 2
       objectReference: {fileID: 0}
@@ -83634,14 +83887,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
-      propertyPath: exitWaypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.5
@@ -83666,10 +83911,6 @@ PrefabInstance:
       propertyPath: exitWaypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1270820417}
-    - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5792669886568371678, guid: c1e43e8dec295384aa3342b2bd8db593, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 3
@@ -84080,6 +84321,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
       propertyPath: fireAlarm
       value: 0
       objectReference: {fileID: 0}
@@ -84091,10 +84340,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.5
@@ -84123,10 +84368,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[5]
       value: 
       objectReference: {fileID: 1947556837}
-    - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2705470624127864888, guid: 33c67cd29e44ba4448be9312da6ab9cb, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 3
@@ -85503,7 +85744,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &1748254187
@@ -88256,6 +88496,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808849112}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1809251531 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4356745740536138099, guid: 83f6852a331c0d142bc36dd3d9810722, type: 3}
+  m_PrefabInstance: {fileID: 580244821}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1810534851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88762,6 +89013,18 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
+      propertyPath: exitWaypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
       propertyPath: waiting
       value: 0
       objectReference: {fileID: 0}
@@ -88778,14 +89041,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1250184184}
     - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
-      propertyPath: exitWaypoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.5
       objectReference: {fileID: 0}
@@ -88801,10 +89056,6 @@ PrefabInstance:
       propertyPath: exitWaypoints.Array.data[0]
       value: 
       objectReference: {fileID: 88893752}
-    - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7750365110165451459, guid: 17262699d9e1c954c89ef88006380166, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 60
@@ -91580,7 +91831,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1887250870
@@ -92420,7 +92670,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1901273924
@@ -93945,6 +94194,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3848841602731901285, guid: 2e80b90e3f52bc1469491995ed26be86, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848841602731901285, guid: 2e80b90e3f52bc1469491995ed26be86, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848841602731901285, guid: 2e80b90e3f52bc1469491995ed26be86, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -93952,10 +94209,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 3848841602731901285, guid: 2e80b90e3f52bc1469491995ed26be86, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3848841602731901285, guid: 2e80b90e3f52bc1469491995ed26be86, type: 3}
       propertyPath: remainingWaypointDistance
       value: 0.5
@@ -93968,10 +94221,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[1]
       value: 
       objectReference: {fileID: 1246974646}
-    - target: {fileID: 3848841602731901285, guid: 2e80b90e3f52bc1469491995ed26be86, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3848841602731901285, guid: 2e80b90e3f52bc1469491995ed26be86, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 5
@@ -94518,7 +94767,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1926725697
@@ -95632,7 +95880,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &1960220367
@@ -96713,7 +96960,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1978058048 stripped
@@ -97003,7 +97249,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1990115901 stripped
@@ -97437,7 +97682,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &2002566541
@@ -97695,7 +97939,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &2005000958
@@ -98355,6 +98598,102 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4167991947002514860, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
   m_PrefabInstance: {fileID: 5019522622644180444}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2029529301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2029529305}
+  - component: {fileID: 2029529304}
+  - component: {fileID: 2029529303}
+  - component: {fileID: 2029529302}
+  m_Layer: 0
+  m_Name: BlackVoid (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &2029529302
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029529301}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2029529303
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029529301}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a34438adfbd0f9d4f9e4d3f8d0475a5c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2029529304
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029529301}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2029529305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029529301}
+  m_LocalRotation: {x: 0.70710677, y: 0.00000044703475, z: -0.0000003419046, w: 0.7071068}
+  m_LocalPosition: {x: 835.07, y: 14.54, z: 56.23}
+  m_LocalScale: {x: 1.7438183, y: 2.700705, z: 3.2634332}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &2029988761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98613,6 +98952,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 222005735545831209, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
+      propertyPath: waypointPath.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 222005735545831209, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
+      propertyPath: waypointWaitTimes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 222005735545831209, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
       propertyPath: npcMovementMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -98620,10 +98967,6 @@ PrefabInstance:
       propertyPath: playerMovementTimeStop
       value: 
       objectReference: {fileID: 1250184184}
-    - target: {fileID: 222005735545831209, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
-      propertyPath: waypointPath.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 222005735545831209, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
       propertyPath: waypointPath.Array.data[0]
       value: 
@@ -98640,10 +98983,6 @@ PrefabInstance:
       propertyPath: waypointPath.Array.data[3]
       value: 
       objectReference: {fileID: 1485840265}
-    - target: {fileID: 222005735545831209, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
-      propertyPath: waypointWaitTimes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 222005735545831209, guid: 5f910aabeed2b154cb7c6e15ed3ccabb, type: 3}
       propertyPath: waypointWaitTimes.Array.data[0]
       value: 5
@@ -101443,6 +101782,102 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103302988}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2103457272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2103457276}
+  - component: {fileID: 2103457275}
+  - component: {fileID: 2103457274}
+  - component: {fileID: 2103457273}
+  m_Layer: 0
+  m_Name: BlackVoid (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &2103457273
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103457272}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2103457274
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103457272}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a34438adfbd0f9d4f9e4d3f8d0475a5c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2103457275
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103457272}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2103457276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103457272}
+  m_LocalRotation: {x: 0.70710677, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 689.93, y: 10.54, z: -0.2}
+  m_LocalScale: {x: 1.7438183, y: 2.700705, z: 2.2198715}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &2104575157
 GameObject:
   m_ObjectHideFlags: 0
@@ -101724,7 +102159,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &2112264893
@@ -102536,7 +102970,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &2130565082
@@ -124828,6 +125261,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 5019522623944888692}
     m_Modifications:
     - target: {fileID: 8848449747644925072, guid: 1862632188239aa47a9492c9fb37acce, type: 3}
+      propertyPath: accusedSuspectMugshot.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848449747644925072, guid: 1862632188239aa47a9492c9fb37acce, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -124848,10 +125285,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 550844035}
     - target: {fileID: 8848449747644925072, guid: 1862632188239aa47a9492c9fb37acce, type: 3}
-      propertyPath: accusedSuspectMugshot.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8848449747644925072, guid: 1862632188239aa47a9492c9fb37acce, type: 3}
       propertyPath: accusedSuspectMugshot.Array.data[0]
       value: 
       objectReference: {fileID: 1236811228}
@@ -124867,6 +125300,10 @@ PrefabInstance:
       propertyPath: accusedSuspectMugshot.Array.data[3]
       value: 
       objectReference: {fileID: 40814294}
+    - target: {fileID: 8848449747644925072, guid: 1862632188239aa47a9492c9fb37acce, type: 3}
+      propertyPath: transitionText
+      value: 
+      objectReference: {fileID: 1809251531}
     - target: {fileID: 8848449747644925073, guid: 1862632188239aa47a9492c9fb37acce, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -125040,6 +125477,14 @@ PrefabInstance:
       value: NPCManager
       objectReference: {fileID: 0}
     - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
+      propertyPath: allNpcs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
+      propertyPath: simpleNpcs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
       propertyPath: timer
       value: 
       objectReference: {fileID: 1924370733}
@@ -125052,20 +125497,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1923860207}
     - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
-      propertyPath: allNpcs.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
       propertyPath: allNpcs.Array.data[0]
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
       propertyPath: allNpcs.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
-      propertyPath: simpleNpcs.Array.size
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4110781630205487809, guid: d36a718e98b7f564fa49a8ef5034a692, type: 3}
       propertyPath: simpleNpcs.Array.data[0]
@@ -125319,6 +125756,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8313452774475984859, guid: 23766b7adea476e429ac413b99e3c068, type: 3}
+      propertyPath: NPCExitWaypoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8313452774475984859, guid: 23766b7adea476e429ac413b99e3c068, type: 3}
       propertyPath: NPCWayPoints.Array.data[0]
       value: 
       objectReference: {fileID: 0}
@@ -125341,10 +125782,6 @@ PrefabInstance:
     - target: {fileID: 8313452774475984859, guid: 23766b7adea476e429ac413b99e3c068, type: 3}
       propertyPath: NPCWayPoints.Array.data[5]
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8313452774475984859, guid: 23766b7adea476e429ac413b99e3c068, type: 3}
-      propertyPath: NPCExitWaypoints.Array.size
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8313452774475984859, guid: 23766b7adea476e429ac413b99e3c068, type: 3}
       propertyPath: NPCExitWaypoints.Array.data[0]
@@ -125602,7 +126039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3740275375675803102, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
       propertyPath: maxCountDown
-      value: 90
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3740275375675803102, guid: ea4a028a760ad724eb2a9c929532fcdd, type: 3}
       propertyPath: fireAlarmTime

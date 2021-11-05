@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        if (Keyboard.current.escapeKey.isPressed) pause.PauseGame();
+       // if (Keyboard.current.escapeKey.isPressed) pause.PauseGame();
     }
 
 
