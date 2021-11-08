@@ -136,7 +136,7 @@ namespace Luke
                 //making the countdown and timer have minutes and seconds limits
                 minutesCountDown = Mathf.FloorToInt(displayCountDown / 60);
                 secondsCountDown = Mathf.FloorToInt(displayCountDown % 60);
-                milliSecondsCountDown = (displayCountDown % 1) * 1000;
+                //milliSecondsCountDown = (displayCountDown % 1) * 1000;
 
                 //player visual
                 if (currentCountDown <= 0f)
