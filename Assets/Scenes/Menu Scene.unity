@@ -375,7 +375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &221180810
 RectTransform:
   m_ObjectHideFlags: 0
@@ -786,7 +786,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 8f5fccb19f46fb641a54e0a1c8df4db5, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 87aeb170c4043744f9bad0bcc813d048, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -1744,7 +1744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1592542386
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2223,13 +2223,13 @@ MonoBehaviour:
 
 
     To do so you will need
-    to explore your environment, keeping track of where everyone is, what they do,
-    and who they talk to (dialogue soon to be added to game).
+    to explore your environment, keep track of where everyone is, what they do, and
+    who they talk to (dialogue soon to be added to game).
 
 
-    You only have
-    90 seconds each round to explore using your time powers before you must attempt
-    a guess. Then you can try again.
+    You only have 90
+    seconds each round to explore. The world will only move when you are moving.
+    Then you can try again.
 
 
     Good luck, and happy hunting.'
@@ -2259,8 +2259,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2527,7 +2527,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -170}
+  m_AnchoredPosition: {x: 0, y: -149}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1872729982
@@ -2569,7 +2569,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1872729983}
+  m_TargetGraphic: {fileID: 1241187657}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -2650,14 +2650,14 @@ RectTransform:
   m_GameObject: {fileID: 1895166093}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.4033773, y: 0.2316045, z: 0.73279}
+  m_LocalScale: {x: 2.7925487, y: 1.009699, z: 1.0958624}
   m_Children: []
   m_Father: {fileID: 737232406}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.3}
+  m_AnchoredPosition: {x: 0, y: -0.29999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1895166095
@@ -2680,7 +2680,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fc5feecb7ac132540ae85ed087c90658, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0a314865e5e7044aa86cf0ebc8444cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
