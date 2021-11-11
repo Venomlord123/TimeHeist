@@ -15,8 +15,6 @@ namespace Luke
 
         //variables 
         public List<NPCModel> allNpcs;
-        public List<NPCBase> simpleNpcs;
-        public List<NPCBase> redherringNpcs;
         public List<NPCBase> heistNpcs;
 
         // Start is called before the first frame update

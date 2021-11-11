@@ -40,7 +40,7 @@ public class LightingManager : MonoBehaviour
     {
         if (lightsOn == false)
         {
-            if (timer.currentTimer < timer.blackOutTime - blackoutDuration)
+            if (Timer.currentTimer < timer.blackOutTime - blackoutDuration)
             {
                 TurnOnLights();
             }

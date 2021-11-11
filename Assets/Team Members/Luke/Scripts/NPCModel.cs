@@ -27,7 +27,6 @@ namespace Luke
         public float npcMovementMultiplier;
         [Tooltip("The walking animation speed (Higher the number slower it animates)")]
         public float animationSpeedDivider = 5f;
-        private float waitTimeElement;
         [Tooltip("The current amount of time waiting at waypoint (For visual testing purposes)")]
         public float currentWaitTime;
         [Tooltip("Is the NPC waiting?")]
@@ -41,6 +40,11 @@ namespace Luke
         [Tooltip("This npc will currently ignore the fire alarm exit waypoints")]
         public bool ignoreFireAlarm = false;
 
+        public float counter;
+
+        private bool isTalking = false;
+        private bool isObserving = false;
+        private int waitTimeElement;
         private float time = 0.178f;
 
         //Subscribe
@@ -106,7 +110,18 @@ namespace Luke
                 {
                     if (waiting == false)
                     {
-                        StartCoroutine(WaypointWaitTimer());
+                        if (waypointPath[currentTarget].conversation)
+                        {
+                            Talking();
+                        }
+
+                        if (waypointPath[currentTarget].observing)
+                        {
+                            Observing();
+                        }
+                        
+                        WaypointWaitTimer();
+                        
                     }
                 }
             }
@@ -143,31 +158,48 @@ namespace Luke
 
         /// <summary>
         /// Co-routines only yield whats within the function!! 
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerator WaypointWaitTimer()
+        /// HACK needs a cleanup and a counter instead of IEnumarator
+        public void WaypointWaitTimer()
         {
-            navMeshAgent.isStopped = true;
             waiting = true;
+            navMeshAgent.isStopped = true;
             if (currentWaitTime == 0f)
             {
                 currentWaitTime = time;
             }
-            
-            yield return new WaitForSeconds(currentWaitTime);
-            navMeshAgent.isStopped = false;
 
-            //changing npc wait to the next in list ready for next waiting period
-            if (waypointWaitTimes.Count != 0 && waypointWaitTimes.Count < waypointWaitTimes.Capacity)
+            //TODO
+            if (waiting)
             {
-                waitTimeElement++;
-                currentWaitTime = waypointWaitTimes[(int)waitTimeElement];
+                counter = waypointWaitTimes[waitTimeElement];
             }
-            waiting = false;
-            //changed to here because of face direction
-            currentTarget = (currentTarget + 1) % waypointPath.Count;
+            
+            if (Timer.timerOn)
+            {
+                if (waypointWaitTimes != null)
+                {
+                    counter = counter - Time.deltaTime;
+                }
+                
+                navMeshAgent.isStopped = false;
+
+                //changing npc wait to the next in list ready for next waiting period
+                if (waypointWaitTimes.Count != 0 && waypointWaitTimes.Count < waypointWaitTimes.Capacity)
+                {
+                    waitTimeElement++;
+                    currentWaitTime = waypointWaitTimes[waitTimeElement];
+                }
+                waiting = false;
+                //changed to here because of face direction
+                currentTarget = (currentTarget + 1) % waypointPath.Count;
+            }
+            
+            //yield return new WaitForSeconds(currentWaitTime);
+            
             if (fireAlarmActive && ignoreFireAlarm == false)
             {
+                navMeshAgent.isStopped = false;
+                waiting = false;
                 currentTarget = setExitWaypoint;
             }
         }
@@ -198,6 +230,43 @@ namespace Luke
                 navMeshAgent.SetDestination(exitWaypoints[currentTarget].transform.position);
             }
         }
-        
+
+        public void Talking()
+        {
+            waiting = true;
+            float counter = Timer.currentTimer - waypointPath[currentTarget].animationTimer;
+
+            if (isTalking == false)
+            {
+                isTalking = true;
+                animator.SetBool("isTalking", true);
+            }
+
+            if (Timer.currentTimer < counter)
+            {
+                isTalking = false;
+                animator.SetBool("isTalking", false);
+                waiting = false;
+            }
+        }
+
+        public void Observing()
+        {
+            waiting = true;
+            float counter = Timer.currentTimer - waypointPath[currentTarget].animationTimer;
+
+            if (isObserving == false)
+            {
+                isObserving = true;
+                animator.SetBool("isObserving", true);
+            }
+
+            if (Timer.currentTimer < counter)
+            {
+                isObserving = false;
+                animator.SetBool("isObserving", false);
+                waiting = false;
+            }
+        }
     }
 }

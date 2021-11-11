@@ -8,7 +8,7 @@ using ZachFrench;
 
 namespace Luke
 {
-    public class Timer : MonoBehaviour
+    public  class Timer : MonoBehaviour
     {
         //Reference
         public GameManager gameManager;
@@ -17,9 +17,9 @@ namespace Luke
         //Variables for event timer
         [Header("Timer for level events")] 
         public TextMeshProUGUI timerText;
-        public bool timerOn;
+        public static bool timerOn;
         [Tooltip("In seconds")]
-        public float currentTimer;
+        public static float currentTimer;
         [Tooltip("Walking time")]
         public float maxTime;
         [Tooltip("Time the blackout will happen")]
@@ -41,7 +41,7 @@ namespace Luke
         public TextMeshProUGUI countDownText;
         public bool countDownStarted;
         [Tooltip("In seconds")]
-        public float currentCountDown;
+        public static float currentCountDown;
         [Tooltip("Change this to change the amount of time outside the player time stopping (In seconds)")]
         public float maxCountDown;
         [HideInInspector]
