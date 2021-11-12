@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    ///     TODO player unable to move.
+    /// TODO player unable to move.
     /// </summary>
     public void SceneEnd()
     {

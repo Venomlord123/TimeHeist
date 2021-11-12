@@ -8,6 +8,7 @@ public class LightingManager : MonoBehaviour
 {
     //References
     public Timer timer;
+    public GameManager gameManager;
     //Variables
     public List<Light> lights;
     public float lightsIntensity;
@@ -15,14 +16,21 @@ public class LightingManager : MonoBehaviour
     public float blackoutDuration;
     public bool lightsOn = true;
 
+    private void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
     private void OnEnable()
     {
         timer.BlackOutEvent += TurnOffLights;
+        gameManager.JournalSwitchSceneEvent += TurnOnLights;
     }
 
     private void OnDisable()
     {
         timer.BlackOutEvent += TurnOffLights;
+        gameManager.JournalSwitchSceneEvent -= TurnOnLights;
     }
     
     // Start is called before the first frame update
