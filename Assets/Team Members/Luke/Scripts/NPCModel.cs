@@ -39,7 +39,7 @@ namespace Luke
         public bool waiting;
 
         [Tooltip("Starting Position for the NPC")]
-        public Vector3 startPosition;
+        [SerializeField] public Vector3 startPosition;
 
         [Tooltip("Start rotation position of npc")]
         public Quaternion startRotation;

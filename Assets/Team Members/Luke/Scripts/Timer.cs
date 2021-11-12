@@ -196,6 +196,7 @@ namespace Luke
                 if (currentTimer <= 0)
                 {
                     EventTimerEndEvent?.Invoke();
+                    
                 }
             }
         }
