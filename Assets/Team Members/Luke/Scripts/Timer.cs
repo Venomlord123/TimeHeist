@@ -92,6 +92,8 @@ namespace Luke
             gameManager.JournalSwitchSceneEvent += ResetCountdown;
             gameManager.JournalSwitchSceneEvent += StartCountDown;
             playerMovement.PassingNormalEvent += AdjustTimer;
+            PlayerMovementTimeStop.TimeStopEvent += PauseHeistTimer;
+            PlayerMovementTimeStop.ContinueTimeEvent += StartHeistTimer;
         }
 
         private void OnDisable()
@@ -101,6 +103,8 @@ namespace Luke
             gameManager.JournalSwitchSceneEvent -= ResetCountdown;
             gameManager.JournalSwitchSceneEvent-= StartCountDown;
             playerMovement.PassingNormalEvent -= AdjustTimer;
+            PlayerMovementTimeStop.TimeStopEvent -= PauseHeistTimer;
+            PlayerMovementTimeStop.ContinueTimeEvent -= StartHeistTimer;
         }
         
         //use for in between rounds in the main scene
@@ -122,6 +126,16 @@ namespace Luke
         {
             countDownStarted = false;
             timerOn = false;
+        }
+
+        public void PauseHeistTimer(float a)
+        {
+            timerOn = false;
+        }
+
+        public void StartHeistTimer(float a, Vector3 b)
+        {
+            timerOn = true;
         }
 
         /// <summary>
