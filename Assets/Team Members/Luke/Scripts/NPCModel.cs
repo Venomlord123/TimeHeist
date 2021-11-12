@@ -91,6 +91,7 @@ namespace Luke
                 }
                 else
                 {
+                    //todo PROBABLY DOESN'T NEED TO BE AN IENUMURATOR
                     StartCoroutine(GoToExitPoint());
                 }
             }
@@ -110,6 +111,7 @@ namespace Luke
                 {
                     if (waiting == false)
                     {
+                        WaypointWaitTimer();
                         if (waypointPath[currentTarget].conversation)
                         {
                             Talking();
@@ -119,9 +121,6 @@ namespace Luke
                         {
                             Observing();
                         }
-                        
-                        WaypointWaitTimer();
-                        
                     }
                 }
             }
@@ -180,18 +179,21 @@ namespace Luke
                 {
                     counter = counter - Time.deltaTime;
                 }
-                
-                navMeshAgent.isStopped = false;
 
-                //changing npc wait to the next in list ready for next waiting period
-                if (waypointWaitTimes.Count != 0 && waypointWaitTimes.Count < waypointWaitTimes.Capacity)
+                if (counter < 0)
                 {
-                    waitTimeElement++;
-                    currentWaitTime = waypointWaitTimes[waitTimeElement];
+                    navMeshAgent.isStopped = false;
+
+                    //changing npc wait to the next in list ready for next waiting period
+                    if (waypointWaitTimes.Count != 0 && waypointWaitTimes.Count < waypointWaitTimes.Capacity)
+                    {
+                        waitTimeElement++;
+                        currentWaitTime = waypointWaitTimes[waitTimeElement];
+                    }
+                    waiting = false;
+                    //changed to here because of face direction
+                    currentTarget = (currentTarget + 1) % waypointPath.Count;
                 }
-                waiting = false;
-                //changed to here because of face direction
-                currentTarget = (currentTarget + 1) % waypointPath.Count;
             }
             
             //yield return new WaitForSeconds(currentWaitTime);
@@ -233,9 +235,6 @@ namespace Luke
 
         public void Talking()
         {
-            waiting = true;
-            float counter = Timer.currentTimer - waypointPath[currentTarget].animationTimer;
-
             if (isTalking == false)
             {
                 isTalking = true;
@@ -246,15 +245,11 @@ namespace Luke
             {
                 isTalking = false;
                 animator.SetBool("isTalking", false);
-                waiting = false;
             }
         }
 
         public void Observing()
         {
-            waiting = true;
-            float counter = Timer.currentTimer - waypointPath[currentTarget].animationTimer;
-
             if (isObserving == false)
             {
                 isObserving = true;
@@ -265,7 +260,6 @@ namespace Luke
             {
                 isObserving = false;
                 animator.SetBool("isObserving", false);
-                waiting = false;
             }
         }
     }
