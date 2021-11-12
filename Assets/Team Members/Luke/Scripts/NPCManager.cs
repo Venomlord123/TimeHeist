@@ -45,6 +45,15 @@ namespace Luke
                 npcModel.transform.rotation = npcModel.startRotation;
                 npcModel.currentTarget = 0;
             }
+
+            foreach (NPCModel npcModel in allNpcs)
+            {
+                if (npcModel.transform.position != npcModel.startPosition)
+                {
+                    npcModel.transform.position = npcModel.startPosition;
+                    Debug.Log(npcModel.gameObject.name + npcModel.transform.position);
+                }
+            }
         }
 
         /// <summary>
