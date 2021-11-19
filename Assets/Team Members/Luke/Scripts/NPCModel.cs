@@ -54,7 +54,9 @@ namespace Luke
         [Tooltip("This npc will currently ignore the fire alarm exit waypoints")]
         public bool ignoreFireAlarm;
         [Tooltip("An array that holds all the characters needed audio clips")]
-        public List<AudioClip> audioSources;
+        public List<AudioClip> audioClips;
+        [Tooltip("Use this to assign the talking audio clip")]
+        public int talkingSetter;
 
         public float counter;
         private bool counterStarted;
@@ -186,6 +188,7 @@ namespace Luke
                     if (isTalking)
                     {
                         isTalking = false;
+                        voiceAudio.Stop();
                         animator.SetBool("isTalking", false);
                     }
                 
@@ -249,8 +252,10 @@ namespace Luke
         {
             if (isTalking == false)
             {
+                voiceAudio.clip = audioClips[talkingSetter];
                 isTalking = true;
                 animator.SetBool("isTalking", true);
+                voiceAudio.Play();
             }
         }
 
