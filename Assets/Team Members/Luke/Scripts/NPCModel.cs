@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using ZachFrench;
@@ -15,6 +17,8 @@ namespace Luke
 
         [Tooltip("Drag this character's animator here")]
         public Animator animator;
+        [Tooltip("Drag the audio source on the npc here")]
+        public AudioSource voiceAudio;
 
         //Variables
         [Tooltip("The current selected waypoint element")]
@@ -49,6 +53,8 @@ namespace Luke
 
         [Tooltip("This npc will currently ignore the fire alarm exit waypoints")]
         public bool ignoreFireAlarm;
+        [Tooltip("An array that holds all the characters needed audio clips")]
+        public List<AudioClip> audioSources;
 
         public float counter;
         private bool counterStarted;
@@ -66,6 +72,7 @@ namespace Luke
             startRotation = transform.rotation;
 
             navMeshAgent = GetComponent<NavMeshAgent>();
+            voiceAudio = GetComponent<AudioSource>();
             //setting our new variable to the NPCBase's first waypoint wait time
             if (waypointWaitTimes.Count != 0) currentWaitTime = waypointWaitTimes[0];
             GoToNextPoint();
