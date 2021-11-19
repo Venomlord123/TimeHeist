@@ -42,6 +42,7 @@ namespace Luke
         {
             gameManager.GameSwitchSceneEvent += DisplayHistory;
             npcDetails = journalModel.suspectEntries;
+            heistCounter = 0;
         }
 
         private void OnDisable()
