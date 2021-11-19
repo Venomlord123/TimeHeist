@@ -62,6 +62,7 @@ namespace Luke
         private bool counterStarted;
         private bool isObserving;
         private bool isTalking;
+        private bool isTalking2;
         private float time = 0.178f;
         private int waitTimeElement;
 
@@ -180,6 +181,7 @@ namespace Luke
                     counterStarted = true;
                     
                     if (waypointPath[currentTarget].conversation && isTalking == false) Talking();
+                    if (waypointPath[currentTarget].conversation2 && isTalking2 == false) Talking2();
                     if (waypointPath[currentTarget].observing && isObserving == false) Observing();
                 }
 
@@ -190,6 +192,12 @@ namespace Luke
                         isTalking = false;
                         voiceAudio.Stop();
                         animator.SetBool("isTalking", false);
+                    }
+                    
+                    if (isTalking2)
+                    {
+                        isTalking = false;
+                        animator.SetBool("isTalking2", false);
                     }
                 
                     if (isObserving)
@@ -256,6 +264,15 @@ namespace Luke
                 isTalking = true;
                 animator.SetBool("isTalking", true);
                 voiceAudio.Play();
+            }
+        }
+
+        public void Talking2()
+        {
+            if (isTalking2 == false)
+            {
+                isTalking = true;
+                animator.SetBool("isTalking2", true);
             }
         }
 
