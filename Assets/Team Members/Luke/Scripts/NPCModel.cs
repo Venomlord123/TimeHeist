@@ -82,7 +82,7 @@ namespace Luke
                     //todo PROBABLY DOESN'T NEED TO BE AN IENUMURATOR
                     StartCoroutine(GoToExitPoint());
             }
-            else
+            else if(fireAlarmActive == false && waiting == false)
             {
                 GoToNextPoint();
             }
@@ -124,9 +124,6 @@ namespace Luke
                     if (waiting == false)
                     {
                         WaypointWaitTimer();
-                        if (waypointPath[currentTarget].conversation) Talking();
-
-                        if (waypointPath[currentTarget].observing) Observing();
                     }
             }
         }
@@ -165,22 +162,32 @@ namespace Luke
         {
             waiting = true;
             navMeshAgent.isStopped = true;
-            /*if (currentWaitTime == 0f)
-            {
-                currentWaitTime = time;
-            }*/
 
-            //TODO
             if (waiting)
             {
                 if (counterStarted == false && waiting)
                 {
                     counter = waypointWaitTimes[waitTimeElement];
                     counterStarted = true;
+                    
+                    if (waypointPath[currentTarget].conversation && isTalking == false) Talking();
+                    if (waypointPath[currentTarget].observing && isObserving == false) Observing();
                 }
 
                 if (counter < 0f)
                 {
+                    if (isTalking)
+                    {
+                        isTalking = false;
+                        animator.SetBool("isTalking", false);
+                    }
+                
+                    if (isObserving)
+                    {
+                        isObserving = false;
+                        animator.SetBool("isObserving", false);
+                    }
+                    
                     navMeshAgent.isStopped = false;
 
                     //changing npc wait to the next in list ready for next waiting period
@@ -238,12 +245,6 @@ namespace Luke
                 isTalking = true;
                 animator.SetBool("isTalking", true);
             }
-
-            if (Timer.currentTimer < counter)
-            {
-                isTalking = false;
-                animator.SetBool("isTalking", false);
-            }
         }
 
         public void Observing()
@@ -252,12 +253,6 @@ namespace Luke
             {
                 isObserving = true;
                 animator.SetBool("isObserving", true);
-            }
-
-            if (Timer.currentTimer < counter)
-            {
-                isObserving = false;
-                animator.SetBool("isObserving", false);
             }
         }
     }

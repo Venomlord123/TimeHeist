@@ -14,8 +14,6 @@ namespace Luke
         public bool conversation;
         [Tooltip("NPC arriving here will activate animation for observing art")]
         public bool observing;
-        [Tooltip("How long the talking or observation animation will loop for")]
-        public float animationTimer;
         [Tooltip("How long until the start of the talking or observing animation is started after arriving to the waypoint")]
         public float animationDelay;
     }
