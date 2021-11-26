@@ -991,6 +991,7 @@ MonoBehaviour:
   navMeshAgent: {fileID: 2705470624127864894}
   playerMovementTimeStop: {fileID: 0}
   animator: {fileID: 0}
+  voiceAudio: {fileID: 0}
   currentTarget: 0
   setExitWaypoint: 0
   remainingWaypointDistance: 0.5
@@ -1000,7 +1001,11 @@ MonoBehaviour:
   waiting: 0
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
-  fireAlarm: 0
+  fireAlarmActive: 0
+  ignoreFireAlarm: 0
+  audioClips: []
+  talkingSetter: 0
+  counter: 0
 --- !u!195 &2705470624127864894
 NavMeshAgent:
   m_ObjectHideFlags: 0

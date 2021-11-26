@@ -23,42 +23,39 @@ namespace Luke
         //Variables
         [Tooltip("The current selected waypoint element")]
         public int currentTarget;
-
         [Tooltip("The npc's set exit point (On fire alarm event)")]
         public int setExitWaypoint;
-
         [Tooltip("Distance from waypoint to allow change to next waypoint")]
         public float remainingWaypointDistance = .5f;
-
         [Tooltip("Change the npc's speed (multiplied from player speed)")]
         public float npcMovementMultiplier;
-
         [Tooltip("The walking animation speed (Higher the number slower it animates)")]
         public float animationSpeedDivider = 5f;
-
         [Tooltip("The current amount of time waiting at waypoint (For visual testing purposes)")]
         public float currentWaitTime;
-
         [Tooltip("Is the NPC waiting? (testing purposes)")]
         public bool waiting;
-
         [Tooltip("Starting Position for the NPC")]
         [SerializeField] public Vector3 startPosition;
-
         [Tooltip("Start rotation position of npc")]
         public Quaternion startRotation;
-
         [Tooltip("If fire alarm is currently on")]
         public bool fireAlarmActive;
-
         [Tooltip("This npc will currently ignore the fire alarm exit waypoints")]
         public bool ignoreFireAlarm;
         [Tooltip("An array that holds all the characters needed audio clips")]
         public List<AudioClip> audioClips;
         [Tooltip("Use this to assign the talking audio clip")]
         public int talkingSetter;
-
+        [Tooltip("The heist members visual that will change")]
+        public GameObject objectToSwap;
         public float counter;
+        [Tooltip("This character is a person of interest that swaps it's model")]
+        public bool isModelSwapper;
+        
+        public bool swapModelActiveOnStart;
+        public bool swapModelInactiveOnStart;
+        
         private bool counterStarted;
         private bool isObserving;
         private bool isTalking;
@@ -79,6 +76,8 @@ namespace Luke
             //setting our new variable to the NPCBase's first waypoint wait time
             if (waypointWaitTimes.Count != 0) currentWaitTime = waypointWaitTimes[0];
             GoToNextPoint();
+            ActivateModelOnStart();
+            DeactivateModelOnStart();
         }
 
         // Update is called once per frame
@@ -105,7 +104,6 @@ namespace Luke
                     if (counter < 0f) WaypointWaitTimer();
                 }
             }
-                
         }
 
         //Subscribe
@@ -183,6 +181,7 @@ namespace Luke
                     if (waypointPath[currentTarget].conversation && isTalking == false) Talking();
                     if (waypointPath[currentTarget].conversation2 && isTalking2 == false) Talking2();
                     if (waypointPath[currentTarget].observing && isObserving == false) Observing();
+                    if (waypointPath[currentTarget].modelSwap && isModelSwapper) StartCoroutine(ModelSwap());
                 }
 
                 if (counter < 0f)
@@ -190,8 +189,11 @@ namespace Luke
                     if (isTalking)
                     {
                         isTalking = false;
-                        voiceAudio.Stop();
                         animator.SetBool("isTalking", false);
+                        if (audioClips.Count > 0)
+                        {
+                            voiceAudio.Stop();
+                        }
                     }
                     
                     if (isTalking2)
@@ -205,6 +207,7 @@ namespace Luke
                         isObserving = false;
                         animator.SetBool("isObserving", false);
                     }
+                    
                     
                     navMeshAgent.isStopped = false;
 
@@ -260,10 +263,13 @@ namespace Luke
         {
             if (isTalking == false)
             {
-                voiceAudio.clip = audioClips[talkingSetter];
                 isTalking = true;
                 animator.SetBool("isTalking", true);
-                voiceAudio.Play();
+                if (audioClips.Count > 0)
+                {
+                    voiceAudio.clip = audioClips[talkingSetter];
+                    voiceAudio.Play();
+                }
             }
         }
 
@@ -282,6 +288,35 @@ namespace Luke
             {
                 isObserving = true;
                 animator.SetBool("isObserving", true);
+            }
+        }
+
+        public IEnumerator ModelSwap()
+        {
+            yield return new WaitForSeconds(waypointPath[currentTarget].modelSwapDelay);
+            if (objectToSwap.activeSelf)
+            {
+                objectToSwap.SetActive(false);
+            }
+            else
+            {
+                objectToSwap.SetActive(true);
+            }
+        }
+
+        public void ActivateModelOnStart()
+        {
+            if (swapModelActiveOnStart)
+            {
+                objectToSwap.SetActive(true);
+            }
+        }
+
+        public void DeactivateModelOnStart()
+        {
+            if (swapModelInactiveOnStart)
+            {
+                objectToSwap.SetActive(false);
             }
         }
     }
