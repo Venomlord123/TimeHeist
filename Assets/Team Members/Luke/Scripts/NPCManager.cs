@@ -41,18 +41,20 @@ namespace Luke
             foreach (NPCModel npcModel in allNpcs)
             {
                 npcModel.fireAlarmActive = false;
-                npcModel.transform.position = npcModel.startPosition;
+                npcModel.GetComponent<CapsuleCollider>().enabled = false;
+                npcModel.GetComponent<Rigidbody>().isKinematic = true;
+                npcModel.transform.localPosition = npcModel.startPosition;
                 npcModel.transform.rotation = npcModel.startRotation;
-                npcModel.currentTarget = 0;
-            }
-
-            foreach (NPCModel npcModel in allNpcs)
-            {
-                if (npcModel.transform.position != npcModel.startPosition)
+                npcModel.resetting = true;
+                npcModel.GetComponent<CapsuleCollider>().enabled = true;
+                npcModel.GetComponent<Rigidbody>().isKinematic = false;
+                npcModel.resetting = false;
+                if (npcModel.transform.localPosition != npcModel.startPosition)
                 {
-                    npcModel.transform.position = npcModel.startPosition;
+                    npcModel.transform.localPosition = npcModel.startPosition;
                     Debug.Log(npcModel.gameObject.name + npcModel.transform.position);
                 }
+                npcModel.currentTarget = 0;
             }
         }
 

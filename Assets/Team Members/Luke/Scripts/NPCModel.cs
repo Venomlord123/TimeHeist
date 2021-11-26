@@ -58,6 +58,9 @@ namespace Luke
         [Tooltip("Use this to assign the talking audio clip")]
         public int talkingSetter;
 
+        public bool resetting;
+        
+        
         public float counter;
         private bool counterStarted;
         private bool isObserving;
@@ -71,7 +74,7 @@ namespace Luke
         {
             Physics.IgnoreLayerCollision(7, 7);
             //This is for when we need to reset to original positions
-            startPosition = transform.position;
+            startPosition = transform.localPosition;
             startRotation = transform.rotation;
 
             navMeshAgent = GetComponent<NavMeshAgent>();
@@ -81,9 +84,20 @@ namespace Luke
             GoToNextPoint();
         }
 
+        public void Resetting()
+        {
+            transform.position = startPosition;
+        }
+
         // Update is called once per frame
         private void FixedUpdate()
         {
+            if (resetting)
+            {
+                Resetting();
+            }
+            
+            
             if (fireAlarmActive)
             {
                 if (ignoreFireAlarm)
