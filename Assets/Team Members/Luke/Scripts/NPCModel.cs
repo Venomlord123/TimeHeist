@@ -86,18 +86,12 @@ namespace Luke
 
         public void Resetting()
         {
-            transform.position = startPosition;
+            transform.localPosition = startPosition;
         }
 
         // Update is called once per frame
         private void FixedUpdate()
         {
-            if (resetting)
-            {
-                Resetting();
-            }
-            
-            
             if (fireAlarmActive)
             {
                 if (ignoreFireAlarm)
