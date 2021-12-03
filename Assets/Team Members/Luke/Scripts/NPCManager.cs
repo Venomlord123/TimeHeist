@@ -42,6 +42,15 @@ namespace Luke
         {
             foreach (NPCModel npcModel in allNpcs)
             {
+                if (npcModel.swapModelActiveOnStart)
+                {
+                    npcModel.objectToSwap.SetActive(true);
+                }
+
+                if (npcModel.swapModelInactiveOnStart)
+                {
+                    npcModel.objectToSwap.SetActive(false);
+                }
                 npcModelTemp = npcModel;
                 
                 npcModel.fireAlarmActive = false;
