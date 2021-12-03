@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 namespace Luke
@@ -16,6 +17,7 @@ namespace Luke
         //variables 
         public List<NPCModel> allNpcs;
         public List<NPCBase> heistNpcs;
+        public NPCModel npcModelTemp;
 
         // Start is called before the first frame update
         void Start()
@@ -40,22 +42,41 @@ namespace Luke
         {
             foreach (NPCModel npcModel in allNpcs)
             {
+                npcModelTemp = npcModel;
+                
                 npcModel.fireAlarmActive = false;
                 Rigidbody tempRb = npcModel.GetComponent<Rigidbody>();
-                npcModel.GetComponent<CapsuleCollider>().enabled = false;
-                tempRb.isKinematic = true;
-                tempRb.position = npcModel.startPosition;
-                npcModel.transform.rotation = npcModel.startRotation;
-                npcModel.Resetting();
-                npcModel.GetComponent<CapsuleCollider>().enabled = true;
-                tempRb.isKinematic = false;
-                if (tempRb.position != npcModel.startPosition)
+                StartCoroutine(WaitForFrame());
+                /*if (tempRb.position != npcModel.startPosition)
                 {
                     tempRb.position = npcModel.startPosition;
                     Debug.Log(npcModel.gameObject.name + npcModel.transform.position);
-                }
+                }*/
                 npcModel.currentTarget = 0;
             }
+        }
+
+        public IEnumerator WaitForFrame()
+        {
+            yield return new WaitForEndOfFrame();
+            foreach (NPCModel npcModel in allNpcs)
+            {
+                Physics.IgnoreLayerCollision(10,9, true);
+                npcModel.GetComponent<NavMeshAgent>().enabled = false;
+                //npcModel.GetComponent<CapsuleCollider>().enabled = false;
+                Rigidbody tempRb = npcModel.GetComponent<Rigidbody>();
+                //tempRb.isKinematic = true;
+                npcModel.transform.position = npcModel.startPosition;
+                //tempRb.position = npcModelTemp.startPosition;
+                npcModel.transform.rotation = npcModel.startRotation;
+                //npcModelTemp.Resetting();
+                Physics.IgnoreLayerCollision(10,9, false);
+                npcModel.GetComponent<NavMeshAgent>().enabled = true;
+                //npcModelTemp.GetComponent<CapsuleCollider>().enabled = true;
+                //tempRb.isKinematic = false;
+                
+            }
+           
         }
 
         /// <summary>

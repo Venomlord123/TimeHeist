@@ -97,8 +97,7 @@ namespace Luke
                 if (ignoreFireAlarm)
                     GoToNextPoint();
                 else
-                    //todo PROBABLY DOESN'T NEED TO BE AN IENUMURATOR
-                    StartCoroutine(GoToExitPoint());
+                    GoToExitPoint();
             }
             else if(fireAlarmActive == false && waiting == false)
             {
@@ -173,8 +172,8 @@ namespace Luke
         }
 
         /// <summary>
-        ///     Co-routines only yield whats within the function!!
-        ///     HACK needs a cleanup and a counter instead of IEnumarator
+        /// This decides how much time waiting and what is done at the arrival of the waypoint
+        /// </summary>
         public void WaypointWaitTimer()
         {
             waiting = true;
@@ -259,11 +258,10 @@ namespace Luke
                 Quaternion.Slerp(transform.rotation, newRotation, animator.speed / animationSpeedDivider);
         }
 
-        public IEnumerator GoToExitPoint()
+        public void GoToExitPoint()
         {
             if (ignoreFireAlarm == false)
             {
-                yield return new WaitForSeconds(.5f);
                 navMeshAgent.SetDestination(exitWaypoints[currentTarget].transform.position);
             }
         }

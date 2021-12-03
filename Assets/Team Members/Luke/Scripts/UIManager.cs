@@ -22,8 +22,8 @@ namespace Luke
 
         private void OnEnable()
         {
-            timer.CountDownEndEvent += ZeroCountDown;
-            gameManager.JournalSwitchSceneEvent += ZeroCountDown;
+            timer.CountDownEndEvent += DisablingCountDown;
+            gameManager.JournalSwitchSceneEvent += DisablingCountDown;
             gameManager.JournalSwitchSceneEvent += ShowCountdown;
             playerModel.InteractEvent += InteractPopUp;
             gameManager.masterMind.AllAccusedCorrectEvent += GameEndPopUp;
@@ -37,8 +37,8 @@ namespace Luke
 
         private void OnDisable()
         {
-            timer.CountDownEndEvent -= ZeroCountDown;
-            gameManager.JournalSwitchSceneEvent -= ZeroCountDown;
+            timer.CountDownEndEvent -= DisablingCountDown;
+            gameManager.JournalSwitchSceneEvent -= DisablingCountDown;
             gameManager.JournalSwitchSceneEvent -= ShowCountdown;
             playerModel.InteractEvent -= InteractPopUp;
         }
@@ -60,11 +60,11 @@ namespace Luke
             timer.timerText.text = string.Format("{0:0}:{1:00}:{2:000}", timer.timerMinutes, timer.timerSeconds, timer.timerMilliSeconds);
         }
         
-        public void ZeroCountDown()
+        public void DisablingCountDown()
         {
             //Forcing the zero view
-            timer.countDownText.text = string.Format("{0:0}:{1:00}", 0,0);
-            timer.timerText.text = string.Format("{0:0}:{1:00}:{2:000}", 0, 0, 0);
+            timer.countDownText.text = string.Format("{0:0}:{1:00}", 0f,0f);
+            timer.timerText.text = string.Format("{0:0}:{1:00}:{2:000}", 0f, 0f, 0f);
             //disabling view of timer
             countDown.SetActive(false);
             eventTimer.SetActive(false);

@@ -67,7 +67,6 @@ namespace Luke
             playerMovement = FindObjectOfType<PlayerMovementTimeStop>();
             currentCountDown = maxCountDown;
             currentTimer = maxTime;
-            
             StartCountDown();
         }
 
