@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{3a989c31-3488-4451-8425-951167ee8985}">
+		<property name="name">
+			<value>ReverbZone</value>
+		</property>
+		<relationship name="folder">
+			<destination>{04636130-f8ba-42a9-a332-06d1b4b34b8a}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{69b059de-9f43-4bd0-8757-72b02ae677c6}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{69b059de-9f43-4bd0-8757-72b02ae677c6}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>1.6000000238418579</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

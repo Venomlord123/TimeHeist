@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public Timer timer;
     public MasterMind masterMind;
     public Pause pause;
+    public AudioManager audioManager;
 
     //variables
     //TODO roundCounter++ when new round starts
@@ -129,6 +130,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GameSwitchScene()
     {
+        audioManager.GameStateJournal();
         GameSwitchSceneEvent?.Invoke();
         Debug.Log("Switch to journal");
     }
@@ -139,6 +141,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void JournalSwitchScene()
     {
+        audioManager.GameStatePlay();
         JournalSwitchSceneEvent?.Invoke();
         Debug.Log("Switch to game");
         roundCounter++;

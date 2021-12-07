@@ -82,6 +82,7 @@ namespace Luke
         {
             //TODO check to see if the npc is already added
             StartCoroutine(PopUpTimer());
+            gameManager.audioManager.SuspectAdded();            
         }
 
         public IEnumerator PopUpTimer()
