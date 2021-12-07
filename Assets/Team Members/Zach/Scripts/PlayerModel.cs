@@ -61,6 +61,7 @@ namespace ZachFrench
         {
             //todo add to TDD for reference to layer
             Physics.IgnoreLayerCollision(6,10);
+            Physics.IgnoreLayerCollision(6,7);
             startPosition = transform.position;
             startRotation = transform.rotation;
         }
