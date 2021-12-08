@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{3192457d-3eeb-44ea-91f8-394d5376e023}">
+		<property name="name">
+			<value>PREMASTER</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{37911d83-60b1-486f-acb4-62a59d9d37fb}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{e2623d25-776e-4e0d-bd8f-7a789bbf16ae}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{717e2b99-37b4-4d5d-87e5-1c5fa8eeebe7}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{37911d83-60b1-486f-acb4-62a59d9d37fb}">
+		<relationship name="effects">
+			<destination>{8b20306f-3f18-439c-a035-f46d7b4de273}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{e2623d25-776e-4e0d-bd8f-7a789bbf16ae}" />
+	<object class="MixerBusFader" id="{8b20306f-3f18-439c-a035-f46d7b4de273}" />
+</objects>

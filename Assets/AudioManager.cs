@@ -8,6 +8,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     
+    // TODO MAKE THIS IT'S OWN OBJECT WHICH DOESNT DESTROY ON LOAD
+
     public GameManager gameManager;
     public PlayerMovementTimeStop playerMovementTimeStop;
 
@@ -46,8 +48,8 @@ public class AudioManager : MonoBehaviour
     // public KeyCode RedRoomKey;
     // public KeyCode YellowRoomKey;
     // public KeyCode BlueRoomKey;
-    public KeyCode GameStateJournalKey;
-    public KeyCode GameStatePlayKey;
+    // public KeyCode GameStateJournalKey;
+    // public KeyCode GameStatePlayKey;
 
 
 
@@ -73,6 +75,9 @@ public class AudioManager : MonoBehaviour
         gameState = 1;
         FMODPauseSFXInstance = FMODUnity.RuntimeManager.CreateInstance (FMODPauseSFXEvent);
         FMODUnpauseSFXInstance = FMODUnity.RuntimeManager.CreateInstance (FMODUnpauseSFXEvent);
+        // FMODChatterInstance = FMODUnity.RuntimeManager.CreateInstance (FMODChatterEvent);
+        // FMODChatterInstance.start();
+        // Debug.Log("Start successful");
     }
 
     void Update ()
@@ -86,13 +91,13 @@ public class AudioManager : MonoBehaviour
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Speed", playerMovementTimeStop.playerVelocity);
         }
         
-        if (Input.GetKeyDown(GameStateJournalKey)) {
-            GameStateJournal();
-        }
+        // if (Input.GetKeyDown(GameStateJournalKey)) {
+        //     GameStateJournal();
+        // }
 
-        if (Input.GetKeyDown(GameStatePlayKey)) {
-            GameStatePlay();
-        }
+        // if (Input.GetKeyDown(GameStatePlayKey)) {
+        //     GameStatePlay();
+        // }
 
         // if (Input.GetKeyDown(GreenRoomKey)) {
         //     AreaGreenRoom();
@@ -113,8 +118,8 @@ public class AudioManager : MonoBehaviour
 
     public void DebugEvent()
     {
-        Debug.Log("Gamestate is " + gameState);
-        // gameManager.GameSwitchScene();
+        FMODMusicInstance = FMODUnity.RuntimeManager.CreateInstance (FMODMusicEvent);
+        FMODMusicInstance.start();        
     }
 
 
@@ -125,24 +130,27 @@ public class AudioManager : MonoBehaviour
     {
         // Debug.Log("Menu Pause Audio Event");
         FMODPauseSFXInstance.start();
-        FMODUnity.RuntimeManager.GetBus("bus:/MUS BUS").setPaused(true);
-        FMODUnity.RuntimeManager.GetBus("bus:/DX BUS").setPaused(true);
+        // FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/MUS BUS").setPaused(true);
+        FMODMusicInstance.setPitch(0.5f);
+        FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS").setPaused(true);
     }
 
     public void UnpauseGame()
     {
         // Debug.Log("Game Resume Audio Event");
         FMODUnpauseSFXInstance.start(); 
-        FMODUnity.RuntimeManager.GetBus("bus:/MUS BUS").setPaused(false);
-        FMODUnity.RuntimeManager.GetBus("bus:/DX BUS").setPaused(false);
+        // FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/MUS BUS").setPaused(false);
+        FMODMusicInstance.setPitch(1f);
+        FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS").setPaused(false);
     }
 
     public void GameStateJournal()
     {
         gameState = 0;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Concern", 0);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameMode", 0);
-        FMODUnity.RuntimeManager.GetBus("bus:/ATMOS BUS").setPaused(true);
-        FMODUnity.RuntimeManager.GetBus("bus:/DX BUS").setPaused(true);
+        FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/SFX BUS/ATMOS BUS").setPaused(true);
+        FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS").setPaused(true);
         Debug.Log("GameStateJournal called. Gamestate is " + gameState);
         // do other audio stuff here
     }
@@ -151,8 +159,8 @@ public class AudioManager : MonoBehaviour
     {
         gameState = 1;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameMode", 1);
-        FMODUnity.RuntimeManager.GetBus("bus:/ATMOS BUS").setPaused(false);
-        FMODUnity.RuntimeManager.GetBus("bus:/DX BUS").setPaused(false);
+        FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/SFX BUS/ATMOS BUS").setPaused(false);
+        FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS").setPaused(false);
         Debug.Log("GameStatePlay called. Gamestate is " + gameState);
         // do other audio stuff here
     }   
@@ -209,21 +217,22 @@ public class AudioManager : MonoBehaviour
 
     public void BlackOut()
     {
-        Debug.Log("Blackout audio event triggered");
+        // Debug.Log("Blackout audio event triggered");
         FMODBlackOutInstance = FMODUnity.RuntimeManager.CreateInstance (FMODBlackOutEvent);
-        FMODBlackOutInstance.start ();
-        // transition to music buildup part 2
+        FMODBlackOutInstance.start();
+        // transition to music buildup part 2?
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Concern", 1);
         // wait until lights come back on and fade halfway between calm and concerned
+        // add slight lowpass to EQ
     }
 
     public void FireAlarm()
     {
-        Debug.Log("Fire Alarm audio event triggered");
+        // Debug.Log("Fire Alarm audio event triggered");
         FMODFireAlarmInstance = FMODUnity.RuntimeManager.CreateInstance (FMODFireAlarmEvent);
-        FMODFireAlarmInstance.start ();
-        // transition to buildup part 3
+        FMODFireAlarmInstance.start();
+        // transition to buildup part 3?
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Concern", 2);
-        // make chatter atmos into fear
+        // add slight lowpass to EQ
     }
 }
