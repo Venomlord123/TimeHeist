@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Luke;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -78,10 +79,10 @@ namespace ZachFrench
             //raycast for interacting
             InteractionRay();
         }
-
+        
         private void InteractionRay()
         {
-            ray = new Ray(transform.position, transform.forward);
+            ray = new Ray(transform.position + new Vector3(0,transform.localScale.y,0), transform.forward);
             hitInfo = new RaycastHit();
             Physics.Raycast(ray, out hitInfo);
             if (Mouse.current.leftButton.isPressed)
