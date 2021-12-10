@@ -11,6 +11,7 @@ namespace Luke
     {
         //References
         public NavMeshAgent navMeshAgent;
+        public Outline outline;
 
         [Tooltip("Drag the player object here")]
         public PlayerMovementTimeStop playerMovementTimeStop;
@@ -51,7 +52,8 @@ namespace Luke
         public GameObject objectToSwap;
 
         public bool resetting;
-        
+        [HideInInspector]
+        public bool highlight;
         
         public float counter;
         [Tooltip("This character is a person of interest that swaps it's model")]
@@ -70,7 +72,9 @@ namespace Luke
         // Start is called before the first frame update
         private void Start()
         {
+            outline = GetComponent<Outline>();
             Physics.IgnoreLayerCollision(7, 7);
+            outline.enabled = false;
             //This is for when we need to reset to original positions
             startPosition = transform.localPosition;
             startRotation = transform.rotation;
@@ -82,6 +86,25 @@ namespace Luke
             GoToNextPoint();
             ActivateModelOnStart();
             DeactivateModelOnStart();
+        }
+
+        public void OutlineHighlightEnable()
+        {
+            if (highlight == false)
+            {
+               outline.enabled = true;
+               highlight = true; 
+            }
+            
+        }
+        
+        public void OutlineHighlightDisable()
+        {
+            if (highlight == true)
+            {
+                outline.enabled = false;
+                highlight = false;
+            }
         }
 
         public void Resetting()

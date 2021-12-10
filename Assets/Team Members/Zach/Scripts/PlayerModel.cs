@@ -100,6 +100,24 @@ namespace ZachFrench
                     }
                 }
             }
+
+            if (Mouse.current.rightButton.wasReleasedThisFrame)
+            {
+                if (hitInfo.collider != null)
+                {
+                    if (hitInfo.collider.GetComponent<NPCModel>())
+                    {
+                        if (hitInfo.collider.GetComponent<NPCModel>() && hitInfo.collider.GetComponent<NPCModel>().highlight == false)
+                        {
+                            hitInfo.collider.SendMessage("OutlineHighlightEnable");
+                        }
+                        else if(hitInfo.collider.GetComponent<NPCModel>().highlight)
+                        {
+                            hitInfo.collider.SendMessage("OutlineHighlightDisable");
+                        }
+                    }
+                }
+            }
         }
 
         public void CharacterMovement()
