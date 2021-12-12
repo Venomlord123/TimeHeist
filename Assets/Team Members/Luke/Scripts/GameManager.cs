@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public Timer timer;
     public MasterMind masterMind;
     public Pause pause;
+
+    [HideInInspector]
     public AudioManager audioManager;
 
     //variables
@@ -24,7 +26,9 @@ public class GameManager : MonoBehaviour
 
         //masterMind = FindObjectOfType<MasterMind>();
         timer = FindObjectOfType<Timer>();
+        audioManager = FindObjectOfType<AudioManager>();
         roundCounter = 1;
+        audioManager.GameStatePlay();
     }
 
     public void Update()
@@ -81,6 +85,7 @@ public class GameManager : MonoBehaviour
     {
         GameStartEvent?.Invoke();
         Debug.Log("Round started");
+        audioManager.GameStatePlay();
     }
 
     /// <summary>

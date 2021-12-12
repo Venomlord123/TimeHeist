@@ -5,11 +5,18 @@ public class Pause : MonoBehaviour
 {
     //References 
     public MouseCursor mouseCursor;
+
+    [HideInInspector]
     public AudioManager audioManager; 
     
     //Variables
     public GameObject pauseMenu;
     public bool isPaused;
+
+    public void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
 
     public void PauseGame()
     {

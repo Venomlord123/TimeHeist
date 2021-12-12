@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="ParameterPreset" id="{bfda3488-a277-4d94-bbce-61cb079c1243}">
 		<property name="name">
-			<value>GameMode</value>
+			<value>MusicState</value>
 		</property>
 		<relationship name="folder">
 			<destination>{04636130-f8ba-42a9-a332-06d1b4b34b8a}</destination>
@@ -16,11 +16,12 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>2</value>
+			<value>3</value>
 		</property>
 		<property name="enumerationLabels">
-			<value>Journal</value>
-			<value>Gameplay</value>
+			<value>IntroA</value>
+			<value>IntroB</value>
+			<value>MainMusic</value>
 		</property>
 		<property name="isGlobal">
 			<value>true</value>

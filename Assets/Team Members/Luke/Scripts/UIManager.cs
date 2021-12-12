@@ -13,6 +13,7 @@ namespace Luke
         public GameManager gameManager;
         public PlayerModel playerModel;
         public Timer timer;
+        public AudioManager audioManager;
         //Variables
         public GameObject eventTimer;
         public GameObject countDown;
@@ -33,6 +34,7 @@ namespace Luke
         {
             timer = FindObjectOfType<Timer>();
             gameManager = FindObjectOfType<GameManager>();
+            audioManager = FindObjectOfType<AudioManager>();
         }
 
         private void OnDisable()
@@ -81,8 +83,11 @@ namespace Luke
         public void InteractPopUp()
         {
             //TODO check to see if the npc is already added
-            StartCoroutine(PopUpTimer());
-            gameManager.audioManager.SuspectAdded();            
+            if (audioManager.gameState == 1)
+            {
+                StartCoroutine(PopUpTimer());
+                audioManager.SuspectAdded(); 
+            }
         }
 
         public IEnumerator PopUpTimer()

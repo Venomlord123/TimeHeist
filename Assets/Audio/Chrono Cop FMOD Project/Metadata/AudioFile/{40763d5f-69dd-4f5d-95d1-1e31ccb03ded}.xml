@@ -2,10 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{40763d5f-69dd-4f5d-95d1-1e31ccb03ded}">
 		<property name="assetPath">
-			<value>Ambience, Urban, City, Corner, Traffic, People, Street Crossing, Elizabeth Street, Albert Street, Brisbane, Australia SND37574.wav</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>SFX/Atmos/Ambience, Urban, City, Corner, Traffic, People, Street Crossing, Elizabeth Street, Albert Street, Brisbane, Australia SND37574.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>

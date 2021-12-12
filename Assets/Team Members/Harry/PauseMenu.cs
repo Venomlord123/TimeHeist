@@ -5,8 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+
+    public AudioManager audioManager;
+
+    public void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
     public void ExitGame()
     {
         SceneManager.LoadScene("Menu Scene");
+        audioManager.GameStateJournal();
     }
 }

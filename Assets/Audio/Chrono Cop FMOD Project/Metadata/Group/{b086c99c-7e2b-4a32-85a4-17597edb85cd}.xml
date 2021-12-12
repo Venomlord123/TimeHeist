@@ -17,6 +17,7 @@
 	<object class="MixerBusEffectChain" id="{32284ac4-3d04-4daa-8a7b-8f96b73e63ea}">
 		<relationship name="effects">
 			<destination>{85d0934c-6d67-404e-a0b1-ce9c9c1170e6}</destination>
+			<destination>{084a8816-d789-4463-be87-0cfabc8ef7f5}</destination>
 			<destination>{e919f747-30b1-422b-bd85-0fd0de7c1730}</destination>
 			<destination>{b99a6299-f4dc-4a84-98f3-b1c9efe8a9c1}</destination>
 			<destination>{ad3ef405-7e4e-4d54-800b-9cd7e3aeddac}</destination>
@@ -47,12 +48,13 @@
 			<value>-12.4137917</value>
 		</property>
 	</object>
-	<object class="MixerBusFader" id="{e919f747-30b1-422b-bd85-0fd0de7c1730}" />
-	<object class="Sidechain" id="{b99a6299-f4dc-4a84-98f3-b1c9efe8a9c1}">
-		<property name="bypass">
-			<value>true</value>
+	<object class="GainEffect" id="{084a8816-d789-4463-be87-0cfabc8ef7f5}">
+		<property name="gain">
+			<value>6</value>
 		</property>
 	</object>
+	<object class="MixerBusFader" id="{e919f747-30b1-422b-bd85-0fd0de7c1730}" />
+	<object class="Sidechain" id="{b99a6299-f4dc-4a84-98f3-b1c9efe8a9c1}" />
 	<object class="MixerSend" id="{ad3ef405-7e4e-4d54-800b-9cd7e3aeddac}">
 		<property name="inputFormat">
 			<value>2</value>

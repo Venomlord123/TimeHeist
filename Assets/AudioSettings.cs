@@ -14,21 +14,21 @@ public class AudioSettings : MonoBehaviour
     FMOD.Studio.Bus Dialogue;
     FMOD.Studio.Bus Master;
 
-    [SerializeField]
-    [Range(0f, 1f)]
-    public float SFXVolume = 0.5f;
+    // [SerializeField]
+    // [Range(0f, 1f)]
+    public float SFXVolume;
 
-    [SerializeField]
-    [Range(0f, 1f)]
-    public float MusicVolume = 0.5f;
+    // [SerializeField]
+    // [Range(0f, 1f)]
+    public float MusicVolume;
 
-    [SerializeField]
-    [Range(0f, 1f)]
-    public float DialogueVolume = 0.5f;
+    // [SerializeField]
+    // [Range(0f, 1f)]
+    public float DialogueVolume;
 
-    [SerializeField]
-    [Range(0f, 1f)]
-    public float MasterVolume = 1f;
+    // [SerializeField]
+    // [Range(0f, 1f)]
+    public float MasterVolume;
 
 
 

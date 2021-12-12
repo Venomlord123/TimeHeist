@@ -2,10 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{8e052c79-c640-4770-9f8a-a83255f4a4f3}">
 		<property name="assetPath">
-			<value>Machines, Hvac, Industrial Kitchen, Ventilation Tone 03 SND36292.wav</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>SFX/Atmos/Machines, Hvac, Industrial Kitchen, Ventilation Tone 03 SND36292.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>
