@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{ba930e67-0ca0-40dc-bc0a-47cf51f38844}">
+		<property name="assetPath">
+			<value>Dialogue/It Was No One.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>7.4880000000000004</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6cefe92b-0ba8-439b-80cc-815142e84d0c}</destination>
+		</relationship>
+	</object>
+</objects>

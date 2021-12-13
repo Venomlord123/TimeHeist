@@ -5,7 +5,6 @@ using TMPro;
 using UnityEngine;
 using ZachFrench;
 
-
 namespace Luke
 {
     public  class Timer : MonoBehaviour
@@ -22,9 +21,9 @@ namespace Luke
         public static float currentTimer;
         [Tooltip("Walking time")]
         public float maxTime;
-        [Tooltip("Time the blackout will happen")]
+        [Tooltip("Time the blackout will happen - default 35")]
         public float blackOutTime;
-        [Tooltip("Time the fire alarm will happen")]
+        [Tooltip("Time the fire alarm will happen - default 15")]
         public float fireAlarmTime;
         [HideInInspector]
         public float timerMinutes;
@@ -181,6 +180,7 @@ namespace Luke
                     BlackOutEvent?.Invoke();
                     blackOutDone = true;
                     Debug.Log("BlackOut!!!");
+                    gameManager.audioManager.BlackOut();
                 }
 
                 if (currentTimer <= fireAlarmTime && fireAlarmDone == false)
@@ -190,6 +190,7 @@ namespace Luke
                     PaintingStolenEvent?.Invoke();
                     fireAlarmDone = true;
                     Debug.Log("Fire Alarm!!!");
+                    gameManager.audioManager.FireAlarm();
                 }
 
                 if (currentTimer <= 0)

@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public MasterMind masterMind;
     public Pause pause;
 
+    [HideInInspector]
+    public AudioManager audioManager;
+
     //variables
     //TODO roundCounter++ when new round starts
     public int roundCounter;
@@ -23,7 +26,9 @@ public class GameManager : MonoBehaviour
 
         //masterMind = FindObjectOfType<MasterMind>();
         timer = FindObjectOfType<Timer>();
+        audioManager = FindObjectOfType<AudioManager>();
         roundCounter = 1;
+        audioManager.GameStatePlay();
     }
 
     public void Update()
@@ -80,6 +85,7 @@ public class GameManager : MonoBehaviour
     {
         GameStartEvent?.Invoke();
         Debug.Log("Round started");
+        audioManager.GameStatePlay();
     }
 
     /// <summary>
@@ -129,6 +135,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GameSwitchScene()
     {
+        audioManager.GameStateJournal();
         GameSwitchSceneEvent?.Invoke();
         Debug.Log("Switch to journal");
     }
@@ -139,6 +146,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void JournalSwitchScene()
     {
+        audioManager.GameStatePlay();
         JournalSwitchSceneEvent?.Invoke();
         Debug.Log("Switch to game");
         roundCounter++;

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{e6a33208-340c-4d21-b56e-f8c8393d75d2}">
+		<property name="assetPath">
+			<value>SFX/Misc/Oh Hey Short.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.69599999999999995</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6cefe92b-0ba8-439b-80cc-815142e84d0c}</destination>
+		</relationship>
+	</object>
+</objects>

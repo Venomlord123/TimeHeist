@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{5b3b9dcb-763d-4464-849b-e7ab8ca48045}">
+		<property name="name">
+			<value>MusicRedness</value>
+		</property>
+		<relationship name="folder">
+			<destination>{04636130-f8ba-42a9-a332-06d1b4b34b8a}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{db8f1396-b385-42cb-9f2a-3ff81b5b9a02}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{db8f1396-b385-42cb-9f2a-3ff81b5b9a02}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

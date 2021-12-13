@@ -13,6 +13,7 @@ namespace Luke
         public JournalModel journalModel;
         public GameManager gameManager;
         public GameObject histroyTextRef;
+        public AudioManager audioManager;
 
         //Variables
         private bool accusationCorrect = false;
@@ -36,6 +37,7 @@ namespace Luke
         private void Start()
         {
             accusationHistory = new List<List<bool>>();
+            audioManager = FindObjectOfType<AudioManager>();
         }
 
         private void OnEnable()
@@ -57,7 +59,10 @@ namespace Luke
                 AddAccusedEvent.Invoke(accusedDetails);
                 currentlyAccused.Add(accusedDetails);
                 accusedDetails.currentlyAccused = true;
+                audioManager.IncrementAccusationCounter();
             }
+
+            audioManager.MenuInteractA();
         }
         
         public void RemoveFromAccusationList()
@@ -69,11 +74,16 @@ namespace Luke
             currentlyAccused.Clear();
             RemoveAccusedEvent.Invoke();
             
+            audioManager.MenuInteractB();
+            audioManager.ResetAccusations();
+
         }
         
         public void CheckAccusations()
         {
             currentRoundBools.Clear();
+            
+            audioManager.ResetAccusations();
             
             foreach (NPCInformation npcInformation in currentlyAccused)
             {
@@ -112,6 +122,8 @@ namespace Luke
             //History of accusations (true or false amount)
             StoreHistory(currentRoundBools);
             currentlyAccused.Clear();
+
+            audioManager.MenuInteractA();
         }
 
         /// <summary>

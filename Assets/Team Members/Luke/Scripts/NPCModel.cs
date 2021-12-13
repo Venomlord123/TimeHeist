@@ -69,6 +69,11 @@ namespace Luke
         private float time = 0.178f;
         private int waitTimeElement;
 
+        // Adds FMOD footsteps hook
+        [FMODUnity.EventRef]
+        private string FMODFootstepEvent = "event:/Atmos/Footsteps";
+        private FMOD.Studio.EventInstance NPCFootstepInstance;
+
         // Start is called before the first frame update
         private void Start()
         {
@@ -86,6 +91,20 @@ namespace Luke
             GoToNextPoint();
             ActivateModelOnStart();
             DeactivateModelOnStart();
+
+            // Creates instance of FMOD footstep event for each NPC & attaches to Rigidbody
+            NPCFootstepInstance = FMODUnity.RuntimeManager.CreateInstance (FMODFootstepEvent); 
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(NPCFootstepInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
+
+            Footsteps ();
+        }
+
+        private void Footsteps ()
+        {
+            if (!waiting)
+            {
+                NPCFootstepInstance.start();
+            }
         }
 
         public void OutlineHighlightEnable()
@@ -295,11 +314,11 @@ namespace Luke
             {
                 isTalking = true;
                 animator.SetBool("isTalking", true);
-                if (audioClips.Count > 0)
-                {
-                    voiceAudio.clip = audioClips[talkingSetter];
-                    voiceAudio.Play();
-                }
+                // if (audioClips.Count > 0)
+                // {
+                //     voiceAudio.clip = audioClips[talkingSetter];
+                //     voiceAudio.Play();
+                // }
             }
         }
 

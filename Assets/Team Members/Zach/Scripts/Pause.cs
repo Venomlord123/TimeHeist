@@ -5,10 +5,18 @@ public class Pause : MonoBehaviour
 {
     //References 
     public MouseCursor mouseCursor;
+
+    [HideInInspector]
+    public AudioManager audioManager; 
     
     //Variables
     public GameObject pauseMenu;
     public bool isPaused;
+
+    public void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
 
     public void PauseGame()
     {
@@ -17,6 +25,7 @@ public class Pause : MonoBehaviour
             Time.timeScale = 0;
             pauseMenu.SetActive(true);
             mouseCursor.EnableMouse();
+            audioManager.PauseGame();
         }
     }
 
@@ -27,6 +36,7 @@ public class Pause : MonoBehaviour
             pauseMenu.SetActive(false);
             mouseCursor.DisableMouse();
             Time.timeScale = 1;
+            audioManager.UnpauseGame();
         }
     }
 }

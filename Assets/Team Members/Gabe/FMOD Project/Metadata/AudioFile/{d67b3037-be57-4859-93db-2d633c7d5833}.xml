@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{d67b3037-be57-4859-93db-2d633c7d5833}">
+		<property name="assetPath">
+			<value>Dialogue/Culprit D2.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>7.8719999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6cefe92b-0ba8-439b-80cc-815142e84d0c}</destination>
+		</relationship>
+	</object>
+</objects>
