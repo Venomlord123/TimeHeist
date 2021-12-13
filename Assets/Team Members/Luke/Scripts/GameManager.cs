@@ -11,11 +11,9 @@ public class GameManager : MonoBehaviour
     public MasterMind masterMind;
     public Pause pause;
 
-    [HideInInspector]
     public AudioManager audioManager;
 
     //variables
-    //TODO roundCounter++ when new round starts
     public int roundCounter;
     public float journalTransitionTime;
 
