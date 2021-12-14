@@ -9,6 +9,9 @@ public class SuspectIndividualButton : MonoBehaviour
    public event Action<NPCInformation> OnButtonPressDetailsEvent;
    public event Action<NPCInformation> OnButtonPressAccuseEvent;
 
+   public GameObject circle;
+   public GameObject cross;
+
    public void ExpandDetails()
    {
       OnButtonPressDetailsEvent?.Invoke(npcInformation);
@@ -18,6 +21,29 @@ public class SuspectIndividualButton : MonoBehaviour
    {
       OnButtonPressAccuseEvent?.Invoke(npcInformation);
    }
+
+   public void Circle()
+   {
+      if (circle.activeInHierarchy != true)
+      {
+         circle.SetActive(true);
+      }
+      else
+      {
+         circle.SetActive(false);
+      }
+   }
    
-   
+
+   public void Cross()
+   {
+      if (cross.activeInHierarchy != true)
+      {
+         cross.SetActive(true);
+      }
+      else
+      {
+         cross.SetActive(false);
+      }
+   }
 }
