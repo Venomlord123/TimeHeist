@@ -930,6 +930,28 @@ MonoBehaviour:
   Type: 1
   IsGlobal: 1
   Exists: 1
+--- !u!114 &-7327924279305614066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Speed
+  m_EditorClassIdentifier: 
+  Name: Speed
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 1
+  Exists: 1
 --- !u!114 &-7301424829162518696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1680,7 +1702,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -3234758725463720864}
+  - {fileID: -4084489946353885130}
   MinDistance: 0
   MaxDistance: 0
   Length: 39242
@@ -2188,7 +2210,7 @@ MonoBehaviour:
   Path: Assets/Team Members/Gabe/FMOD Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637750467439631364
+  lastModified: 637752489462152136
   FileSizes:
   - Name: Desktop
     Value: 3290
@@ -2744,6 +2766,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 1
   Exists: 0
+--- !u!114 &-4084489946353885130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Chatter/Concern
+  m_EditorClassIdentifier: 
+  Name: Concern
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 1
+  Exists: 1
 --- !u!114 &-4061397444265302773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2920,6 +2964,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 1
   Exists: 0
+--- !u!114 &-3904216661308630276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/MusicRedness
+  m_EditorClassIdentifier: 
+  Name: MusicRedness
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 1
+  Exists: 1
 --- !u!114 &-3846373489184488784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3046,7 +3112,7 @@ MonoBehaviour:
   Path: Assets/Team Members/Gabe/FMOD Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637750467439601355
+  lastModified: 637752489462137247
   FileSizes:
   - Name: Desktop
     Value: 9458624
@@ -4741,6 +4807,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 1
   Exists: 1
+--- !u!114 &-375776068820706720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/MusicState
+  m_EditorClassIdentifier: 
+  Name: MusicState
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 1
+  IsGlobal: 1
+  Exists: 1
 --- !u!114 &-266851614594520725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5118,7 +5206,7 @@ MonoBehaviour:
   - {fileID: -3637145110911842834}
   StringsBanks:
   - {fileID: -5199221394300717083}
-  stringsBankWriteTime: 637750467439631364
+  stringsBankWriteTime: 637752489462152136
   cacheVersion: 8
 --- !u!114 &653411865730188
 MonoBehaviour:
@@ -5870,6 +5958,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 1
   Exists: 0
+--- !u!114 &1301853832639969244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/MusicBlueness
+  m_EditorClassIdentifier: 
+  Name: MusicBlueness
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 1
+  Exists: 1
 --- !u!114 &1318986586293187705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7644,9 +7754,9 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5360216660036987337}
-  - {fileID: -5224059668307066227}
-  - {fileID: -2165061842834140778}
+  - {fileID: -375776068820706720}
+  - {fileID: 1301853832639969244}
+  - {fileID: -3904216661308630276}
   MinDistance: 0
   MaxDistance: 0
   Length: 113076
@@ -8334,7 +8444,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -5274475213115008765}
+  - {fileID: -7327924279305614066}
   MinDistance: 0
   MaxDistance: 45
   Length: 820
