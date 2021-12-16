@@ -142,7 +142,7 @@ public class AudioManager : MonoBehaviour
 
         SFX = FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/SFX BUS");
         Music = FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/MUS BUS");
-        Dialogue = FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS");
+        Dialogue = FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS/DX MAIN");
         Master = FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER");
     }
 
@@ -197,8 +197,10 @@ public class AudioManager : MonoBehaviour
 
         FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/SFX BUS/ATMOS BUS").setPaused(false);
         FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/SFX BUS/Heist SFX").setPaused(false);
-        FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS").setPaused(false);
+        FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS/DX MAIN").setPaused(false);
         FMODOpeningDialogueInstance.start();
+        FMODClosingDialogueInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        
 
         playerMovementTimeStop = FindObjectOfType<PlayerMovementTimeStop>();
 
@@ -217,8 +219,9 @@ public class AudioManager : MonoBehaviour
         FMODMusicInstance.setPitch(1f);
         FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/SFX BUS/ATMOS BUS").setPaused(true);
         FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/SFX BUS/Heist SFX").setPaused(true);
-        FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS").setPaused(true);
+        FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS/DX MAIN").setPaused(true);
         FMODClosingDialogueInstance.start();
+        FMODOpeningDialogueInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
 
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Speed", 1);
@@ -232,7 +235,7 @@ public class AudioManager : MonoBehaviour
 
         MenuInteractA();
         FMODMusicInstance.setPitch(0.5f);
-        FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS").setPaused(true);
+        FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS/DX MAIN").setPaused(true);
         
         Debug.Log("Menu Pause Audio Event");
     }
@@ -243,7 +246,7 @@ public class AudioManager : MonoBehaviour
 
         MenuInteractB();
         FMODMusicInstance.setPitch(1f);
-        FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS").setPaused(false);
+        FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS/DX MAIN").setPaused(false);
 
         Debug.Log("Game Resume Audio Event");
     }

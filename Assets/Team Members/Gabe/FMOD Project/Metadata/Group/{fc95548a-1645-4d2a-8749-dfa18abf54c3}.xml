@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{fc95548a-1645-4d2a-8749-dfa18abf54c3}">
+		<property name="name">
+			<value>DX BUS</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{505d66df-c544-487f-b46a-94c86eebef23}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{1404b77e-622c-40d7-82f8-abeef35fd67e}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{3192457d-3eeb-44ea-91f8-394d5376e023}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{505d66df-c544-487f-b46a-94c86eebef23}">
+		<relationship name="effects">
+			<destination>{7624c04f-f310-4d65-9910-265bcd4889c6}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{1404b77e-622c-40d7-82f8-abeef35fd67e}" />
+	<object class="MixerBusFader" id="{7624c04f-f310-4d65-9910-265bcd4889c6}" />
+</objects>
