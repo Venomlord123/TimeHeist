@@ -198,6 +198,7 @@ public class AudioManager : MonoBehaviour
         FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/SFX BUS/ATMOS BUS").setPaused(false);
         FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/SFX BUS/Heist SFX").setPaused(false);
         FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS").setPaused(false);
+        FMODOpeningDialogueInstance.start();
 
         playerMovementTimeStop = FindObjectOfType<PlayerMovementTimeStop>();
 
@@ -217,7 +218,8 @@ public class AudioManager : MonoBehaviour
         FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/SFX BUS/ATMOS BUS").setPaused(true);
         FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/SFX BUS/Heist SFX").setPaused(true);
         FMODUnity.RuntimeManager.GetBus("bus:/PREMASTER/DX BUS").setPaused(true);
-        
+        FMODClosingDialogueInstance.start();
+
 
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Speed", 1);
 
