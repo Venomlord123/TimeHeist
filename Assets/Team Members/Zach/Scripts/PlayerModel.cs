@@ -77,7 +77,10 @@ namespace ZachFrench
             velocityNorm = characterController.velocity.normalized;
             
             //raycast for interacting
-            InteractionRay();
+            if (gameManager.inJournal == false)
+            {
+                InteractionRay();
+            }
         }
         
         private void InteractionRay()

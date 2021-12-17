@@ -10,12 +10,12 @@ public class GameManager : MonoBehaviour
     public Timer timer;
     public MasterMind masterMind;
     public Pause pause;
-
     public AudioManager audioManager;
 
     //variables
     public int roundCounter;
     public float journalTransitionTime;
+    public bool inJournal = false;
 
     private void Start()
     {
@@ -102,11 +102,13 @@ public class GameManager : MonoBehaviour
     {
         SceneEndEvent?.Invoke();
         GameSwitchScene();
+        inJournal = true;
         Debug.Log("Main Scene over");
     }
 
     public void JournalEnd()
     {
+        inJournal = false;
         StartCoroutine(TransitionToGameSceneTime());
     }
 
